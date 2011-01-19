@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* CSS Document */
+#Geral #Center img
+{
+	display:block;
+}
+	#Geral #Center p
+	{
+		display:inline-block;
+		margin:0 10px 0 10px;
+		color:#666;
+		font-weight:bold;
+	}
+			#Geral #Center li
+			{
+				color:#000;
+				font-family:Tahoma, Geneva, sans-serif;
+				font-size:12px;
+				font-style:normal;
+				display:block;;
+			}
+					#Geral #Center ul
+				{
+					margin:20px 0 10px 0;
+					display:block;
+				}
+					
+
+#Geral #Center #Fotobox
+{
+	display:inline-block;
+	margin:35px 0 0 0;
+	width:225px;
+	height:420px;	
+}
+#Geral #Center #Dadosbox
+{
+	display:inline-block;
+	margin:35px 0 0 0;
+	width:710px;
+	height:420px;
+}

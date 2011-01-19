@@ -1,0 +1,100 @@
+@charset "utf-8";
+/* CSS Document */
+
+*
+{
+	margin:0px;
+	padding:0px;	
+}
+a, p, td, input, textarea, span, div
+{
+	font-family:Tahoma;
+	font-size:12px;
+}
+img
+{
+	border:none;	
+}
+
+p
+{
+	text-align:justify;
+}
+
+a
+{
+	text-decoration:none;	
+}
+
+a:hover
+{
+	text-decoration:underline;	
+}
+#Geral
+{
+	background-image:url(../images/img_backpedido.png);
+	background-repeat:no-repeat;
+	background-position:top center;
+	margin:auto;
+	width:742px;
+	height:657px;
+}
+
+		#Geral p
+	{
+		display:inline-block;
+		margin:0 10px 0 10px;
+		color:#666;
+		font-weight:bold;
+	}
+			#Geral li
+			{
+				color:#000;
+				font-family:Tahoma, Geneva, sans-serif;
+				font-size:12px;
+				font-style:normal;
+				display:block;;
+				
+			}
+					#Geral ul
+				{
+					margin:20px auto 10px auto;
+					display:block;
+					text-align:justify;
+				}
+	#Geral #Pedido #Box
+	{
+		width:707px;
+		height:180px;
+		margin:40px auto 0 auto;	
+	}		
+	#Geral #Pedido #Botoes
+	{
+		width:707px;
+		height:50px;
+		margin:10px auto 0 0;
+		text-align:center;	
+	}	
+		#Geral #Pedido #Botoes img
+		{
+			margin:10px 5px 0 5px;
+		}			
+#Geral #Pedido
+{
+	width:750px;
+	height:300px;
+	margin:auto;	
+}
+#Geral #Pedido #Tabela
+{
+	text-align:center;
+	margin:auto;
+	border-collapse:collapse;
+	background-color:#CCC;	
+}
+	#Geral #Pedido td
+	{
+		border-top:#000 solid 1px;
+		border-bottom:#000 solid 1px;
+		border-collapse:collapse;	
+	}

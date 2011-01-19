@@ -1,0 +1,343 @@
+@charset "utf-8";
+/* CSS Document */
+
+*
+{
+	margin:0px;
+	padding:0px;	
+}
+a, p, td, input, textarea, span, div
+{
+	font-family:Tahoma;
+	font-size:12px;
+}
+img
+{
+	border:none;	
+}
+
+p
+{
+	text-align:justify;
+	color:#999;
+}
+
+a
+{
+	text-decoration:none;	
+}
+
+a:hover
+{
+	text-decoration:underline;	
+}
+body
+{
+	background-image:url(../images/backhome.jpg);
+	background-repeat:no-repeat;
+	background-position:center top;
+	text-align:center;
+}
+#Geral
+{
+	margin:0 auto;
+	text-align:center;
+}	
+  
+		#Geral #Header
+		{
+			margin:auto;
+			width:960px;
+			height:247px;
+		}
+			#Geral #Header #Barralog
+			{
+				background-image:url(../images/Barralog.png);
+				background-repeat:no-repeat;
+				background-position:center;
+				margin:0 auto;
+				width:950px;
+				height:25px;
+			}
+			     #Geral #Header #Infouser
+				 {
+					float:right;
+					width:660px;
+					height:139px;	 
+				 }
+						 #Geral #Header #Infouser #Boxuser
+						 {
+							padding:50px 0 0 0;
+							float:left;
+							width:530px;
+							height:139px;
+						 }
+			    
+			 
+						#Geral #Header #Logo
+						{
+							margin:5px 0 0 0;
+							background-image:url(../images/logo.png);
+							background-position:center top;
+							width:207px;
+							height:206px;	
+						}
+						
+							#Geral #Header #Busca
+							{
+								margin:auto;
+								width:660px;
+								height:27px;
+								float:right;
+							}
+										#Geral #Header #Busca input
+								{
+									background-image:url(../images/img_barra_busca.png);
+									background-repeat:no-repeat;
+									background-color:transparent;
+									width:100%;
+									height:27px;
+									border:none;
+									margin:0 0 0 0;
+									padding-left:10px;
+								}
+										   #Geral #Header #Menu
+									{
+										width:663px;
+										height:47px;
+										float:right;
+										
+										
+									}
+											 #Geral #Header #Menu ul
+   											 {
+												padding:0px;
+												margin:20px 0 0 0;
+												width:100%;
+												list-style:none;
+												float:left;
+												
+											 }
+			
+													#Geral #Header #Menu li
+													{
+														margin:-2px;
+														padding:0;
+														display: inline; 
+													}
+						
+			
+		#Geral #Center
+		{
+			margin:auto;
+			width:960px;
+			height:680px;	
+		}
+			#Geral #Center .Titulo
+			{
+				float:left;
+				margin:30px 0 17px 5px;	
+			}
+					#Geral #Center ul
+					{
+						padding:0px;
+						margin:5px 0 0 0;
+						list-style:none;
+						float:left;					
+					}
+						 #Geral #Center input
+						 {
+							margin:0px;
+							padding:0;
+							float:left;
+						 }
+	
+							 #Geral #Center li
+							 {
+								font-family:Tahoma, Geneva, sans-serif;
+								font-size:12px;
+								font-weight:normal;
+								color:#999;
+								margin:7px 0 0 0;
+								padding:0;
+								display:list-item;
+								text-align:justify;	
+							 }
+							 #Geral #Center p
+							 {
+								margin:3px 0 0 0px;
+								padding:0;
+								text-align:justify;
+							 }
+											
+						 #Geral #Center #Botao
+						 {
+							margin:25px 0 0 0;
+							padding:0;
+							width:220px;
+							height:40px;
+							display:block;
+							float:left;	
+					     }
+						
+								 #Geral #Center h1
+								 {
+									   display:block;
+									   float:left;
+									   font-family:Tahoma, Geneva, sans-serif;
+									   font-size:14px;
+									   font-weight:bold;
+									   color:#999;
+								  }
+			#Geral #Center #Pesquisa
+			{
+				margin:20px 10px 0 0;
+				display:inline-block;
+				width:220px;
+				height:334px;
+			}
+				
+			#Geral #Center #Pedido
+			{
+				margin:0 10px 0 0;
+				display:inline-block;
+				width:470px;
+				height:334px;
+			}
+			#Geral #Center #Pedido #Backtemp
+			{
+				background-image:url(../images/back_pedidos.png);
+				background-repeat:no-repeat;
+				background-position:center top;
+				margin:40px 0 0 0;
+				display:block;
+				width:100%;
+				height:100%;
+			}
+					#Geral #Center #Pedido #Tabela
+					{
+						font-family:Tahoma, Geneva, sans-serif;
+						font-size:12px;
+						font-weight:normal;
+						color:#999;
+						float:left;
+						margin:25px 0 0 15px;
+						padding:0;
+						display:block;
+					}
+								#Geral #Center #Pedido #Tabela tr
+								{
+									
+									border:#666 solid 3px;
+								}
+							
+			#Geral #Center #At_online
+			{
+				margin:0 0px 0 0;
+				display:inline-block;
+				width:220px;
+				height:334px;
+			}
+				#Geral #Center #At_online #Onlinebox
+				{
+					float:left;
+					display:inline-block;
+					background-image:url(../images/img_back_boxonline.png);
+					background-repeat:no-repeat;
+					background-position:center top;
+					width:222px;
+					height:26px;
+						
+				}
+
+					
+			#Geral #Center #Promocoes
+			{
+				margin:0 10px 0 0;
+				display:inline-block;
+				width:220px;
+				height:334px;
+			}
+			#Geral #Center #Noticias
+			{
+				margin:0 10px 0 0;
+				display:inline-block;
+				width:470px;
+				height:334px;
+			}
+					#Geral #Center #Noticias ul li a
+					{
+						margin:0px 0 0 20px;
+						font-family:Tahoma, Geneva, sans-serif;
+						font-size:12px;
+						font-weight:normal;
+						color:#999;
+					}
+				
+			#Geral #Center #Sua_opiniao
+			{
+				margin:0 0px 0 0;
+				display:inline-block;
+				width:220px;
+				height:334px;
+			}
+			#Geral #Center #Sua_opiniao p
+			{
+				font-family:Tahoma, Geneva, sans-serif;
+				font-size:12px;
+				font-weight:normal;
+				color:#999;
+			}
+		#Geral #Footer
+		{
+			background-image:url(../images/backfoot.jpg);
+			background-repeat:no-repeat;
+			background-position:center top;
+			width:100%;
+			height:282px;
+			margin:auto;
+		}
+		#Geral #Footer #Conteudo
+		{
+			margin:auto;
+			width:960px;
+			height:280px;
+			text-align:center;
+		}
+			#Footer #Conteudo a
+			{
+				font-family: Tahoma !important;
+				font-size:12px !important;
+				color:#666666 !important;
+				margin:0px 5px 0px 0px;
+			}
+					#Geral #Footer #Conteudo #Menu
+					{
+						text-align:right;
+						float:right;
+						
+					}
+.clear
+{
+	clear:both;	
+}
+
+.center
+{
+	text-align:center;
+}
+.left
+{
+	text-align:left;
+}
+
+.progress_poll
+{
+	background-image:url('/images/progressmeter1om.jpg');
+}
+
+#flash_notice {
+  background-color: #CFC;
+  border: solid 1px #6C6;
+  padding:5px;
+}

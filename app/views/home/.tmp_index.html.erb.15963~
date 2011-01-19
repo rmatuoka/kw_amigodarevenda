@@ -1,0 +1,106 @@
+<%content_for :title do%>
+	
+<%end%>
+
+<div id="Pesquisa">
+	<h1><img src="images/tit_pesquisa.png" width="20" height="21" style="margin:0 10px 0 0; float:left;" />Pesquisas</h1>
+	<%if cookies[:poll] != "true"%>
+	<ul>
+	    <p><%=@poll.name%></p>
+		<%=form_tag('polls/' + @poll.id.to_s + "/edit", :method => :get)%>
+		<%@poll_questions.each do |q|%>    	
+			<li><%=radio_button_tag("question", q.id)%> &nbsp; <%=q.question%></li>
+		<%end%>
+	</ul>
+	
+	<div id="Botao">
+		<%=image_submit_tag("btn_votar.png")%>
+		</form>
+	</div>
+	<%else%>
+	<ul class="clear" style="width:100%;">
+		<%@resultado.each do |r|%>
+			<li><%=r%></li>
+		<%end%>
+		<li><b>Total de votos:</b> <%=@total_votes%></li>
+	</ul>
+	
+	<%end%>
+</div>
+      <div id="Pedido">
+		<h1><img src="images/tit_pedidos.png" width="20" height="19" style="margin:0 10px 0 0; float:left;" />Pedido</h1>
+	  <div id="Tabela">
+                <table width="440" height="175" border="0" >
+                  <tr>
+                    <td>Realizado em:</td>
+                    <td>&nbsp;</td>
+                    <td>Estatus:</td>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td>00.00.0000 </td>
+                    <td>00:00:00</td>
+                    <td>ENCAMINHADO</td>
+                    <td>+ DETALHES</td>
+                  </tr>
+                  <tr>
+                    <td>00.00.0000 </td>
+                    <td>00:00:00</td>
+                    <td>AGUARDANDO CONFIRMAÇÃO</td>
+                    <td>+ DETALHES</td>
+                  </tr>
+                  <tr>
+                    <td>00.00.0000 </td>
+                    <td>00:00:00</td>
+                    <td>CONFIRMADO</td>
+                    <td>+ DETALHES</td>
+                  </tr>
+                  <tr>
+                    <td>00.00.0000 </td>
+                    <td>00:00:00</td>
+                    <td>ENTREGUE</td>
+                    <td>+ DETALHES</td>
+                  </tr>
+                  <tr>
+                    <td>00.00.0000 </td>
+                    <td>00:00:00</td>
+                    <td>ENTREGUE</td>
+                    <td>+ DETALHES</td>
+                  </tr>
+                </table>
+        <img src="images/btn_vejatodas.png" width="73" height="12" style="float:right; margin:10px 0 0 0;" />
+        </div>
+        <div id="Backtemp"></div>
+		</div>
+        
+        <div id="At_online"><h1>
+	        <img src="images/tit_atendimentoonline.png" width="23" height="22" style="margin:0 10px 0 0; float:left;"  />Atendimento Online</h1>
+	        <div id="Onlinebox">
+	        	<h1 style=" font-weight:normal; margin:2px 0px 2px 20px;">STATUS</h1>
+				<h1 style=" color:#66CC00; margin:2px 20px 2px 20px; float:right;">ONLINE</h1>
+			</div>
+	        <img src="images/img_chat.png" width="223" height="208" style="display:block; margin:5px 0 0 0;" />
+      	</div>
+        
+		 <div id="Promocoes">
+        	<h1><img src="images/tit_promocoes.png" width="20" height="20" style="margin:0 10px 0 0; float:left;" />Promoções</h1>
+			<%=image_tag(SERVIDOR + @offer.image.url("thumb"), :style => "display:block;")%>
+		</div>
+        
+      <div id="Noticias">
+      	<h1><img src="images/tit_noticias.png" width="14" height="19" style="margin:0 10px 0 0; float:left;"/>Notícias</h1>
+            <ul>
+             <%@notices.each do |n|%>
+				 <li><%=n.created_at.to_date.strftime("%d/%m/%Y")%> - <%=link_to n.summary, "#"%></li>
+            <%end%>
+			</ul>
+        	<img src="images/btn_vejamais.png" width="68" height="12" style="float:right; margin:22px 0 0 0;" />
+	  </div>
+        
+         <div id="Sua_opiniao">
+	        <h1><img src="images/tit_suaopiniao.png" width="14" height="20"  style="margin:0 10px 0 0; float:left;" />Sua Opinião</h1>
+	        <p style="display:block; float:left; margin:0 0 35px 0;">Conte-nos sua opinião, ela pode nos ajudar a melhorar sempre.</p>
+	        <img src="images/btn_enviasuaopini.png" width="206" height="47"  style="display:block; margin:5px 0 0 0; width:100%;"  />
+	        <img src="images/btn_avalieseurepre.png" width="206" height="32" style="display:block; margin:5px 0 0 0; width:100%;" />
+	        <img src="images/btn_falecomseurepre.png" width="206" height="47" style="display:block; margin:5px 0 0 0; width:100%;" />
+		</div>

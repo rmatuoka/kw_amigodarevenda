@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Amigo da Revenda <%=yield :title%></title>
+<%=stylesheet_link_tag "estilo"%>
+<%=yield :head%>
+</head>
+<body>
+<div id="Geral">
+  <div id="Header">
+    	<div id="Barralog">
+            <a href="http://www.nautilus.ind.br" style="float:left; margin:5px 0 0 28px">Voltar para site Nautilus</a>
+            <p style="float:right; margin:5px 35px 0 0px;">01 de Janeiro de 2010  |  7h30m  | <a href="">Logout</a></p>
+        </div>
+      <div id="Infouser">
+      	<div id="Boxuser">
+      		<p style=" text-align:right; margin:5px 5px 5px 5px; font-size:large;"><%=@reseller.nome%></p>
+			<p style="float:right;">
+				<img src="/images/img_boxinfouser.png" width="20" height="14" style="margin:auto 5px" /><%=link_to "Visualizar Dados", reseller_path(@reseller)%>
+				<img src="/images/img_boxinfouser2.png" width="18" height="18" style="margin:auto 5px" /> Configurações
+			</p>
+	  </div>
+	  <img src="/images/img_user.png" width="109" height="109" style="float:right; margin:15px 0px 0 0;" /></div>
+      <div id="Busca"><input type="text" value="Busca" border="none"  /></div>
+      <%=render :file => "/layouts/_menu.html.erb"%>
+      <div id="Logo"></div>
+
+  </div>
+	<div id="Center">
+    	<%=yield%>	
+    </div>
+
+	<div id="Footer">
+        <div id="Conteudo">
+            <div id="Menu"><p><a href="#">Home</a> | <a href="#">Site da Nautilus</a> | <a href="#">Sobre Amigos da Revenda</a> | <a href="#">Politica de Privacidade</a> | <a href="#">Termos de Uso</a> | <a href="#">Ajuda</a></p>
+            </div>
+        </div>
+    </div>
+	
+</div>
+</body>
+</html>

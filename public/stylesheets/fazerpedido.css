@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+
+			#Geral #Center #Meupedbox
+			{
+				background-image:url(../images/back_meupedido.png);
+				background-repeat:no-repeat;
+				background-position:center top;
+				display:inline-block;
+				width:225px;
+				height:625px;
+			}
+				#Geral #Center #Produtosbox
+				{
+					display:inline-block;
+					width:700px;
+					height:623px;
+				}

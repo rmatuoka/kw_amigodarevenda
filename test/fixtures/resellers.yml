@@ -1,0 +1,19 @@
+one:
+  cod_representante: 1
+  nome: MyString
+  endereco: MyString
+  bairro: MyString
+  cidade: MyString
+  estado: MyString
+  telefone: MyString
+  fax: MyString
+
+two:
+  cod_representante: 1
+  nome: MyString
+  endereco: MyString
+  bairro: MyString
+  cidade: MyString
+  estado: MyString
+  telefone: MyString
+  fax: MyString
