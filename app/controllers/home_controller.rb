@@ -28,6 +28,9 @@ class HomeController < ApplicationController
       @resultado.push @out
       end
     end
+    
+    #PEDIDOS
+    @pedidos = ProductRequest.all(:conditions => ['user_id = ?', session[:id]], :limit => 4)
   end
   
   def autentica

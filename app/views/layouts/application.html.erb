@@ -11,7 +11,7 @@
   <div id="Header">
     	<div id="Barralog">
             <a href="http://www.nautilus.ind.br" style="float:left; margin:5px 0 0 28px">Voltar para site Nautilus</a>
-            <p style="float:right; margin:5px 35px 0 0px;">01 de Janeiro de 2010  |  7h30m  
+            <p style="float:right; margin:5px 35px 0 0px;"><%=data_atual_extenso%>  |  <%=hora_atual_resumida%>  
 			<% if session[:logged]%>
 			 | <%=link_to "Logout", session_path(1), :method => :delete%>
 			<%end%>

@@ -5,12 +5,12 @@ class PollsController < ApplicationController
     @poll_question = PollQuestion.find(params[:question]);
     
     if !@poll_question.blank?
-      #Atualiza voto
+      #verifica se está em branco
       if @poll_question.total_votes.blank?
         @poll_question.total_votes = 0
       end
       
-      #verifica se está em branco
+      #Atualiza voto
       @poll_question.total_votes += 1
       
       if @poll_question.save

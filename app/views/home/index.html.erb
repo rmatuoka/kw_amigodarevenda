@@ -12,7 +12,7 @@
 			<li><%=radio_button_tag("question", q.id)%> &nbsp; <%=q.question%></li>
 		<%end%>
 	</ul>
-	
+
 	<div id="Botao">
 		<%=image_submit_tag("btn_votar.png")%>
 		</form>
@@ -30,43 +30,21 @@
       <div id="Pedido">
 		<h1><img src="images/tit_pedidos.png" width="20" height="19" style="margin:0 10px 0 0; float:left;" />Pedido</h1>
 	  <div id="Tabela" style="margin-top:70px;">
-                <table width="440" height="175" border="0" >
+                <table width="440" border="0" >
                   <tr>
                     <td>Realizado em:</td>
                     <td>&nbsp;</td>
-                    <td>Estatus:</td>
+                    <td>Status:</td>
                     <td>&nbsp;</td>
                   </tr>
-                  <tr>
-                    <td>00.00.0000 </td>
-                    <td>00:00:00</td>
-                    <td>ENCAMINHADO</td>
+                  
+				<%@pedidos.each do |p|%>
+				<tr height="20">
+                    <td><%=p.created_at.to_date.strftime("%d/%m/%Y")%> <%=p.created_at.to_time.strftime("%H:%M:%S")%></td>
+                    <td><%=p.status%></td>
                     <td>+ DETALHES</td>
                   </tr>
-                  <tr>
-                    <td>00.00.0000 </td>
-                    <td>00:00:00</td>
-                    <td>AGUARDANDO CONFIRMAÇÃO</td>
-                    <td>+ DETALHES</td>
-                  </tr>
-                  <tr>
-                    <td>00.00.0000 </td>
-                    <td>00:00:00</td>
-                    <td>CONFIRMADO</td>
-                    <td>+ DETALHES</td>
-                  </tr>
-                  <tr>
-                    <td>00.00.0000 </td>
-                    <td>00:00:00</td>
-                    <td>ENTREGUE</td>
-                    <td>+ DETALHES</td>
-                  </tr>
-                  <tr>
-                    <td>00.00.0000 </td>
-                    <td>00:00:00</td>
-                    <td>ENTREGUE</td>
-                    <td>+ DETALHES</td>
-                  </tr>
+				<%end%>
                 </table>
         <img src="/images/btn_vejatodas.png" width="73" height="12" style="float:right; margin:10px 0 0 0;" />
         </div>
