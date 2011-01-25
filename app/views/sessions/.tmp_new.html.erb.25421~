@@ -6,7 +6,7 @@
 	
 <div id="BoxLogin" style="text-align:left;">
 <br>
-<div class="Titulos"><img src="/images/tit_promocoes.png" style="float:left;"/><h1>Login</h1></div>
+<h1><img src="/images/tit_promocoes.png" width="20" height="20" style="margin:0 10px 0 0; float:left;" />Login</h1>
 	<br>
 	<br>
 	<%- flash.each do |name, msg| -%>

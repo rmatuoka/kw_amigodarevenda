@@ -42,7 +42,6 @@
         <div id="Conteudo">
             <div id="Menu"><p><a href="#">Home</a> | <a href="#">Site da Nautilus</a> | <a href="#">Sobre Amigos da Revenda</a> | <a href="#">Politica de Privacidade</a> | <a href="#">Termos de Uso</a> | <a href="#">Ajuda</a></p>
             </div>
-			<div id="logo_bot"><a href="http://www.korewa.com.br/"><img src="/images/logo_korewa.png" style="float:left; "></a><a href="http://www.nautilus.ind.br/"><img src="/images/logo_nautilus.png" style="float:right;"></a></div>
         </div>
     </div>
 	

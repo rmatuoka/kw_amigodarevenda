@@ -7,6 +7,6 @@
 <%end%>
 
 <div id="Barradown">
-	<div class="Titulos"><img src="/images/tit_noticias.png" style="float:left;" /><h1>Notícias</h1></div>
+	<img src="/images/tit_noticias.png" style="float:left;" />
 	
 </div>
