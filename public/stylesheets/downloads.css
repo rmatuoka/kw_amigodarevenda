@@ -3,8 +3,10 @@
 
 #Geral #Center #Barradown
 {
+	display:inline;
+	float:left;
 	margin:35px 0 38px 0;
-	width:100%;
+	width:960px;
 	height:25px;	
 }
 	#Geral #Center .Tabdown

@@ -10,12 +10,20 @@ a, p, td, input, textarea, span, div
 {
 	font-family:Tahoma;
 	font-size:12px;
+	color:#000000;
 }
 img
 {
 	border:none;	
 }
 
+.Titulos
+{
+	text-align:right;
+	height:25px;
+	width:100px;
+	font-weight:normal;	
+}
 p
 {
 	text-align:justify;
@@ -85,8 +93,8 @@ body
 						
 							#Geral #Header #Busca
 							{
-								margin:auto;
-								width:660px;
+								margin:0 8px 0 0;
+								width:650px;
 								height:27px;
 								float:right;
 							}
@@ -106,9 +114,11 @@ body
 										width:663px;
 										height:47px;
 										float:right;
+										margin:4px auto;
 										
 										
 									}
+								   
 											 #Geral #Header #Menu ul
    											 {
 												padding:0px;
@@ -125,8 +135,18 @@ body
 														padding:0;
 														display: inline; 
 													}
-						
-			
+															
+													    img.acende {
+													    opacity: 0.8;
+													    -moz-opacity: 0.8;
+													    Filter: Alpha(Opacity=80)
+													    }
+													    img.acende:hover {
+													    opacity: 1.0;
+													    -moz-opacity: 1.0;
+													    Filter: Alpha(Opacity=100)
+													    }
+																
 		#Geral #Center
 		{
 			margin:auto;
@@ -186,8 +206,9 @@ body
 									   float:left;
 									   font-family:Tahoma, Geneva, sans-serif;
 									   font-size:14px;
-									   font-weight:bold;
+									   font-weight:normal;
 									   color:#999;
+									   margin:0px 0 0 5px;
 								  }
 			#Geral #Center #Pesquisa
 			{
@@ -304,6 +325,13 @@ body
 			height:280px;
 			text-align:center;
 		}
+				#Geral #Footer #Conteudo #logo_bot
+				{
+					display:inline-block;
+					width:960px;
+					height:47px;
+					margin:220px auto;
+				}
 			#Footer #Conteudo a
 			{
 				font-family: Tahoma !important;

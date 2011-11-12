@@ -7,8 +7,8 @@
 <%end%>
 
 <div id="Barradown">
-	<div class="Titulos"><img src="/images/tit_downloads.png" style="float:left;"/><h1>Downloads</h1></div>
-	<input type="text" name="busca" value="Busca" border="none" style="display:inline; float:right; width:300px; height:100%; margin:-27px 0 0 0px;" onfocus="if(this.value=='Busca'){this.value=''};" onblur="if(this.value==''){this.value='Busca'};" />
+	<img src="/images/tit_downloads.png" width="101" height="23" style="float:left;" />
+	<input type="text" name="Selecione" value="Busca" style="float:right; width:300px; height:100%; margin:0 0 0 10px;"/>
 </div>
 
 <img src="/images/img_barra_downloads.png" width="960" height="34" />
@@ -18,7 +18,7 @@
 	<tr>
 	<td width="5%"><img src="/images/icones/download/"></td>
 	<td width="52%" class="left"><%=d.name%></td>
-	<td width="18%"><%=d.file_file_size%> kb</td>
+	<td width="18%"><%=d.file_file_size / 1000%> kb</td>
 	<td width="25%"><%=link_to(image_tag("btn_download.png"), d.file.url)%></td>
 	</tr>
 <%end%>

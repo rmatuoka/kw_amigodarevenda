@@ -1,0 +1,24 @@
+<%content_for :head do%>
+	<%=stylesheet_link_tag "login"%>
+<%end%>
+
+
+	
+<div id="BoxLogin" style="text-align:left;">
+<br>
+<div class="Titulos"><img src="/images/tit_promocoes.png" style="float:left;"/><h1>Login</h1></div>
+	<br>
+	<br>
+	<%- flash.each do |name, msg| -%>
+		<%= content_tag :div, msg, :id => "flash_#{name}" %>
+	<%- end -%>
+	<br>
+	<%=form_tag sessions_path, :method => :post%>
+			E-mail: <input type="text" name="email" id="email" value="" style="float:none; width:400px; height:25px; border:1px solid #B9B9B9;" /><br>
+			<br>
+			Senha: <input type="password" name="senha" id="senha" value="" style="float:none; width:400px; height:25px; border:1px solid #B9B9B9;" /><br>
+			<br>
+		
+		<button>Login</button>
+	</form>
+</div>

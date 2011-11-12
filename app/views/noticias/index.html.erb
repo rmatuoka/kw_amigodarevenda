@@ -7,10 +7,13 @@
 <%end%>
 
 <div id="Barradown">
+<!-- <<<<<<< HEAD
 	<h1><img src="/images/tit_noticias.png" width="14" height="19" style="margin:0 10px 0 0; float:none;"/>Notícias</h1>
 	<ul>
      	<%@noticias.each do |n|%>
 			 <li><%=n.created_at.to_date.strftime("%d/%m/%Y")%> - <%=link_to n.summary, noticia_path(n)%></li>
         <%end%>
 	</ul>
+======= -->
+	<div class="Titulos"><img src="/images/tit_noticias.png" style="float:left;" /><h1>Notícias</h1></div>
 </div>
