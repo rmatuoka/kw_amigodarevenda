@@ -1,0 +1,32 @@
+<% title "Update" %>
+
+<p>
+  <strong>Name:</strong>
+  <%=h @update.name %>
+</p>
+<p>
+  <strong>Body:</strong>
+  <%=h @update.body %>
+</p>
+<p>
+  <strong>Published:</strong>
+  <%=h @update.published %>
+</p>
+<p>
+  <strong>Data Inicio:</strong>
+  <%=h @update.data_inicio %>
+</p>
+<p>
+  <strong>Data Fim:</strong>
+  <%=h @update.data_fim %>
+</p>
+<p>
+  <strong>Total Lidos:</strong>
+  <%=h @update.total_lidos %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_update_path(@update) %> |
+  <%= link_to "Destroy", @update, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", updates_path %>
+</p>

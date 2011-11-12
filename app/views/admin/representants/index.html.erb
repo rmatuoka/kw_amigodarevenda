@@ -1,0 +1,23 @@
+<% title "Representants" %>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Telefone</th>
+    <th>Celular</th>
+    <th>Email</th>
+  </tr>
+  <% for representant in @representants %>
+    <tr>
+      <td><%=h representant.nome %></td>
+      <td><%=h representant.telefone %></td>
+      <td><%=h representant.celular %></td>
+      <td><%=h representant.email %></td>
+      <td><%= link_to "Show", representant %></td>
+      <td><%= link_to "Edit", edit_representant_path(representant) %></td>
+      <td><%= link_to "Destroy", representant, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Representant", new_representant_path %></p>

@@ -1,0 +1,24 @@
+<% title "Poll Question" %>
+
+<p>
+  <strong>Poll:</strong>
+  <%=h @poll_question.poll_id %>
+</p>
+<p>
+  <strong>Question:</strong>
+  <%=h @poll_question.question %>
+</p>
+<p>
+  <strong>Published:</strong>
+  <%=h @poll_question.published %>
+</p>
+<p>
+  <strong>Total Votes:</strong>
+  <%=h @poll_question.total_votes %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_admin_poll_poll_question_path(@poll, @poll_question) %> |
+  <%= link_to "Destroy",  admin_poll_poll_questions_path(@poll, @poll_question), :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", admin_poll_poll_questions_path(@poll) %>
+</p>

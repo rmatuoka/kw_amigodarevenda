@@ -1,0 +1,35 @@
+#Pedidosbox
+{
+	margin-top:20px;
+	height:auto;
+	min-height:300px;
+}
+
+
+#Pedidosbox .Titulo
+{
+	margin-bottom:20px;
+}
+
+#Pedidosbox #BoxRevenda
+{
+	width:460px;
+	height:325px;
+	float:left;
+}
+
+#Pedidosbox #BoxTransportadora
+{
+	width:460px;
+	height:325px;
+	float:right;
+}
+
+#Pedidosbox .bgEscolha
+{
+	width:333px;
+	height:57px;
+	margin-left:54px;
+	background-image:url('/images/representante/box_escolha1.png');
+	background-repeat:no-repeat;
+}

@@ -1,3 +1,7 @@
+require 'rubygems'
+require 'appraisal'
+require 'bundler/setup'
+
 require 'rake'
 require 'rake/testtask'
 require 'rake/rdoctask'
@@ -6,11 +10,11 @@ $LOAD_PATH << File.join(File.dirname(__FILE__), 'lib')
 require 'paperclip'
 
 desc 'Default: run unit tests.'
-task :default => [:clean, :test]
+task :default => [:clean, :all]
 
 desc 'Test the paperclip plugin under all supported Rails versions.'
 task :all do |t|
-  exec('rake RAILS_VERSION=2.1 && rake RAILS_VERSION=2.3 && rake RAILS_VERSION=3.0')
+  exec('rake appraisal test')
 end
 
 desc 'Test the paperclip plugin.'
@@ -62,13 +66,13 @@ task :manifest => :clean do
     puts file
   end
 end
- 
+
 desc "Generate a gemspec file for GitHub"
 task :gemspec => :clean do
   File.open("#{spec.name}.gemspec", 'w') do |f|
     f.write spec.to_ruby
   end
-end 
+end
 
 desc "Build the gem into the current directory"
 task :gem => :gemspec do

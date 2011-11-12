@@ -1,0 +1,40 @@
+<% title "Reseller" %>
+
+<p>
+  <strong>Cod Representante:</strong>
+  <%=h @reseller.cod_representante %>
+</p>
+<p>
+  <strong>Nome:</strong>
+  <%=h @reseller.nome %>
+</p>
+<p>
+  <strong>Endereco:</strong>
+  <%=h @reseller.endereco %>
+</p>
+<p>
+  <strong>Bairro:</strong>
+  <%=h @reseller.bairro %>
+</p>
+<p>
+  <strong>Cidade:</strong>
+  <%=h @reseller.cidade %>
+</p>
+<p>
+  <strong>Estado:</strong>
+  <%=h @reseller.estado %>
+</p>
+<p>
+  <strong>Telefone:</strong>
+  <%=h @reseller.telefone %>
+</p>
+<p>
+  <strong>Fax:</strong>
+  <%=h @reseller.fax %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_reseller_path(@reseller) %> |
+  <%= link_to "Destroy", @reseller, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", resellers_path %>
+</p>

@@ -1,0 +1,33 @@
+<%content_for :head do%>
+	<%=stylesheet_link_tag "login"%>
+<%end%>
+<div style="clear:both;"></div>
+<div style="text-align:center;">
+<div id="BoxLogin" style="clear:both;">
+	<h1><%=image_tag "tit_login.png"%></h1>
+	
+	<p style="margin-bottom:20px;">
+		Seja bem vindo ao sistema Amigo da Revenda, Para continuar, você precisa fazer o login com o usuário e senha fornecidos pela Nautilus. Caso não o possua, entre em contato com nosso suporte.
+	</p>
+	
+	<%= form_for @user_session do |f| %>
+	  <%= f.error_messages %>
+	  
+	<div id="bgLogin">
+	<p>
+	    <%= f.label :usuário %>
+	    <%= f.text_field :username %>
+	</p>
+	<p>
+	    <%= f.label :senha %>&nbsp;&nbsp;
+	    <%= f.password_field :password %>
+	</p>
+	</div>
+	<p style="text-align:right; margin-right:65px;"><%= image_submit_tag "btn_entrar_login.png" %></p>
+	<% end %>
+	
+</div>
+</div>
+
+
+

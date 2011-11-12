@@ -1,0 +1,21 @@
+<% title "Downloads" %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Total Downloads</th>
+  </tr>
+  <% for download in @downloads %>
+    <tr>
+      <td><%=h download.name %></td>
+      <td><%=h download.description %></td>
+      <td><%=h download.total_downloads %></td>
+      <td><%= link_to "Show", admin_download_path(download) %></td>
+      <td><%= link_to "Edit", edit_admin_download_path(download) %></td>
+      <td><%= link_to "Destroy", download, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "Novo Download", new_admin_download_path %></p>

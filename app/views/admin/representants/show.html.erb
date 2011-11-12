@@ -1,0 +1,24 @@
+<% title "Representant" %>
+
+<p>
+  <strong>Nome:</strong>
+  <%=h @representant.nome %>
+</p>
+<p>
+  <strong>Telefone:</strong>
+  <%=h @representant.telefone %>
+</p>
+<p>
+  <strong>Celular:</strong>
+  <%=h @representant.celular %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%=h @representant.email %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_representant_path(@representant) %> |
+  <%= link_to "Destroy", @representant, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", representants_path %>
+</p>

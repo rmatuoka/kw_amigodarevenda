@@ -1,0 +1,47 @@
+<%content_for :head do%>
+	<%=stylesheet_link_tag "passo4"%>
+	<%= javascript_include_tag "jquery/jquery" %>
+	<%= javascript_include_tag "jquery/jquery.tools.min.js" %>
+<%end%>
+
+<img src="/images/img_fazerpedidopasso4.png" style="margin:20px auto;">
+<p style="text-align:center;">Confira os dados antes de finalizar o pedido.</p>
+<img src="/images/img_linhapasso4.png" style="margin:10px auto;">
+<div id="Box_passo4">
+  <p><b>Revenda:</b><%=@reseller.nome%><p>
+  <p><b>Endereço:</b><%=@reseller.endereco%> <b>Bairro:</b><%=@reseller.bairro%></p>
+  <p><b>Nome Fantasia:</b><%=@reseller.nome_fantasia%></p>
+  <p><b>CNPJ/CNPF:</b><%=@reseller.cnpj%> <b>Incr.Est./RG:</b><%=@reseller.inscricao_estadual%></p>
+  <p><b>Cidade:</b><%=@reseller.cidade%> <b>UF:</b><%=@reseller.estado%><b>Telefone:</b><%=@reseller.telefone%></p>
+  <p><b>Data da entrega:</b>A DEFINIR <b>Cond.Pgto:</b>A DEFINIR</p>
+  <p><b>Representante:</b><%=@representante.nome%></p>
+  <p><b>Tranportadora:</b><%=@transporter.nome%> <b>Tipo de Frete:</b><%=@pedido.tipo_frete%></p>
+  <p><b>Bairro:</b></p>
+  <div id="Tabela">
+      <table width="700" align="center">
+      <tr>
+        <td height="30">Qtde.</td>
+        <td>Descrição</td>
+        <td>Vl.unid.</td>
+      </tr>
+    <%=@out%>
+    </table>
+    </div>
+
+    <div id="Box2">
+        <p><b>Valor Total Produtos:</b> R$ <%=@valor_total%></p>
+        <p><b>Valor Total IPI:</b> A DEFINIR</p>
+        <p><b>Valor Frete:</b> A DEFINIR</p>
+        <p><b>Valor ST:</b> A DEFINIR</p>
+        <p><b>Valor Total Nota:</b> A DEFINIR </p>
+    </div>
+    <img src="/images/img_linhapasso4.png" style="margin:10px auto;">
+    <div id="Box_infoadic">
+        <p><b>INFORMAÇÕES ADICIONAIS:</b></p>
+        <p><%=@pedido.informacoes_adicionais%></p>
+    </div>
+    <div id="Box3">
+        
+    </div>
+    <img src="/images/img_linhapasso4.png" style="margin:10px auto;">
+	<%=link_to image_tag("btn_finalizarpedido.png", :style => "margin:0 15px 0 0; float:right;"), finalizar_representante_pedido_path(@pedido)%>

@@ -1,4 +1,4 @@
-require 'test/helper'
+require './test/helper'
 
 class InterpolationsTest < Test::Unit::TestCase
   should "return all methods but the infrastructure when sent #all" do
@@ -82,14 +82,17 @@ class InterpolationsTest < Test::Unit::TestCase
 
   should "reinterpolate :url" do
     attachment = mock
-    attachment.expects(:options).returns({:url => ":id"})
     attachment.expects(:url).with(:style, false).returns("1234")
     assert_equal "1234", Paperclip::Interpolations.url(attachment, :style)
   end
 
   should "raise if infinite loop detcted reinterpolating :url" do
-    attachment = mock
-    attachment.expects(:options).returns({:url => ":url"})
+    attachment = Object.new
+    class << attachment
+      def url(*args)
+        Paperclip::Interpolations.url(self, :style)
+      end
+    end
     assert_raises(Paperclip::InfiniteInterpolationError){ Paperclip::Interpolations.url(attachment, :style) }
   end
 
@@ -109,9 +112,25 @@ class InterpolationsTest < Test::Unit::TestCase
 
   should "return the timestamp" do
     now = Time.now
+    zone = 'UTC'
     attachment = mock
     attachment.expects(:instance_read).with(:updated_at).returns(now)
-    assert_equal now.to_s, Paperclip::Interpolations.timestamp(attachment, :style)
+    attachment.expects(:time_zone).returns(zone)
+    assert_equal now.in_time_zone(zone).to_s, Paperclip::Interpolations.timestamp(attachment, :style)
+  end
+
+  should "return updated_at" do
+    attachment = mock
+    seconds_since_epoch = 1234567890
+    attachment.expects(:updated_at).returns(seconds_since_epoch)
+    assert_equal seconds_since_epoch, Paperclip::Interpolations.updated_at(attachment, :style)
+  end
+
+  should "return hash" do
+    attachment = mock
+    fake_hash = "a_wicked_secure_hash"
+    attachment.expects(:hash).returns(fake_hash)
+    assert_equal fake_hash, Paperclip::Interpolations.hash(attachment, :style)
   end
 
   should "call all expected interpolations with the given arguments" do

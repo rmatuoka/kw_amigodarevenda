@@ -41,14 +41,25 @@ module Paperclip
     # Returns the interpolated URL. Will raise an error if the url itself
     # contains ":url" to prevent infinite recursion. This interpolation
     # is used in the default :path to ease default specifications.
+    RIGHT_HERE = "#{__FILE__.gsub(%r{^\./}, "")}:#{__LINE__ + 3}"
     def url attachment, style_name
-      raise InfiniteInterpolationError if attachment.options[:url].include?(":url")
+      raise InfiniteInterpolationError if caller.any?{|b| b.index(RIGHT_HERE) }
       attachment.url(style_name, false)
     end
 
     # Returns the timestamp as defined by the <attachment>_updated_at field
+    # in the server default time zone unless :use_global_time_zone is set
+    # to false.  Note that a Rails.config.time_zone change will still
+    # invalidate any path or URL that uses :timestamp.  For a
+    # time_zone-agnostic timestamp, use #updated_at.
     def timestamp attachment, style_name
-      attachment.instance_read(:updated_at).to_s
+      attachment.instance_read(:updated_at).in_time_zone(attachment.time_zone).to_s
+    end
+
+    # Returns an integer timestamp that is time zone-neutral, so that paths
+    # remain valid even if a server's time zone changes.
+    def updated_at attachment, style_name
+      attachment.updated_at
     end
 
     # Returns the Rails.root constant.
@@ -78,7 +89,7 @@ module Paperclip
     # Returns the extension of the file. e.g. "jpg" for "file.jpg"
     # If the style has a format defined, it will return the format instead
     # of the actual extension.
-    def extension attachment, style_name 
+    def extension attachment, style_name
       ((style = attachment.styles[style_name]) && style[:format]) ||
         File.extname(attachment.original_filename).gsub(/^\.+/, "")
     end
@@ -86,6 +97,17 @@ module Paperclip
     # Returns the id of the instance.
     def id attachment, style_name
       attachment.instance.id
+    end
+
+    # Returns the fingerprint of the instance.
+    def fingerprint attachment, style_name
+      attachment.fingerprint
+    end
+
+    # Returns a the attachment hash.  See Paperclip::Attachment#hash for
+    # more details.
+    def hash attachment, style_name
+      attachment.hash(style_name)
     end
 
     # Returns the id of the instance in a split path form. e.g. returns

@@ -1,0 +1,17 @@
+<% title "Transporters" %>
+
+<table>
+  <tr>
+    <th>Nome</th>
+  </tr>
+  <% for transporter in @transporters %>
+    <tr>
+      <td><%=h transporter.nome %></td>
+      <td><%= link_to "Show", admin_transporter_path(transporter) %></td>
+      <td><%= link_to "Edit", edit_admin_transporter_path(transporter) %></td>
+      <td><%= link_to "Destroy", admin_transporter_path(transporter), :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Transporter", new_admin_transporter_path %></p>

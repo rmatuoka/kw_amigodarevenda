@@ -1,0 +1,2 @@
+module Revenda::PollsHelper
+end

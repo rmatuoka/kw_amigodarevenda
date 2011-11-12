@@ -1,0 +1,2 @@
+module Revenda::ResellersHelper
+end

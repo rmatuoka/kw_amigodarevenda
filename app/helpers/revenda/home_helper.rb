@@ -1,0 +1,2 @@
+module Revenda::HomeHelper
+end

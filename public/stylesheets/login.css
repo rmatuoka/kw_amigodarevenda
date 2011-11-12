@@ -1,0 +1,36 @@
+#BoxLogin
+{
+	width:420px;
+	min-height:42px;
+	height:auto;
+	text-align:center;
+	margin:auto;
+	padding-top:50px;
+}
+
+#BoxLogin input
+{
+	float:none !important;
+}
+
+#BoxLogin label
+{
+	float:none !important;
+}
+
+#BoxLogin h1
+{
+	float:none !important;
+	margin-bottom:30px;
+}
+
+#BoxLogin #bgLogin
+{
+	background-image:url('/images/bg_box_login.png');
+	background-repeat:no-repeat;
+	width:334px;
+	height:97px;
+	padding:20px;
+	text-align:left;
+	margin:auto;
+}

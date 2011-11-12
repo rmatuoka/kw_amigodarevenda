@@ -1,0 +1,23 @@
+<% title "Notices" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Body</th>
+    <th>Summary</th>
+    <th>Published</th>
+  </tr>
+  <% for notice in @notices %>
+    <tr>
+      <td><%=h notice.name %></td>
+      <td><%=h notice.body %></td>
+      <td><%=h notice.summary %></td>
+      <td><%=h notice.published %></td>
+      <td><%= link_to "Show", admin_notice_path(notice) %></td>
+      <td><%= link_to "Edit", edit_admin_notice_path(notice) %></td>
+      <td><%= link_to "Destroy", admin_notice_path(notice), :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Notice", new_admin_notice_path %></p>

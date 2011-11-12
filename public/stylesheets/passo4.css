@@ -1,0 +1,46 @@
+#Box_passo4
+{
+	display:inline-block;
+	margin:auto;
+	width:960px;
+	height:658px;
+}
+b
+{
+	margin:0 5px 0 0;
+}
+p
+{
+	margin:0 5px 0 5px;
+}
+#Box2
+{
+	display:block;
+	text-align:right;
+	width:300px;
+	height:100px;
+	float:right;
+}
+#Box_infoadic
+{
+	text-align:right;
+	width:300px;
+	height:100px;
+	float:left;
+
+}
+#Tabela
+{
+	width:700px;
+	height:140px;
+	margin:10px auto;
+	text-align:CENTER;	
+}
+#Box3
+{
+	text-align:right;
+	width:300px;
+	height:100px;
+	margin:0 0 0 0;
+	float:left;
+}

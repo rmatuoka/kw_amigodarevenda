@@ -1,0 +1,24 @@
+<% title "Notice" %>
+
+<p>
+  <strong>Name:</strong>
+  <%=h @notice.name %>
+</p>
+<p>
+  <strong>Body:</strong>
+  <%=h @notice.body %>
+</p>
+<p>
+  <strong>Summary:</strong>
+  <%=h @notice.summary %>
+</p>
+<p>
+  <strong>Published:</strong>
+  <%=h @notice.published %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_notice_path(@notice) %> |
+  <%= link_to "Destroy", @notice, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", notices_path %>
+</p>

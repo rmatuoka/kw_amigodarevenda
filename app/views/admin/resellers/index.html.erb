@@ -1,0 +1,31 @@
+<% title "Resellers" %>
+
+<table>
+  <tr>
+    <th>Cod Representante</th>
+    <th>Nome</th>
+    <th>Endereco</th>
+    <th>Bairro</th>
+    <th>Cidade</th>
+    <th>Estado</th>
+    <th>Telefone</th>
+    <th>Fax</th>
+  </tr>
+  <% for reseller in @resellers %>
+    <tr>
+      <td><%=h reseller.cod_representante %></td>
+      <td><%=h reseller.nome %></td>
+      <td><%=h reseller.endereco %></td>
+      <td><%=h reseller.bairro %></td>
+      <td><%=h reseller.cidade %></td>
+      <td><%=h reseller.estado %></td>
+      <td><%=h reseller.telefone %></td>
+      <td><%=h reseller.fax %></td>
+      <td><%= link_to "Show", admin_reseller_path(reseller) %></td>
+      <td><%= link_to "Edit", edit_admin_reseller_path(reseller) %></td>
+      <td><%= link_to "Destroy", admin_reseller_path(reseller), :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Reseller", new_admin_reseller_path %></p>

@@ -1,0 +1,32 @@
+<% title "Offer" %>
+
+<p>
+  <strong>Name:</strong>
+  <%=h @offer.name %>
+</p>
+<p>
+  <strong>Body:</strong>
+  <%=h @offer.body %>
+</p>
+<p>
+  <strong>Date Inicio:</strong>
+  <%=h @offer.date_inicio %>
+</p>
+<p>
+  <strong>Data Fim:</strong>
+  <%=h @offer.data_fim %>
+</p>
+<p>
+  <strong>Published:</strong>
+  <%=h @offer.published %>
+</p>
+<p>
+  <strong>Total Clicks:</strong>
+  <%=h @offer.total_clicks %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_admin_offer_path(@offer) %> |
+  <%= link_to "Destroy", @offer, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", admin_offers_path %>
+</p>

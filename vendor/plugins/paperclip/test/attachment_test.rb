@@ -1,5 +1,5 @@
 # encoding: utf-8
-require 'test/helper'
+require './test/helper'
 
 class Dummy
   # This is a dummy class
@@ -41,7 +41,7 @@ class AttachmentTest < Test::Unit::TestCase
       setup do
         @dummy = Dummy.new
       end
-      
+
       should "return false when asked exists?" do
         assert !@dummy.avatar.exists?
       end
@@ -55,7 +55,7 @@ class AttachmentTest < Test::Unit::TestCase
 
       Paperclip::Attachment.default_options.keys.each do |key|
         should "be the default_options for #{key}" do
-          assert_equal @old_default_options[key], 
+          assert_equal @old_default_options[key],
                        @attachment.instance_variable_get("@#{key}"),
                        key
         end
@@ -94,6 +94,83 @@ class AttachmentTest < Test::Unit::TestCase
 
     should "make sure that they are interpolated correctly" do
       assert_equal "1024.omg/1024-bbq/1024what/000/001/024.wtf", @dummy.avatar.path
+    end
+  end
+
+  context "An attachment with :timestamp interpolations" do
+    setup do
+      @file = StringIO.new("...")
+      @zone = 'UTC'
+      Time.stubs(:zone).returns(@zone)
+      @zone_default = 'Eastern Time (US & Canada)'
+      Time.stubs(:zone_default).returns(@zone_default)
+    end
+
+    context "using default time zone" do
+      setup do
+        rebuild_model :path => ":timestamp", :use_default_time_zone => true
+        @dummy = Dummy.new
+        @dummy.avatar = @file
+      end
+
+      should "return a time in the default zone" do
+        assert_equal @dummy.avatar_updated_at.in_time_zone(@zone_default).to_s, @dummy.avatar.path
+      end
+    end
+
+    context "using per-thread time zone" do
+      setup do
+        rebuild_model :path => ":timestamp", :use_default_time_zone => false
+        @dummy = Dummy.new
+        @dummy.avatar = @file
+      end
+
+      should "return a time in the per-thread zone" do
+        assert_equal @dummy.avatar_updated_at.in_time_zone(@zone).to_s, @dummy.avatar.path
+      end
+    end
+  end
+
+  context "An attachment with :hash interpolations" do
+    setup do
+      @file = StringIO.new("...")
+    end
+
+    should "raise if no secret is provided" do
+      @attachment = attachment :path => ":hash"
+      @attachment.assign @file
+
+      assert_raise ArgumentError do
+        @attachment.path
+      end
+    end
+
+    context "when secret is set" do
+      setup do
+        @attachment = attachment :path => ":hash", :hash_secret => "w00t"
+        @attachment.stubs(:instance_read).with(:updated_at).returns(Time.at(1234567890))
+        @attachment.stubs(:instance_read).with(:file_name).returns("bla.txt")
+        @attachment.instance.id = 1234
+        @attachment.assign @file
+      end
+
+      should "interpolate the hash data" do
+        @attachment.expects(:interpolate).with(@attachment.options[:hash_data],anything).returns("interpolated_stuff")
+        @attachment.hash
+      end
+
+      should "result in the correct interpolation" do
+        assert_equal "fake_models/avatars/1234/original/1234567890", @attachment.send(:interpolate,@attachment.options[:hash_data])
+      end
+
+      should "result in a correct hash" do
+        assert_equal "d22b617d1bf10016aa7d046d16427ae203f39fce", @attachment.path
+      end
+
+      should "generate a hash digest with the correct style" do
+        OpenSSL::HMAC.expects(:hexdigest).with(anything, anything, "fake_models/avatars/1234/medium/1234567890")
+        @attachment.path("medium")
+      end
     end
   end
 
@@ -177,11 +254,11 @@ class AttachmentTest < Test::Unit::TestCase
       assert_equal "-all", @dummy.avatar.send(:extra_options_for, :large)
     end
   end
-  
+
   context "An attachment with :path that is a proc" do
     setup do
       rebuild_model :path => lambda{ |attachment| "path/#{attachment.instance.other}.:extension" }
-      
+
       @file = File.new(File.join(File.dirname(__FILE__),
                                  "fixtures",
                                  "5k.png"), 'rb')
@@ -190,31 +267,31 @@ class AttachmentTest < Test::Unit::TestCase
       @dummyB = Dummy.new(:other => 'b')
       @dummyB.avatar = @file
     end
-    
+
     teardown { @file.close }
-    
+
     should "return correct path" do
       assert_equal "path/a.png", @dummyA.avatar.path
       assert_equal "path/b.png", @dummyB.avatar.path
     end
   end
-  
+
   context "An attachment with :styles that is a proc" do
     setup do
       rebuild_model :styles => lambda{ |attachment| {:thumb => "50x50#", :large => "400x400"} }
-      
+
       @attachment = Dummy.new.avatar
     end
-    
+
     should "have the correct geometry" do
       assert_equal "50x50#", @attachment.styles[:thumb][:geometry]
     end
   end
-  
+
   context "An attachment with :url that is a proc" do
     setup do
       rebuild_model :url => lambda{ |attachment| "path/#{attachment.instance.other}.:extension" }
-      
+
       @file = File.new(File.join(File.dirname(__FILE__),
                                  "fixtures",
                                  "5k.png"), 'rb')
@@ -223,16 +300,16 @@ class AttachmentTest < Test::Unit::TestCase
       @dummyB = Dummy.new(:other => 'b')
       @dummyB.avatar = @file
     end
-    
+
     teardown { @file.close }
-    
+
     should "return correct url" do
       assert_equal "path/a.png", @dummyA.avatar.url(:original, false)
       assert_equal "path/b.png", @dummyB.avatar.url(:original, false)
     end
   end
 
-  geometry_specs = [ 
+  geometry_specs = [
     [ lambda{|z| "50x50#" }, :png ],
     lambda{|z| "50x50#" },
     { :geometry => lambda{|z| "50x50#" } }
@@ -326,21 +403,41 @@ class AttachmentTest < Test::Unit::TestCase
         Paperclip::Thumbnail.expects(:make).with(any_parameters).returns(@file)
         Paperclip::Test.expects(:make).with(any_parameters).returns(@file)
       end
-      
+
       before_should "call #make with the right parameters passed as second argument" do
         expected_params = @style_params[:once].merge({:processors => [:thumbnail, :test], :whiny => true, :convert_options => ""})
         Paperclip::Thumbnail.expects(:make).with(anything, expected_params, anything).returns(@file)
       end
-      
+
       before_should "call #make with attachment passed as third argument" do
         Paperclip::Test.expects(:make).with(anything, anything, @dummy.avatar).returns(@file)
       end
     end
   end
 
+  should "include the filesystem module when loading the filesystem storage" do
+    rebuild_model :storage => :filesystem
+    @dummy = Dummy.new
+    assert @dummy.avatar.is_a?(Paperclip::Storage::Filesystem)
+  end
+
+  should "include the filesystem module even if capitalization is wrong" do
+    rebuild_model :storage => :FileSystem
+    @dummy = Dummy.new
+    assert @dummy.avatar.is_a?(Paperclip::Storage::Filesystem)
+  end
+
+  should "raise an error if you try to include a storage module that doesn't exist" do
+    rebuild_model :storage => :not_here
+    @dummy = Dummy.new
+    assert_raises(Paperclip::StorageMethodNotFound) do
+      @dummy.avatar
+    end
+  end
+
   context "An attachment with styles but no processors defined" do
     setup do
-      rebuild_model :processors => [], :styles => {:something => 1}
+      rebuild_model :processors => [], :styles => {:something => '1'}
       @dummy = Dummy.new
       @file = StringIO.new("...")
     end
@@ -442,28 +539,69 @@ class AttachmentTest < Test::Unit::TestCase
   context "Attachment with strange letters" do
     setup do
       rebuild_model
-      
-      @not_file = mock
-      @tempfile = mock
+
+      @not_file = mock("not_file")
+      @tempfile = mock("tempfile")
       @not_file.stubs(:nil?).returns(false)
       @not_file.expects(:size).returns(10)
       @tempfile.expects(:size).returns(10)
-      @not_file.expects(:to_tempfile).returns(@tempfile)
       @not_file.expects(:original_filename).returns("sheep_say_bæ.png\r\n")
       @not_file.expects(:content_type).returns("image/png\r\n")
-      
+
       @dummy = Dummy.new
       @attachment = @dummy.avatar
       @attachment.expects(:valid_assignment?).with(@not_file).returns(true)
       @attachment.expects(:queue_existing_for_delete)
       @attachment.expects(:post_process)
+      @attachment.expects(:to_tempfile).returns(@tempfile)
+      @attachment.expects(:generate_fingerprint).with(@tempfile).returns("12345")
+      @attachment.expects(:generate_fingerprint).with(@not_file).returns("12345")
       @dummy.avatar = @not_file
     end
-    
-    should "remove strange letters and replace with underscore (_)" do
-      assert_equal "sheep_say_b_.png", @dummy.avatar.original_filename
+
+    should "not remove strange letters" do
+      assert_equal "sheep_say_bæ.png", @dummy.avatar.original_filename
     end
-    
+  end
+
+  context "Attachment with uppercase extension and a default style" do
+    setup do
+      @old_defaults = Paperclip::Attachment.default_options.dup
+      Paperclip::Attachment.default_options.merge!({
+        :path => ":rails_root/tmp/:attachment/:class/:style/:id/:basename.:extension"
+      })
+      FileUtils.rm_rf("tmp")
+      rebuild_model
+      @instance = Dummy.new
+      @instance.stubs(:id).returns 123
+
+      @file = File.new(File.join(File.dirname(__FILE__), "fixtures", "uppercase.PNG"), 'rb')
+
+      styles = {:styles => { :large  => ["400x400", :jpg],
+                             :medium => ["100x100", :jpg],
+                             :small => ["32x32#", :jpg]},
+                :default_style => :small}
+      @attachment = Paperclip::Attachment.new(:avatar,
+                                              @instance,
+                                              styles)
+      now = Time.now
+      Time.stubs(:now).returns(now)
+      @attachment.assign(@file)
+      @attachment.save
+    end
+
+    teardown do
+      @file.close
+      Paperclip::Attachment.default_options.merge!(@old_defaults)
+    end
+
+    should "should have matching to_s and url methods" do
+      file = @attachment.to_file
+      assert file
+      assert_match @attachment.to_s, @attachment.url
+      assert_match @attachment.to_s(:small), @attachment.url(:small)
+      file.close
+    end
   end
 
   context "An attachment" do
@@ -585,7 +723,7 @@ class AttachmentTest < Test::Unit::TestCase
               [:large, :medium, :small].each do |style|
                 io = @attachment.to_file(style)
                 # p "in commit to disk test, io is #{io.inspect} and @instance.id is #{@instance.id}"
-                assert File.exists?(io)
+                assert File.exists?(io.path)
                 assert ! io.is_a?(::Tempfile)
                 io.close
               end
@@ -598,7 +736,7 @@ class AttachmentTest < Test::Unit::TestCase
                 cmd = %Q[identify -format "%w %h %b %m" "#{@attachment.path(style.first)}"]
                 out = `#{cmd}`
                 width, height, size, format = out.split(" ")
-                assert_equal style[1].to_s, width.to_s 
+                assert_equal style[1].to_s, width.to_s
                 assert_equal style[2].to_s, height.to_s
                 assert_equal style[3].to_s, format.to_s
               end
@@ -657,7 +795,7 @@ class AttachmentTest < Test::Unit::TestCase
       end
 
       should "not be able to find the module" do
-        assert_raise(NameError){ Dummy.new.avatar }
+        assert_raise(Paperclip::StorageMethodNotFound){ Dummy.new.avatar }
       end
     end
   end
@@ -682,7 +820,7 @@ class AttachmentTest < Test::Unit::TestCase
       now = Time.now
       Time.stubs(:now).returns(now)
       @dummy.avatar = @file
-      assert now, @dummy.avatar.updated_at
+      assert_equal now.to_i, @dummy.avatar.updated_at.to_i
     end
 
     should "return nil when reloaded and sent #avatar_updated_at" do
@@ -753,6 +891,30 @@ class AttachmentTest < Test::Unit::TestCase
         @dummy.save
         @dummy = Dummy.find(@dummy.id)
         assert_equal @file.size, @dummy.avatar.size
+      end
+    end
+
+    context "and avatar_fingerprint column" do
+      setup do
+        ActiveRecord::Base.connection.add_column :dummies, :avatar_fingerprint, :string
+        rebuild_class
+        @dummy = Dummy.new
+      end
+
+      should "not error when assigned an attachment" do
+        assert_nothing_raised { @dummy.avatar = @file }
+      end
+
+      should "return the right value when sent #avatar_fingerprint" do
+        @dummy.avatar = @file
+        assert_equal 'aec488126c3b33c08a10c3fa303acf27', @dummy.avatar_fingerprint
+      end
+
+      should "return the right value when saved, reloaded, and sent #avatar_fingerprint" do
+        @dummy.avatar = @file
+        @dummy.save
+        @dummy = Dummy.find(@dummy.id)
+        assert_equal 'aec488126c3b33c08a10c3fa303acf27', @dummy.avatar_fingerprint
       end
     end
   end

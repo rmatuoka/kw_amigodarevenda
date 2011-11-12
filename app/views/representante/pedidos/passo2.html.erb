@@ -1,0 +1,140 @@
+<%content_for :head do%>
+	<%=stylesheet_link_tag "fazerpedido"%>
+	<%= javascript_include_tag "jquery/jquery" %>
+	<%= javascript_include_tag "jquery/jquery.tools.min.js" %>
+	<script>
+	function mostra_produtos(x)
+	{
+		if($("#d" + x).hasClass('hide'))
+		{
+			//MOSTRA
+			$("#seta" + x).attr('src', '/images/img_setacatcima.png');
+			$("#d" + x).slideDown('slow');
+			$("#d" + x).removeClass('hide')
+		}
+		else
+		{
+			//ESCONDE\
+			$("#seta" + x).attr('src', '/images/img_setacatbaixo.png');
+			$("#d" + x).slideUp('slow');
+			$("#d" + x).addClass('hide')
+		}
+	}
+	
+	function load_pedido()
+	{
+		$.ajax({
+			type:     "GET",
+			dataType: "html",
+			url:      "/ajax_pedidos/gravar",
+			data:     "pedido=<%=params[:id]%>",
+			success: function(msg){
+				$("#Items").html(msg);
+			}
+		});
+	}
+	
+	function grava_pedido(id_produto)
+	{
+		var quantidade = $("#q" + id_produto).val()
+		var preco = $("#p" + id_produto).val()
+		$.ajax({
+			type:     "GET",
+			dataType: "html",
+			url:      "/ajax_pedidos/gravar",
+			data:     "produto="+ id_produto +"&quantidade="+ quantidade +"&pedido=<%=params[:id]%>" +"&preco=" + preco,
+			success: function(msg){
+				$("#Items").html(msg);
+				//$("#formpagseguro").submit();
+                //alert(msg);
+			}
+		});
+	}
+	
+	function limpar_carrinho()
+	{
+		$.ajax({
+			type:     "GET",
+			dataType: "html",
+			url:      "/ajax_pedidos/limpar",
+			data:     "pedido=<%=params[:id]%>",
+			success: function(msg){
+				$("#Items").html(msg);
+			}
+		});
+	}
+	
+	function finalizar_pedido()
+	{
+		$.ajax({
+			type:     "GET",
+			dataType: "html",
+			url:      "/ajax_pedidos/finalizar",
+			data:     "pedido=<%=params[:id]%>",
+			success: function(msg){
+				$("#Items").html(msg);
+			}
+		});
+	}
+	
+	$(document).ready(function() {
+		load_pedido()
+	});
+	</script>
+<%end%>
+
+<div id="Produtosbox">
+        <div class="Titulo_produto">
+			<img src="/images/tit_produtos.png" width="16" height="21" style="float:left;" />
+			<h1 style="margin:3px 0 0 3px;">Produtos</h1>
+		</div>
+        
+		<!-- INICIO LOOP CATEGORIAS -->
+		<%@categorias.each do |c|%>
+		<div id="Categoria">
+			<h1><%=c.nome%></h1>
+			<a href="javascript:void(0);" onclick="mostra_produtos(<%=c.id%>)"><img id="seta<%=c.id%>" src="/images/img_setacatbaixo.png" width="17" height="8"/></a>
+		</div>
+  		<div id="Dados_categoria">
+			<div id="d<%=c.id%>" class="hide">
+				<!-- LOOP PRODUTOS -->
+				<%c.products.all.each do |p|%>
+				<div id="Dados_nome">
+					<h1><%=p.nome%></h1><h2><!-- R$ 9.999,99 --></h2>
+				</div>
+
+				<div style="float:right; width:210px; display:inline-block;">
+					<a href="javascript:void(0);" onclick="grava_pedido(<%=p.id%>)"><img src="/images/btn_adicionarpedido.png" style="margin:auto; float:right;" /></a>
+				</div>
+
+				<div style="float:right; width:232px; display:inline-block; margin:0 0 0 0;">
+					<h1>Quantidade</h1><input id="q<%=p.id%>" type="text" value="0" width="60px" height="25px" align="right" style="margin:0 0 0 7px;"  />
+					<h1>Valor (Un.) R$</h1><input id="p<%=p.id%>" type="text" value="0" width="60px" height="25px" align="right" style="margin:0 0 0 7px;"  />
+				</div>
+				<div class="clear"></div>
+				<%end%>
+				<!-- FIM LOOP PRODUTOS -->
+ 			</div>
+		</div>
+  		<%end%>
+		<!-- FIM LOOP CATEGORIAS -->
+</div>
+		<!-- PEDIDOS -->
+	    <div id="Meupedbox">
+        <div class="Titulo_produto">
+        <img src="/images/tit_meupedido.png" align="left" /><h1 style="margin:3px 0 0 3px; text-align:right;">Meu Pedido</h1></div>
+            <div id="Meupedido">
+            <div id="Tit_items"><h2>Items</h2></div>
+			<div id="Items">
+  
+            </div>
+             <div id="Total_bottom">
+             	<div id="Total"><!--<h4>Unidades Totais:</h4>&nbsp;&nbsp;&nbsp;&nbsp;<h5>R$ 9.999,99</h5> --></div>
+                <!-- <div id="Total"><h4>Valor Total:</h4>&nbsp;&nbsp;&nbsp;&nbsp;<h5>R$ 9.999,99</h5></div> -->
+             </div>
+            <div id="Prod_bottom">
+       	    	<%=link_to image_tag("btn_finalizarpedido.png"), passo3_representante_pedido_path(@pedido)%>
+				<a href="javascript:void(0);" onclick="limpar_carrinho()"><img src="/images/btn_limparcarrinho.png" width="212" height="22" /></a></div>
+   		 	<!--<div id="Sobre_carrinho"><img src="/images/img_interrogacaoo.png" width="10" height="15" style="margin:0 10px 0 0;"/><a href="" style=" text-decoration:underline">Sobre o carrinho</a></div> -->     
+		 </div>
+          </div>

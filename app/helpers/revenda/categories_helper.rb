@@ -1,0 +1,2 @@
+module Revenda::CategoriesHelper
+end

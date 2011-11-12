@@ -1,0 +1,2 @@
+module Representante::HomeHelper
+end

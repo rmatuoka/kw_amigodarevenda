@@ -6,7 +6,8 @@
 				{
 					display:inline-block;
 					width:700px;
-					height:623px;
+					min-height:623px;
+					height:auto;
 					margin:35px 5px 0 5px;
 				}
 .Titulo_produto	
@@ -115,7 +116,9 @@
 				display:inline-block;
 				float:right;
 				width:225px;
-				height:3680x;
+				/*min-height:368px;*/
+				min-height:100px;
+				height:auto;
 				margin:35px 5px 0 5px;
 			}
 			#Geral #Center #Meupedido
@@ -125,13 +128,17 @@
 				background-position:center top;
 				margin:0 auto;
 				width:221px;
-				height:586px;
+				height:auto;
+				/*min-height:586px;*/
+				min-height:100px;
 				display:inline-block;
 			}			
 		#Geral #Center #Meupedido #Items
 		{
 			width:auto;
-			height:415px;
+			height:auto;
+			/*min-height:415px;*/
+			min-height:100px;
 			margin:0 10px 0 10px;
 			border:#E5E5E5 solid 1px;
 			
