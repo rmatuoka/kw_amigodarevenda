@@ -13,14 +13,14 @@
             <a href="http://www.nautilus.ind.br" style="float:left; margin:5px 0 0 28px">Voltar para site Nautilus</a>
             <p style="float:right; margin:5px 35px 0 0px;"><%=data_atual_extenso%>  |  <%=hora_atual_resumida%>  
 			<% if current_user %>
-			 | <%#=link_to "Logout", session_path(1), :method => :delete%>
+			 | <span class="Tx_logout"><%=link_to "Logout", session_path(1), :method => :delete%></span>
 			<%end%>
 			</p>
         </div>
 <% if current_user %>      
 	<div id="Infouser">
 		<div id="Boxuser">
-			<p style=" text-align:right; margin:5px 5px 5px 5px; font-size:large;">
+			<p style=" text-align:right; margin:5px 0px 5px 5px; font-size:large;">
 				<% 
 				if current_user.has_role? :representante 
 				@representante = current_user.representants.first
@@ -29,8 +29,8 @@
 				<%end%>
 			</p>
 			<p style="float:right;">
-				<img src="/images/img_boxinfouser.png" width="20" height="14" style="margin:auto 5px" /><%=link_to "Visualizar Dados", representante_representant_path(@representante)%>
-				<img src="/images/img_boxinfouser2.png" width="18" height="18" style="margin:auto 5px" /> Configurações
+				<img src="/images/img_boxinfouser.png" width="20" height="14" style="margin:auto 15px" /><span class="Boxuser_align_text1"><%=link_to "Visualizar Dados", representante_representant_path(@representante)%></span>
+				<img src="/images/img_boxinfouser2.png" width="18" height="18" style="margin:auto 15px" /><span class="Boxuser_align_text1"> Configurações</span>
 			</p>
 	  </div>
 	  <img src="/images/img_user.png" width="109" height="109" style="float:right; margin:15px 0px 0 0;" /></div>
@@ -47,13 +47,14 @@
 
 
   </div>
+  <div class="clear"></div>
 	<div id="Center">
     	<%=yield%>	
     </div>
 
 	<div id="Footer">
         <div id="Conteudo">
-            <div id="Menu"><p><a href="#">Home</a> | <a href="#">Site da Nautilus</a> | <a href="#">Sobre Amigos da Revenda</a> | <a href="#">Politica de Privacidade</a> | <a href="#">Termos de Uso</a> | <a href="#">Ajuda</a></p>
+            <div id="Menu"><p><a href="#">Home</a> <a>|</a> <a href="#">Site da Nautilus</a><a>|</a><a href="#">Sobre Amigos da Revenda</a><a>|</a><a href="#">Politica de Privacidade</a><a>|</a><a href="#">Termos de Uso</a><a>|</a><a href="#">Ajuda</a></p>
             </div>
 			<div id="logo_bot"><a href="http://www.korewa.com.br/"><img src="/images/logo_korewa.png" style="float:left; "></a><a href="http://www.nautilus.ind.br/"><img src="/images/logo_nautilus.png" style="float:right;"></a></div>
         </div>

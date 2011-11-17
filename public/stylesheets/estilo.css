@@ -359,8 +359,6 @@ body
 }
 a, p, td, input, textarea, span, div
 {
-	font-family:Tahoma;
-	font-size:12px;
 }
 img
 {
@@ -381,6 +379,16 @@ a:hover
 {
 	text-decoration:underline;	
 }
+@font-face {
+    font-family: 'MyriadPro-Regular';
+    src: url('MyriadPro-Regular.eot');
+    src: url('MyriadPro-Regular.eot?#iefix') format('embedded-opentype'),
+         url('MyriadPro-Regular.ttf') format('truetype'),
+         url('MyriadPro-Regular.svg#TheSansCorrespeBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body
 {
 	background-image:url(../images/backhome.jpg);
@@ -390,12 +398,14 @@ body
 }
 #Geral
 {
+	position:relative;
 	margin:0 auto;
 	text-align:center;
 }	
   
 		#Geral #Header
 		{
+			position:relative;
 			margin:auto;
 			width:960px;
 			height:247px;
@@ -408,7 +418,25 @@ body
 				margin:0 auto;
 				width:950px;
 				height:25px;
+				font-family: MyriadPro-Regular!important;
+				font-size:11px !important;
+				color:#333333 !important;
+				padding-top:4px;
 			}
+			#Geral #Header #Barralog a
+			{
+				font-family: MyriadPro-Regular!important;
+				font-size:10px !important;
+				color:#333333 !important;	
+				text-decoration:none;			
+			}
+				#Geral #Header #Barralog a:hover
+				{
+					font-family: MyriadPro-Regular!important;
+					font-size:10px !important;
+					color:#666666 !important;	
+					text-decoration:underline;					
+				}						
 			     #Geral #Header #Infouser
 				 {
 					float:right;
@@ -421,11 +449,33 @@ body
 							float:left;
 							width:530px;
 							height:139px;
+							font-family: MyriadPro-Regular!important;
+							font-size:11px !important;
+							color:#333333 !important;							
 						 }
-			    
+						 .Boxuser_align_text1
+						 {
+							 position:relative;
+							 top:-3px;
+							 left:0px;							
+						 }						 
+						 #Geral #Header #Infouser #Boxuser a
+						 {
+							 text-decoration:none;
+							color:#333333 !important;							
+						 }
+							 #Geral #Header #Infouser #Boxuser a:hover
+							 {
+								 text-decoration:underline;
+								color:#333333 !important;							
+							 }						 
+			    			    
 			 
 						#Geral #Header #Logo
 						{
+							position:absolute;
+							top:30px;
+							left:0px;
 							margin:5px 0 0 0;
 							background-image:url(../images/logo.png);
 							background-position:center top;
@@ -450,14 +500,17 @@ body
 									border:none;
 									margin:0 0 0 0;
 									padding-left:10px;
+									font-family: Tahoma, Geneva, sans-serif!important;
+									font-size:12px !important;
+									color:#666666 !important;	
 								}
-										   #Geral #Header #Menu
+									#Geral #Header #Menu
 									{
+										position:relative;
+										top:0px;
 										width:663px;
 										height:47px;
 										float:right;
-										
-										
 									}
 											 #Geral #Header #Menu ul
    											 {
@@ -479,6 +532,7 @@ body
 			
 		#Geral #Center
 		{
+			position:relative;
 			margin:auto;
 			width:960px;
 			min-height:790;	
@@ -486,6 +540,7 @@ body
 		}
 		#Geral #Center #Box_center
 		{
+			position:relative; 	
 			margin:50px auto;
 			width:960px;
 			min-height:680px;	
@@ -678,13 +733,19 @@ body
 					
 			#Geral #Center #Promocoes
 			{
+				position:relative;
+				display:block;
 				margin:0 10px 0 0;
 				display:inline-block;
+				float:left;
 				width:220px;
 				height:334px;
 			}
 			#Geral #Center #Noticias
 			{
+				position:relative;
+				display:block;
+				
 				margin:0 10px 0 0;
 				display:inline-block;
 				width:700px;
@@ -715,6 +776,7 @@ body
 			}
 		#Geral #Footer
 		{
+			position:relative;
 			background-image:url(../images/backfoot.jpg);
 			background-repeat:no-repeat;
 			background-position:center top;
@@ -731,17 +793,27 @@ body
 		}
 			#Footer #Conteudo a
 			{
-				font-family: Tahoma !important;
-				font-size:12px !important;
+				font-family: MyriadPro-Regular!important;
+				font-size:10px !important;
 				color:#666666 !important;
 				margin:0px 5px 0px 0px;
 			}
 					#Geral #Footer #Conteudo #Menu
 					{
+						position:relative;
 						text-align:right;
 						float:right;
-						
+						margin-right:77px;
+						top:11px;
 					}
+				#logo_bot
+				{
+					position:relative;
+					display:inline-block;
+					width:960px;
+					height:47px;
+					top:222px;
+				}					
 .clear
 {
 	clear:both;	
