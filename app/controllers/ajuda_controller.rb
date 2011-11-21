@@ -1,0 +1,2 @@
+class AjudaController < ApplicationController
+end

@@ -1,0 +1,2 @@
+class TermosDeUsoController < ApplicationController
+end

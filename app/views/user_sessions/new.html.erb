@@ -11,7 +11,11 @@
 	</p>
 	
 	<%= form_for @user_session do |f| %>
-	  <%= f.error_messages %>
+	  <%#= f.error_messages %>
+	
+	<%if flash[:notice]%>
+		<%=flash[:notice]%>
+	<%end%>
 	  
 	<div id="bgLogin">
 	<p>

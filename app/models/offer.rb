@@ -6,6 +6,6 @@ class Offer < ActiveRecord::Base
         :path => ":rails_root/public/uploads/:attachment/:id/:basename_:style.:extension"
         
   def self.get_promocao
-    Offer.first(:conditions => ['published = 1'])
+    Offer.first(:conditions => ['published = 1 AND date_inicio <= ? AND data_fim >= ?', Date.today, Date.today])
   end
 end
