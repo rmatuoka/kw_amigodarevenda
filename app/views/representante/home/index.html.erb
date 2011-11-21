@@ -29,11 +29,15 @@
 	              </tr>
 				<%end%>  
             </table>
-    		<a href=""><img src="/images/btn_vejamais.png" align="right" style="margin:20px 25px 0 0;"></a>
+			<%=link_to(image_tag("btn_vejamais.png",:align => "right", :style => "margin:20px 25px 0 0;"), representante_product_requests_path)%>
   </div>
 <div id="Promocoes">
 	<h1><img src="/images/tit_promocoes.png" width="20" height="20" style="margin:0 10px 0 0; float:left;" />Promoções</h1>
-	<%=image_tag(@offer.image.url("thumb"), :style => "display:block;float:left;")%>
+	<%if !@offer.blank?%>
+		<%=image_tag(@offer.image.url("thumb"), :style => "display:block;float:left;")%>
+	<%else%>
+		<p style="display:block;">Não há promoções cadastradas.</p>
+	<%end%>
 </div>
 
 <div id="Noticias">

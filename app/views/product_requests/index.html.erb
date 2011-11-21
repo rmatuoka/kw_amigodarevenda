@@ -1,0 +1,24 @@
+<div id="Tabela_pedido">
+    <div id="Info_tabela">
+	<div id="Campo_info1">
+		<h1>Realizado em:</h1>
+	</div>
+	<div id="Campo_info2">
+		<h1>Status:</h1>
+	</div>
+	<div id="Campo_info3">
+		<h1>Revenda:</h1>
+	</div>
+  </div>
+            <table width="918" style="border-collapse:collapse; border:none; margin:0 0 0 11px; margin:auto;">
+            	<%
+				@pedidos.each do |p|
+				%>
+				<tr style="border:#F2F2F2 solid 1px; border-left:#CCC solid 1px;">
+	                <td width="161"><%=p.created_at.to_date.strftime("%d/%m/%Y")%> <%=p.created_at.to_time.strftime("%H:%M:%S")%></td>
+	                <td width="144"><%=p.status%></td>
+	                <td width="513"><%=p.reseller.nome%></td>
+	                <td width="80">[+] DETALHES</td>
+	              </tr>
+				<%end%>  
+            </table>

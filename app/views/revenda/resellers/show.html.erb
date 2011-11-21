@@ -2,7 +2,7 @@
 	<%=stylesheet_link_tag "perfildorevendedor"%>
 <%end%>
 <div id="Fotobox"><img src="/images/tit_nomerevendedor.png"/><h1>Nome do Revendedor</h1>
-    <%=image_tag(SERVIDOR + @reseller.image.url("c_medio"), :style => "margin:10px auto 0 auto; float:left;")%>
+    <%=image_tag(@reseller.image.url("c_medio"), :style => "margin:10px auto 0 auto; float:left;")%>
 	<!-- <img src="/images/img_perfilfoto.png" width="222" height="222" style="margin:10px auto 0 auto; float:left;" /> --> 
 	   			
 </div>       

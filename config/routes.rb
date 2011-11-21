@@ -1,4 +1,4 @@
-KwAmigodarevenda::Application.routes.draw do
+KwAmigodarevenda::Application.routes.draw do |map|
   resources :representants
   resources :user_sessions
   resources :users
@@ -22,10 +22,9 @@ KwAmigodarevenda::Application.routes.draw do
       resources :home
       resources :resellers
       resources :polls do
-  
-      member do
-        get :resultado
-      end
+        member do
+          get :resultado
+        end
     end
       resources :pedidos do
         collection do
@@ -40,17 +39,16 @@ KwAmigodarevenda::Application.routes.draw do
   namespace :representante do
     resources :home
     resources :pedidos do
-    
-    member do
-      get 'passo2'
-      get 'passo3'
-      get 'passo4'
-      post 'passo4'
-      get 'finalizar'
+      member do
+        get 'passo2'
+        get 'passo3'
+        get 'passo4'
+        post 'passo4'
+        get 'finalizar'
+      end 
     end
-    
-    end
-      resources :representants
+    resources :representants
+    resources :product_requests
   end
 
   resources :downloads
@@ -58,11 +56,14 @@ KwAmigodarevenda::Application.routes.draw do
   resources :aax_pedidos
   resources :sessions
   resources :home
+  resources :termos_de_uso
+  resources :sobre
+  resources :politica_privacidade
+  resources :ajuda
   
   root :to => "home#index"
   #match '/' => 'home#index'
   #match '/admin' => 'admin/downloads#index', :as => :admin
-  match 'login' => 'user_sessions#new', :as => :login
-  match 'logout' => 'user_sessions#destroy', :as => :logout
-  match '/:controller(/:action(/:id))'
+  map.login "login", :controller => "user_sessions", :action => "new"
+  map.logout "logout", :controller => "user_sessions", :action => "destroy"
 end

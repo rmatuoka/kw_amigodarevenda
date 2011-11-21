@@ -9,6 +9,7 @@ class UserSessionsController < ApplicationController
       flash[:notice] = "Usuário logado com sucesso."
       redirect_to root_url
     else
+      flash[:notice] = "Usuário e/ou senha inválidos."
       render :action => 'new'
     end
   end

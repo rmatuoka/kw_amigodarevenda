@@ -13,7 +13,7 @@
             <a href="http://www.nautilus.ind.br" style="float:left; margin:5px 0 0 28px">Voltar para site Nautilus</a>
             <p style="float:right; margin:5px 35px 0 0px;"><%=data_atual_extenso%>  |  <%=hora_atual_resumida%>  
 			<% if current_user %>
-			 | <span class="Tx_logout"><%=link_to "Logout", session_path(1), :method => :delete%></span>
+			 | <span class="Tx_logout"><%=link_to "Logout", logout_path%></span>
 			<%end%>
 			</p>
         </div>
@@ -54,7 +54,7 @@
 
 	<div id="Footer">
         <div id="Conteudo">
-            <div id="Menu"><p><a href="#">Home</a> <a>|</a> <a href="#">Site da Nautilus</a><a>|</a><a href="#">Sobre Amigos da Revenda</a><a>|</a><a href="#">Politica de Privacidade</a><a>|</a><a href="#">Termos de Uso</a><a>|</a><a href="#">Ajuda</a></p>
+            <div id="Menu"><p><%=link_to "Home", root_path%> <a>|</a> <%=link_to "Site da Nautilus", "http://www.nautilus.ind.br", :target => "_blank"%> <a>|</a> <%=link_to "Sobre Amigos da Revenda", sobre_index_path%> <a>|</a> <%=link_to "Politica de Privacidade", politica_privacidade_index_path%><a>|</a> <%=link_to "Termos de Uso", termos_de_uso_index_path%><a>|</a> <%=link_to "Ajuda", ajuda_index_path%></p>
             </div>
 			<div id="logo_bot"><a href="http://www.korewa.com.br/"><img src="/images/logo_korewa.png" style="float:left; "></a><a href="http://www.nautilus.ind.br/"><img src="/images/logo_nautilus.png" style="float:right;"></a></div>
         </div>
