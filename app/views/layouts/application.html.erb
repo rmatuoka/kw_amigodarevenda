@@ -7,7 +7,6 @@
 <%=yield :head%>
 </head>
 <body>
-<div id="Footer_geral">
 <div id="Geral">
   <div id="Header">
     	<div id="Barralog">
@@ -37,26 +36,16 @@
 	  <img src="/images/img_user.png" width="109" height="109" style="float:right; margin:15px 0px 0 0;" />
 	</div>
 	<%end%>
-<!-- <<<<<<< HEAD
-      <div id="Busca"><input type="text" value="Busca" border="none"  /></div>
-        
-	  <%#=render :file => "/layouts/_menu.html.erb"%>
-      <div id="Logo"></div>
-======= -->
       <div id="Busca"><input type="text" name="busca" value="Busca" border="none" onfocus="if(this.value=='Busca'){this.value=''};" onblur="if(this.value==''){this.value='Busca'};" /></div>
       <%=render :file => "/layouts/_menu.html.erb"%>
       <a href="/home"><div id="Logo" ></div></a>
-
-
   </div>
-	<div class="clear"></div>
+  
+
 	<div id="Center">
-		<div class="clear"></div>
-    	<%=yield%>
-		<div class="clear"></div>		
+		<%=yield%>
     </div>
-</div>
-<div class="clear"></div>
+	
 	<div id="Footer">
         <div id="Conteudo">
             <div id="Menu"><p><%=link_to "Home", root_path%> <a>|</a> <%=link_to "Site da Nautilus", "http://www.nautilus.ind.br", :target => "_blank"%> <a>|</a> <%=link_to "Sobre Amigos da Revenda", sobre_index_path%> <a>|</a> <%=link_to "Politica de Privacidade", politica_privacidade_index_path%><a>|</a> <%=link_to "Termos de Uso", termos_de_uso_index_path%><a>|</a> <%=link_to "Ajuda", ajuda_index_path%></p>
@@ -65,5 +54,6 @@
         </div>
     </div>
 </div>
+
 </body>
 </html>
