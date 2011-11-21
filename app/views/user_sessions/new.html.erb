@@ -18,18 +18,21 @@
 	<%end%>
 	  
 	<div id="bgLogin">
-	<p>
+	<span >
 	    <%= f.label :usuário %>
 	    <%= f.text_field :username %>
-	</p>
-	<p>
-	    <%= f.label :senha %>&nbsp;&nbsp;
+	</span>
+	<div class="clear"></div>
+	<br />
+	<span class="inpt_pass">
+	    <%= f.label :senha %>
 	    <%= f.password_field :password %>
-	</p>
+	</span>
 	</div>
-	<p style="text-align:right; margin-right:65px;"><%= image_submit_tag "btn_entrar_login.png" %></p>
+	<p class="Bt_entrar_login"><%= image_submit_tag "btn_entrar_login.png" %></p>
 	<% end %>
-	
+	<div class="clear"></div>
+	<br />
 </div>
 </div>
 

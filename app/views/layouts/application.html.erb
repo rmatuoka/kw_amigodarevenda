@@ -7,6 +7,7 @@
 <%=yield :head%>
 </head>
 <body>
+<div id="Footer_geral">
 <div id="Geral">
   <div id="Header">
     	<div id="Barralog">
@@ -33,7 +34,8 @@
 				<img src="/images/img_boxinfouser2.png" width="18" height="18" style="margin:auto 15px" /><span class="Boxuser_align_text1"> Configurações</span>
 			</p>
 	  </div>
-	  <img src="/images/img_user.png" width="109" height="109" style="float:right; margin:15px 0px 0 0;" /></div>
+	  <img src="/images/img_user.png" width="109" height="109" style="float:right; margin:15px 0px 0 0;" />
+	</div>
 	<%end%>
 <!-- <<<<<<< HEAD
       <div id="Busca"><input type="text" value="Busca" border="none"  /></div>
@@ -47,11 +49,14 @@
 
 
   </div>
-  <div class="clear"></div>
+	<div class="clear"></div>
 	<div id="Center">
-    	<%=yield%>	
+		<div class="clear"></div>
+    	<%=yield%>
+		<div class="clear"></div>		
     </div>
-
+</div>
+<div class="clear"></div>
 	<div id="Footer">
         <div id="Conteudo">
             <div id="Menu"><p><%=link_to "Home", root_path%> <a>|</a> <%=link_to "Site da Nautilus", "http://www.nautilus.ind.br", :target => "_blank"%> <a>|</a> <%=link_to "Sobre Amigos da Revenda", sobre_index_path%> <a>|</a> <%=link_to "Politica de Privacidade", politica_privacidade_index_path%><a>|</a> <%=link_to "Termos de Uso", termos_de_uso_index_path%><a>|</a> <%=link_to "Ajuda", ajuda_index_path%></p>
@@ -59,7 +64,6 @@
 			<div id="logo_bot"><a href="http://www.korewa.com.br/"><img src="/images/logo_korewa.png" style="float:left; "></a><a href="http://www.nautilus.ind.br/"><img src="/images/logo_nautilus.png" style="float:right;"></a></div>
         </div>
     </div>
-	
 </div>
 </body>
 </html>
