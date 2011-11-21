@@ -379,6 +379,7 @@ a:hover
 {
 	text-decoration:underline;	
 }
+
 @font-face {
     font-family: 'MyriadPro-Regular';
     src: url('MyriadPro-Regular.eot');
@@ -395,6 +396,13 @@ body
 	background-repeat:no-repeat;
 	background-position:center top;
 	text-align:center;
+}
+#Footer_geral
+{
+	position:relative;
+	text-align:center;
+	width:100%;
+	height:100%;
 }
 #Geral
 {
@@ -535,7 +543,7 @@ body
 			position:relative;
 			margin:auto;
 			width:960px;
-			min-height:790;	
+			min-height:300px;	
 			height:auto;	
 		}
 		#Geral #Center #Box_center
@@ -543,7 +551,7 @@ body
 			position:relative; 	
 			margin:50px auto;
 			width:960px;
-			min-height:680px;	
+			min-height:300px;	
 			height:auto;
 		}
 		#Geral #Center #Titulo_tabpedido
@@ -615,7 +623,6 @@ body
 									
 			#Geral #Center .Titulo
 			{
-				float:left;
 				margin:30px 0 17px 5px;	
 			}
 					#Geral #Center ul
@@ -744,8 +751,7 @@ body
 			#Geral #Center #Noticias
 			{
 				position:relative;
-				display:block;
-				
+				display:block;				
 				margin:0 10px 0 0;
 				display:inline-block;
 				width:700px;
@@ -774,7 +780,7 @@ body
 				font-weight:normal;
 				color:#999;
 			}
-		#Geral #Footer
+		#Footer
 		{
 			position:relative;
 			background-image:url(../images/backfoot.jpg);
@@ -782,23 +788,24 @@ body
 			background-position:center top;
 			width:100%;
 			height:282px;
-			margin:auto;
 		}
-		#Geral #Footer #Conteudo
-		{
+		#Footer  #Conteudo
+		{	
+			position:relative;
 			margin:auto;
 			width:960px;
 			height:280px;
 			text-align:center;
 		}
 			#Footer #Conteudo a
-			{
+			{ 
+				position:relative;
 				font-family: MyriadPro-Regular!important;
 				font-size:10px !important;
 				color:#666666 !important;
 				margin:0px 5px 0px 0px;
 			}
-					#Geral #Footer #Conteudo #Menu
+					#Conteudo #Menu
 					{
 						position:relative;
 						text-align:right;
