@@ -53,7 +53,13 @@ KwAmigodarevenda::Application.routes.draw do |map|
 
   resources :downloads
   resources :noticias
-  resources :aax_pedidos
+  resources :ajax_pedidos do
+    collection do
+      get 'gravar'
+      get 'finalizar'
+      get 'limpar'
+    end
+  end
   resources :sessions
   resources :home
   resources :termos_de_uso

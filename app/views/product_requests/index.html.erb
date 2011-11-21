@@ -18,7 +18,7 @@
 	                <td width="161"><%=p.created_at.to_date.strftime("%d/%m/%Y")%> <%=p.created_at.to_time.strftime("%H:%M:%S")%></td>
 	                <td width="144"><%=p.status%></td>
 	                <td width="513"><%=p.reseller.nome%></td>
-	                <td width="80">[+] DETALHES</td>
+	                <td width="80"><%=link_to "[+] DETALHES", representante_product_request_path(p)%></td>
 	              </tr>
 				<%end%>  
             </table>
