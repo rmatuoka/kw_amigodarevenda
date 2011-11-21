@@ -1,0 +1,41 @@
+<%content_for :head do%>
+	
+<%end%>
+<div id="Fotobox"><img src="/images/tit_nomerevendedor.png"/><h1>Pedido N.: <%=@pedido.id%><%#=@representante.nome%></h1>
+    <%#=image_tag(@reseller.image.url("c_medio"), :style => "margin:10px auto 0 auto; float:left;")%>
+</div>       
+    <div id="Dadosbox"><a href="javascript:history.go(-1);"><img src="/images/btn_voltarbxperfil.png" width="43" height="11" style="float:right;margin:10px 0 0 0;" /></a>
+        
+		<img src="/images/img_linha.png" width="699" height="2" style="margin:0 auto 0 auto;" />
+        <h2>Dados do Representante</h2> 
+		<ul>
+            <li><p>Telefone:</p><%#=@representante.telefone%></li>
+            <li><p>Celular:</p><%#=@representante.celular%></li>
+            <li><p>Email:</p><%#=@representante.email%></li>
+          </ul>
+
+		<img src="/images/img_linha.png" width="699" height="2" style="margin:0 auto 0 auto;" />
+        <h2>Dados da Revenda</h2> 
+		<ul>
+            <li><p>Telefone:</p><%#=@representante.telefone%></li>
+            <li><p>Celular:</p><%#=@representante.celular%></li>
+            <li><p>Email:</p><%#=@representante.email%></li>
+          </ul>	
+
+		<img src="/images/img_linha.png" width="699" height="2" style="margin:0 auto 0 auto;" />
+        <h2>Dados da Transportadora</h2> 
+		<ul>
+            <li><p>Telefone:</p><%#=@representante.telefone%></li>
+            <li><p>Celular:</p><%#=@representante.celular%></li>
+            <li><p>Email:</p><%#=@representante.email%></li>
+          </ul>
+
+		<img src="/images/img_linha.png" width="699" height="2" style="margin:0 auto 0 auto;" />
+        <h2>Informações Adicionais</h2> 
+		<ul>
+            <li><p>Telefone:</p><%#=@representante.telefone%></li>
+            <li><p>Celular:</p><%#=@representante.celular%></li>
+            <li><p>Email:</p><%#=@representante.email%></li>
+          </ul>
+
+   </div>

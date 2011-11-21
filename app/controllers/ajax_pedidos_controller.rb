@@ -3,7 +3,11 @@ class AjaxPedidosController < ApplicationController
   layout "blank"
   
   def index
-    
+    carrega_carrinho
+  end
+  
+  def show
+    carrega_carrinho
   end
   
   def gravar
