@@ -640,12 +640,14 @@ body
   margin: 0;
   background-color: #c00;
   color: #fff;
+font-family: 'MyriadPro-Regular';
 }
 
 #errorExplanation p {
   color: #333;
   margin-bottom: 0;
   padding: 8px;
+font-family: 'MyriadPro-Regular';
 }
 
 #errorExplanation ul {
@@ -655,6 +657,9 @@ body
 #errorExplanation ul li {
   font-size: 12px;
   list-style: disc;
+	margin-left:20px !important;
+	color:#333333 !important;
+	font-family: 'MyriadPro-Regular';
 }
 
 #flash_error {
