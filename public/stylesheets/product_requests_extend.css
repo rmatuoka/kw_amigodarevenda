@@ -1,0 +1,90 @@
+@charset "utf-8";
+/* CSS Document */
+
+#Geral #Center #Titulo_tabpedido
+		{
+			width:941px;
+			height:30px;
+			margin:0px auto;	
+		}		
+		.Bg_img_top_ext
+		{
+			position:absolute;
+			top:0px
+			left:0px;
+		}
+		.Bg_img_bot_ext
+		{
+			position:absolute;
+		}
+		 .Tabela_pedido_ext_bg_top
+		{
+			position:relative;
+			background-image:url(../images/bg_tabpedido_ext.png);
+			background-repeat:repeat-y;
+			background-position:top center;			
+			width:941px;
+			height:auto;
+			margin-top:10px;
+			margin-bottom:45px;
+			border-top:#CCC 1px solid;
+			border-bottom:#CCC 1px solid;
+		}				
+		 #Tabela_pedido_ext
+		{
+			position:relative;
+			width:941px;
+			height:auto;
+			margin-top:10px;
+			margin-bottom:10px;
+		}
+		.img_veja_todas_align
+		{	
+			position:absolute;
+			right:0px;
+			margin-right:43px;
+			margin-top:10px;
+		}		
+		 .Table_pedido_title_ext
+		{
+			text-align:center;
+			font-family:Tahoma, Geneva, sans-serif;
+			font-size:15px;
+			font-weight:bold;		
+			color:#999999;
+			border-collapse:collapse;
+			border:none; 
+			height:40px;
+		}
+		.Table_pedido_ext
+		{
+			text-align:center;
+			font-family:Tahoma, Geneva, sans-serif;
+			font-size:14px;
+			font-weight:normal;		
+			color:#333333;
+			border-collapse:collapse;
+			border:none; 
+		}	
+		.Font_detalhes a
+		{
+			color:#FF903B;
+			text-decoration:none;
+		}
+			#.Font_detalhes a:hover
+			{
+				color:#FF903B;
+				text-decoration:underline;
+			}		
+				 #Info_tabela
+				{
+					display:inline-block;
+					width:939px;
+					height:40px;
+					margin:17px 0 0 11px;
+				}	
+					#Info_tabela h1
+					{
+						text-align:left;
+						margin:6px 0 0 10px;
+					}				

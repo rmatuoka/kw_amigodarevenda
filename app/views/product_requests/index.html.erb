@@ -1,28 +1,110 @@
+<%content_for :head do%>
+	<%=stylesheet_link_tag "product_requests_extend"%>
+<%end%>
+
 <div id="Box_Center">
-	<div id="Tabela_pedido">
-	    <div id="Info_tabela">
-		<div id="Campo_info1">
-			<h1>Realizado em:</h1>
-		</div>
-		<div id="Campo_info2">
-			<h1>Status:</h1>
-		</div>
-		<div id="Campo_info3">
-			<h1>Revenda:</h1>
-		</div>
-	  </div>
+	<h1><img src="/images/tit_pedidos.png" width="20" height="20" style="margin:0 10px 0 0; " />Pedidos</h1>
+	<div class="Tabela_pedido_ext_bg_top">
 	
-    <table width="918" style="border-collapse:collapse; border:none; margin:0 0 0 11px; margin:auto;">
-    	<%
-		@pedidos.each do |p|
-		%>
-		<tr style="border:#F2F2F2 solid 1px; border-left:#CCC solid 1px;">
-            <td width="161"><%=p.created_at.to_date.strftime("%d/%m/%Y")%> <%=p.created_at.to_time.strftime("%H:%M:%S")%></td>
-            <td width="144"><%=p.status%></td>
-            <td width="513"><%=p.reseller.nome%></td>
-            <td width="80"><%=link_to "[+] DETALHES", representante_product_request_path(p)%></td>
-          </tr>
-		<%end%>  
-    </table>
-</div>
+	<div id="Tabela_pedido_ext">
 			
+		 <table width="918" class="Table_pedido_title_ext">
+			<tr >
+				<td width="156">Realizado em:</td>
+				<td width="142">Status:</td>
+				<td width="490">Revenda:</td>
+				<td width="130"></td>
+			 </tr>			 
+		</table>
+		<table width="918" class="Table_pedido_ext">
+			<%
+			@pedidos.each do |p|
+			%>
+			<tr>
+				<td width="161"><%=p.created_at.to_date.strftime("%d/%m/%Y")%> <%=p.created_at.to_time.strftime("%H:%M:%S")%></td>
+				<td width="144"><%=p.status%></td>
+				<td width="460"><%=p.reseller.nome%></td>
+				<td width="133"><%=link_to "[+] DETALHES", representante_product_request_path(p)%></td>
+			  </tr>
+			<%end%>
+
+<tr>
+				<td width="161">\\\\\\\\\\\\\\\\\</td>
+				<td width="144">\aaaaaaaaaaaaaa</td>
+				<td width="513">\ssssssssssss</td>
+				<td width="80"></td>
+			  </tr>		
+<tr>
+				<td width="161">\\\\\\\\\\\\\\\\\</td>
+				<td width="144">\aaaaaaaaaaaaaa</td>
+				<td width="513">\ssssssssssss</td>
+				<td width="80"></td>
+			  </tr>	
+<tr>
+				<td width="161">\\\\\\\\\\\\\\\\\</td>
+				<td width="144">\aaaaaaaaaaaaaa</td>
+				<td width="513">\ssssssssssss</td>
+				<td width="80"></td>
+			  </tr>	
+<tr>
+				<td width="161">\\\\\\\\\\\\\\\\\</td>
+				<td width="144">\aaaaaaaaaaaaaa</td>
+				<td width="513">\ssssssssssss</td>
+				<td width="80"></td>
+			  </tr>	
+<tr>
+				<td width="161">\\\\\\\\\\\\\\\\\</td>
+				<td width="144">\aaaaaaaaaaaaaa</td>
+				<td width="513">\ssssssssssss</td>
+				<td width="80"></td>
+			  </tr>	
+<tr>
+				<td width="161">\\\\\\\\\\\\\\\\\</td>
+				<td width="144">\aaaaaaaaaaaaaa</td>
+				<td width="513">\ssssssssssss</td>
+				<td width="80"></td>
+			  </tr>				  
+<tr>
+				<td width="161">\\\\\\\\\\\\\\\\\</td>
+				<td width="144">\aaaaaaaaaaaaaa</td>
+				<td width="513">\ssssssssssss</td>
+				<td width="80"></td>
+			  </tr>			
+			  <tr>
+				<td width="161">\\\\\\\\\\\\\\\\\</td>
+				<td width="144">\aaaaaaaaaaaaaa</td>
+				<td width="513">\ssssssssssss</td>
+				<td width="80"></td>
+			  </tr>			
+			  <tr>
+				<td width="161">\\\\\\\\\\\\\\\\\</td>
+				<td width="144">\aaaaaaaaaaaaaa</td>
+				<td width="513">\ssssssssssss</td>
+				<td width="80"></td>
+			  </tr>			
+			  <tr>
+				<td width="161">\\\\\\\\\\\\\\\\\</td>
+				<td width="144">\aaaaaaaaaaaaaa</td>
+				<td width="513">\ssssssssssss</td>
+				<td width="80"></td>
+			  </tr>			
+			  <tr>
+				<td width="161">\\\\\\\\\\\\\\\\\</td>
+				<td width="144">\aaaaaaaaaaaaaa</td>
+				<td width="513">\ssssssssssss</td>
+				<td width="80"></td>
+			  </tr>			
+			  <tr>
+				<td width="161">\\\\\\\\\\\\\\\\\</td>
+				<td width="144">\aaaaaaaaaaaaaa</td>
+				<td width="513">\ssssssssssss</td>
+				<td width="80"></td>
+			  </tr>			
+			  </table>	
+	</div> 
+	<div class="clear"></div>
+	</div>	
+	
+</div>
+
+ 
