@@ -1,41 +1,59 @@
 <%content_for :head do%>
 	
 <%end%>
-<div id="Fotobox"><img src="/images/tit_nomerevendedor.png"/><h1>Pedido N.: <%=@pedido.id%><%#=@representante.nome%></h1>
-    <%#=image_tag(@reseller.image.url("c_medio"), :style => "margin:10px auto 0 auto; float:left;")%>
-</div>       
-    <div id="Dadosbox"><a href="javascript:history.go(-1);"><img src="/images/btn_voltarbxperfil.png" width="43" height="11" style="float:right;margin:10px 0 0 0;" /></a>
-        
-		<img src="/images/img_linha.png" width="699" height="2" style="margin:0 auto 0 auto;" />
-        <h2>Dados do Representante</h2> 
-		<ul>
-            <li><p>Telefone:</p><%#=@representante.telefone%></li>
-            <li><p>Celular:</p><%#=@representante.celular%></li>
-            <li><p>Email:</p><%#=@representante.email%></li>
-          </ul>
+<div id="Box_Center">
+		<img src="/images/tit_nomerevendedor.png"/><h1>Pedido N.: <%=@pedido.id%><%#=@representante.nome%></h1>
+    
+			<a href="javascript:history.go(-1);">
+				<img src="/images/btn_voltarbxperfil.png" width="43" height="11" style="float:right;margin:10px 0 0 0;" />
+			</a>
 
-		<img src="/images/img_linha.png" width="699" height="2" style="margin:0 auto 0 auto;" />
-        <h2>Dados da Revenda</h2> 
-		<ul>
-            <li><p>Telefone:</p><%#=@representante.telefone%></li>
-            <li><p>Celular:</p><%#=@representante.celular%></li>
-            <li><p>Email:</p><%#=@representante.email%></li>
-          </ul>	
+			<img src="/images/img_linha.png" width="699" height="2" style="margin:0 auto 0 auto;" />
+	        <h2>Dados do Representante</h2> 
+			<ul>
+				 <li><p>Nome:</p><%=@pedido.reseller.representant.nome%></li>
+	            <li><p>Telefone:</p><%=@pedido.reseller.representant.telefone%></li>
+	            <li><p>Celular:</p><%=@pedido.reseller.representant.celular%></li>
+	            <li><p>Email:</p><%=@pedido.reseller.representant.email%></li>
+	          </ul>
 
-		<img src="/images/img_linha.png" width="699" height="2" style="margin:0 auto 0 auto;" />
-        <h2>Dados da Transportadora</h2> 
-		<ul>
-            <li><p>Telefone:</p><%#=@representante.telefone%></li>
-            <li><p>Celular:</p><%#=@representante.celular%></li>
-            <li><p>Email:</p><%#=@representante.email%></li>
-          </ul>
+			<img src="/images/img_linha.png" width="699" height="2" style="margin:0 auto 0 auto;" />
+	        <h2>Dados da Revenda</h2> 
+			<ul>
+				<li><p>Nome:</p><%=@pedido.reseller.nome%></li>
+	            <li><p>Nome Fantasia:</p><%=@pedido.reseller.nome_fantasia%></li>
+				<li><p>CNPJ:</p><%=@pedido.reseller.cnpj%></li>
+				<li><p>Inscrição Estadual:</p><%=@pedido.reseller.inscricao_estadual%></li>
+				<li><p>Responsável:</p><%=@pedido.reseller.responsavel%></li>
+				<li><p>Telefone:</p><%=@pedido.reseller.telefone%></li>
+	            <li><p>Fax:</p><%=@pedido.reseller.fax%></li>
+	            <li><p>E-Mail:</p><%=@pedido.reseller.email%></li>
+				<li><p>Endereço:</p><%=@pedido.reseller.endereco%></li>
+				<li><p>Bairro:</p><%=@pedido.reseller.bairro%></li>
+				<li><p>Cidade:</p><%=@pedido.reseller.cidade%></li>
+				<li><p>Estado:</p><%=@pedido.reseller.estado%></li>
+	          </ul>	
 
-		<img src="/images/img_linha.png" width="699" height="2" style="margin:0 auto 0 auto;" />
-        <h2>Informações Adicionais</h2> 
-		<ul>
-            <li><p>Telefone:</p><%#=@representante.telefone%></li>
-            <li><p>Celular:</p><%#=@representante.celular%></li>
-            <li><p>Email:</p><%#=@representante.email%></li>
-          </ul>
+			<img src="/images/img_linha.png" width="699" height="2" style="margin:0 auto 0 auto;" />
+	        <h2>Dados da Transportadora</h2> 
+			<ul>
+	            <li><p>Nome:</p><%=@pedido.transporter.nome%></li>
+	          </ul>
 
-   </div>
+			<img src="/images/img_linha.png" width="699" height="2" style="margin:0 auto 0 auto;" />
+	        <h2>Informações Adicionais</h2> 
+			<ul>
+	            <li><p>Frete:</p><%=@pedido.tipo_frete%></li>
+	            <li><p>Informações:</p><%=@pedido.informacoes_adicionais%></li>
+	            <li><p>Fatura para cliente:</p><%=@pedido.fatura_para_cliente%></li>
+	          </ul>
+	
+			<img src="/images/img_linha.png" width="699" height="2" style="margin:0 auto 0 auto;" />
+	        <h2>Dados da Entrega</h2> 
+			<ul>
+	            <li><p>Rua:</p><%=@pedido.entrega_rua_numero%></li>
+	            <li><p>Bairro:</p><%=@pedido.entrega_bairro%></li>
+	            <li><p>Cidade:</p><%=@pedido.cidade%></li>
+				<li><p>Estado:</p><%=@pedido.entrega_uf%></li>
+	          </ul>
+</div>
