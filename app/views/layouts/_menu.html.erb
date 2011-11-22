@@ -1,7 +1,6 @@
 	<%if current_user%>
 	<div id="Menu">
                     <ul>
-
                         <li><%=link_to(image_tag("Menu/btn_home.png", :class => "acende"), home_index_path)%></li>
                         <%if current_user.has_role? :revendedor%>
 							<li><a href=""><img src="/images/Menu/btn_guiadorv.png" class="acende" width="162" height="27" /></a></li>
@@ -10,8 +9,7 @@
                         <li><%=link_to(image_tag("Menu/btn_downloads.png", :class => "acende"), downloads_path)%></li>
                         <%if current_user.has_role? :revendedor%>
 							<li><a href=""><img src="/images/Menu/btn_cursosonline.png" class="acende" width="131" height="28" /></a></li>
-                        <%end%>
-
+                        <%end%>		
                     </ul>
       </div>
 	<%end%>

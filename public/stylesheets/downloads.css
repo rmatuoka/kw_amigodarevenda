@@ -9,12 +9,38 @@
 	width:960px;
 	height:25px;	
 }
+	#Geral #Center .Tabup
+	{
+		
+		width:100%;
+		text-align:center;
+		font-family:Tahoma, Geneva, sans-serif;
+		font-size:14px;
+		font-weight:normal;
+		color:#999999;
+		border-collapse:collapse;
+		margin-left:1px;
+	}
+	#Geral #Center .Tabupcel
+	{
+		border:#BBBBBB 1px solid;
+		 border-collapse:collapse;
+		height:30px;
+		text-align:center;
+		background-image:url('../images/bg_top_table_downloads.png');
+		background-repeat:repeat-x;
+		background-position:center top;	
+	}	
 	#Geral #Center .Tabdown
 	{
 		border:none;
 		width:100%;
 		height:100px;
 		text-align:center;
+		font-family:Tahoma, Geneva, sans-serif;
+		font-size:12px;
+		font-weight:normal;	
+		color:#666666;		
 	}
 	   #Geral #Center td
 	   {

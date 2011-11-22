@@ -1,22 +1,19 @@
 <div id="Box_center">
 	<div id="Titulo_tabpedido">
         <h1><img src="/images/tit_pedidos.png" width="20" height="20" style="margin:0 10px 0 0; float:left;" />Pedidos</h1>
-        <%=link_to image_tag("btn_fazerpedido.png", :style => "float:right;"), representante_pedidos_path%>
-		<!--<a href="" style=""><img src="/images/btn_fazerpedido.png"></a> -->
+        
+		<!--<a href="#"><img src="/images/btn_fazerpedido.png"></a> -->
     </div>
   <div id="Tabela_pedido">
-    <div id="Info_tabela">
-	<div id="Campo_info1">
-		<h1>Realizado em:</h1>
-	</div>
-	<div id="Campo_info2">
-		<h1>Status:</h1>
-	</div>
-	<div id="Campo_info3">
-		<h1>Revenda:</h1>
-	</div>
-  </div>
-            <table width="918" style="border-collapse:collapse; border:none; margin:0 0 0 11px; margin:auto;">
+             <table width="918" class="Table_pedido_title">
+				<tr style="border:#F2F2F2 solid 1px; border-left:#CCC solid 1px;">
+	                <td width="161">Realizado em:</td>
+	                <td width="144">Status:</td>
+	                <td width="513">Revenda:</td>
+	                <td width="80"><%=link_to image_tag("btn_fazerpedido.png", :style => "float:right;"), representante_pedidos_path%></td>
+	              </tr>
+            </table> 
+            <table width="918" class="Table_pedido">
             	<%
 				@pedidos.each do |p|
 				@revenda = Reseller.find(p.reseller_id)
@@ -24,12 +21,12 @@
 				<tr style="border:#F2F2F2 solid 1px; border-left:#CCC solid 1px;">
 	                <td width="161"><%=p.created_at.to_date.strftime("%d/%m/%Y")%> <%=p.created_at.to_time.strftime("%H:%M:%S")%></td>
 	                <td width="144"><%=p.status%></td>
-	                <td width="513"><%=@revenda.nome%></td>
-	                <td width="80"><%=link_to "[+] DETALHES", representante_product_request_path(p)%></td>
+	                <td width="460"><%=@revenda.nome%></td>
+	                <td width="133" class="Font_detalhes"><%=link_to "[+] DETALHES", representante_product_request_path(p)%></td>
 	              </tr>
 				<%end%>  
             </table>
-			<%=link_to(image_tag("btn_vejamais.png",:align => "right", :style => "margin:20px 25px 0 0;"), representante_product_requests_path)%>
+			<%=link_to(image_tag("bt_veja_todas.png",:align => "right", :class => "img_veja_todas_align"), representante_product_requests_path)%>
   </div>
 <div id="Promocoes">
 	<h1><img src="/images/tit_promocoes.png" width="20" height="20" style="margin:0 10px 0 0; float:left;" />Promoções</h1>
@@ -41,12 +38,16 @@
 </div>
 
 <div id="Noticias">
- <h1><img src="/images/tit_noticias.png" width="14" height="19" style="margin:0 10px 0 0; float:left;"/>Notícias</h1>
-        <ul>
-         	<%@noticias.each do |n|%>
-				 <li><%=n.created_at.to_date.strftime("%d/%m/%Y")%> - <%=link_to n.summary, noticia_path(n)%></li>
-            <%end%>
-		</ul>
-        <a href="/noticias"><img src="/images/btn_vejamais.png" align="right" style=" margin:22px 0 0 0;"></a>
+<div class="clear"></div>
+ <h1><img src="/images/tit_noticias.png" width="14" height="19" style="margin:0 10px 0 0;"/>Notícias</h1>
+		<%@noticias.each do |n|%>	
+            <table class="Box_content_noticias">
+				<tr>
+	                <td class="Data_noticias"><%=n.created_at.to_date.strftime("%d/%m/%Y")%>-</td>
+	                <td class="Box_noticias"><%=link_to n.summary, noticia_path(n)%></td>
+	              </tr> 
+            </table>	
+		<%end%>			
+        <a href="/noticias"><img src="/images/btn_vejamais.png" class="Bt_vejamais_not_align"></a>
  </div>
 </div>

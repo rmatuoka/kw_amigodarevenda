@@ -1,41 +1,38 @@
 <%content_for :head do%>
-	
+	<%=stylesheet_link_tag "product_requests"%>
 <%end%>
-<div id="Fotobox"><img src="/images/tit_nomerevendedor.png"/><h1>Pedido N.: <%=@pedido.id%><%#=@representante.nome%></h1>
-    <%#=image_tag(@reseller.image.url("c_medio"), :style => "margin:10px auto 0 auto; float:left;")%>
-</div>       
-    <div id="Dadosbox"><a href="javascript:history.go(-1);"><img src="/images/btn_voltarbxperfil.png" width="43" height="11" style="float:right;margin:10px 0 0 0;" /></a>
-        
-		<img src="/images/img_linha.png" width="699" height="2" style="margin:0 auto 0 auto;" />
-        <h2>Dados do Representante</h2> 
+	<div id="Dadosbox_p_requests">    
+    <h1 class="Titleh1"><img src="/images/tit_nomerevendedor.png"/>Pedido N.: <%=@pedido.id%><%#=@representante.nome%></h1>
+	<div class="clear"></div>
+	<a href="javascript:history.go(-1);"><img src="/images/btn_voltarbxperfil.png" width="43" height="11" class="bt_voltar_align"/></a> 
+	<br />
+	<div class="Line_details_pr_1"></div>
+		<h2>Dados do Representante</h2> 
 		<ul>
-            <li><p>Telefone:</p><%#=@representante.telefone%></li>
-            <li><p>Celular:</p><%#=@representante.celular%></li>
-            <li><p>Email:</p><%#=@representante.email%></li>
-          </ul>
-
-		<img src="/images/img_linha.png" width="699" height="2" style="margin:0 auto 0 auto;" />
+            <li><label>Telefone:</label><span><%#=@representante.telefone%></span></li>
+            <li><label>Celular:</label><span><%#=@representante.celular%></span></li>
+            <li><label>Email:</label><span><%#=@representante.email%></span></li>
+        </ul>
+		<div class="Line_details_pr"></div>
         <h2>Dados da Revenda</h2> 
 		<ul>
-            <li><p>Telefone:</p><%#=@representante.telefone%></li>
-            <li><p>Celular:</p><%#=@representante.celular%></li>
-            <li><p>Email:</p><%#=@representante.email%></li>
-          </ul>	
-
-		<img src="/images/img_linha.png" width="699" height="2" style="margin:0 auto 0 auto;" />
+            <li><label>Telefone:</label><span><%#=@representante.telefone%></span></li>
+            <li><label>Celular:</label><span><%#=@representante.celular%></span></li>
+            <li><label>Email:</label><span><%#=@representante.email%></span></li>
+        </ul>	
+		<div class="Line_details_pr"></div>
         <h2>Dados da Transportadora</h2> 
 		<ul>
-            <li><p>Telefone:</p><%#=@representante.telefone%></li>
-            <li><p>Celular:</p><%#=@representante.celular%></li>
-            <li><p>Email:</p><%#=@representante.email%></li>
-          </ul>
-
-		<img src="/images/img_linha.png" width="699" height="2" style="margin:0 auto 0 auto;" />
+            <li><label>Telefone:</label><span><%#=@representante.telefone%></span></li>
+            <li><label>Celular:</label><span><%#=@representante.celular%></span></li>
+            <li><label>Email:</label><span><%#=@representante.email%></span></li>
+        </ul>
+		<div class="Line_details_pr"></div>
         <h2>Informações Adicionais</h2> 
 		<ul>
-            <li><p>Telefone:</p><%#=@representante.telefone%></li>
-            <li><p>Celular:</p><%#=@representante.celular%></li>
-            <li><p>Email:</p><%#=@representante.email%></li>
-          </ul>
-
+            <li><label>Telefone:</label><span><%#=@representante.telefone%></span></li>
+            <li><label>Celular:</label><span><%#=@representante.celular%></span></li>
+            <li><label>Email:</label><span><%#=@representante.email%></span></li>
+        </ul>
    </div>
+   <div class="clear"></div>

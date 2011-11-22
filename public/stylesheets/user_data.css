@@ -1,0 +1,91 @@
+@charset "utf-8";
+/* CSS Document */
+#Fotobox
+{
+	position:relative;
+	min-height:500px;
+	width:250px;
+	float:left;
+	
+}
+#Fotobox h1 img
+{
+	margin-right:5px;	
+}								
+#Dadosbox
+{
+	position:relative;
+	min-height:10px;
+	width:auto;
+	float:left;
+	width:694px;
+	top:48px;
+	
+}
+.bt_voltar_align
+{
+	text-align:right;
+	position:absolute;
+	right:0px;
+	margin-right:0px !important;
+}
+ h1 
+{ 
+	 font-family:Tahoma, Geneva, sans-serif;
+	 font-size:14px;
+	 font-weight:normal;
+	 color:#999999;
+	 margin-bottom:0 !important;
+	 margin-top:20px !important;
+}
+ h2
+{ 
+	 font-family:Tahoma, Geneva, sans-serif;
+	 font-size:14px;
+	 font-weight:normal;
+	 color:#999999;
+	 text-align:left;
+}
+.Titleh1
+{
+	margin-bottom:30px;
+}
+.Titleh2
+{
+}
+.Line_details_pr_1
+{
+	width:694px;
+	border-bottom:#CCCCCC 1px solid;
+	margin-bottom:15px;
+	margin-top:15px;
+}
+.Line_details_pr
+{
+	width:694px;
+	border-bottom:#CCCCCC 1px solid;
+	margin-bottom:5px;
+	margin-top:5px;
+}
+
+ul li
+{
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:12px;
+	font-weight:normal;
+	color:#999;
+	margin:7px 0 0 0;
+	padding:0;
+	display:list-item;
+	text-align:justify;	
+}
+ul li label 
+{
+	color:#666666;
+	margin-right:5px;
+		
+}
+ul li span
+{
+	color:#000000;		
+}

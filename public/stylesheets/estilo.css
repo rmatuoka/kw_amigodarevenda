@@ -91,7 +91,9 @@ body
 				}						
 			     #Geral #Header #Infouser
 				 {
-					float:right;
+					position:relative;
+					left:281px;
+					*left:131px;
 					width:660px;
 					height:139px;	 
 				 }
@@ -100,7 +102,7 @@ body
 							padding:50px 0 0 0;
 							float:left;
 							width:530px;
-							height:139px;
+							height:90px;
 							font-family: MyriadPro-Regular!important;
 							font-size:11px !important;
 							color:#333333 !important;							
@@ -136,11 +138,12 @@ body
 						}
 						
 							#Geral #Header #Busca
-							{
+							{	
+								position:relative;
+								left:134px;
 								margin:auto;
 								width:660px;
 								height:27px;
-								float:right;
 							}
 										#Geral #Header #Busca input
 								{
@@ -159,18 +162,17 @@ body
 									#Geral #Header #Menu
 									{
 										position:relative;
-										top:0px;
-										width:663px;
+										left:277px;
+										width:auto;
 										height:47px;
-										float:right;
 									}
 											 #Geral #Header #Menu ul
    											 {
 												padding:0px;
 												margin:20px 0 0 0;
-												width:100%;
+												min-width:100px;
+												width:auto;
 												list-style:none;
-												float:left;
 												
 											 }
 			
@@ -205,10 +207,48 @@ body
 			background-image:url(../images/back_tabelapedido.png);
 			background-repeat:no-repeat;
 			background-position:top center;
-			width:941px;
-			height:230px;
+			width:919px;
+			height:220px;
 			margin:auto auto 31px auto;
+			padding:10px 9px 0 13px;
 		}
+		#Geral #Center #Box_center #Tabela_pedido .img_veja_todas_align
+		{	
+			position:absolute;
+			right:0px;
+			margin-right:43px;
+			margin-top:10px;
+		}		
+		 #Tabela_pedido .Table_pedido_title
+		{
+			text-align:center;
+			font-family:Tahoma, Geneva, sans-serif;
+			font-size:15px;
+			font-weight:bold;		
+			color:#999999;
+			border-collapse:collapse;
+			border:none; 
+		}
+		 #Tabela_pedido .Table_pedido
+		{
+			text-align:center;
+			font-family:Tahoma, Geneva, sans-serif;
+			font-size:14px;
+			font-weight:normal;		
+			color:#333333;
+			border-collapse:collapse;
+			border:none; 
+		}	
+		#Tabela_pedido .Table_pedido .Font_detalhes a
+		{
+			color:#FF903B;
+			text-decoration:none;
+		}
+			#Tabela_pedido .Table_pedido .Font_detalhes a:hover
+			{
+				color:#FF903B;
+				text-decoration:underline;
+			}		
 				#Geral #Center #Box_center #Tabela_pedido #Info_tabela
 				{
 					display:inline-block;
@@ -420,6 +460,51 @@ body
 				display:inline-block;
 				width:700px;
 				height:334px;
+			}
+			.Box_content_noticias
+			{
+				position:relative;
+				width:710px;
+				height:44px;
+				margin-bottom:10px;
+			}
+				
+			.Data_noticias
+			{
+				font-family:Tahoma, Geneva, sans-serif;
+				font-size:12px;
+				font-weight:normal;	
+				color:#CCCCCC;				
+				position:relative;
+				text-align:left;
+			}	
+			
+				
+			.Box_noticias
+			{
+				font-family:Tahoma, Geneva, sans-serif;
+				font-size:12px;
+				font-weight:normal;
+				color:#CCCCCC;	
+				position:relative;
+				text-align:left;
+				padding-left:5px;
+								
+			}
+				.Box_noticias a
+				{
+					color:#CCCCCC;
+					text-decoration:none;				
+				}	
+					.Box_noticias a:hover
+					{
+						color:#CCCCCC;				
+						text-decoration:underline;
+					}			
+			.Bt_vejamais_not_align
+			{
+				position:absolute;
+				right:0px;
 			}
 					#Geral #Center #Noticias ul li a
 					{
