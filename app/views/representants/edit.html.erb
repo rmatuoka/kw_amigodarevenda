@@ -1,0 +1,28 @@
+<%content_for :head do%>
+		<%=stylesheet_link_tag "user_data"%>
+<%end%>
+<div class="clear"></div>
+<%form_for (@representante, :html => { :multipart => :true }) do |f|%>
+<div id="Fotobox"><h1><img src="/images/tit_nomerevendedor.png"/><%=@representante.nome%></h1>
+    <%#=image_tag(@reseller.image.url("c_medio"), :style => "margin:10px auto 0 auto; float:left;")%>
+	<img src="/images/img_perfilfoto.png" width="222" height="222" style="margin:10px auto 0 auto; float:left;" /> 
+	   			
+</div>    
+    <div id="Dadosbox">
+	<a href="javascript:history.go(-1);"><img src="/images/btn_voltarbxperfil.png" width="43" height="11" class="bt_voltar_align"/></a>
+	
+	<%= f.error_messages %>
+	<div class="Line_details_pr_1"></div>
+        <div class="clear"></div>
+         <ul>
+			<li><label>COD. Sistema:</label><span><%=@representante.cod_sistema%></span></li><br>
+            <li><label>Telefone:</label><br><span><%=f.text_field :telefone, :class => "form"%></span></li>
+            <li><label>Celular:</label><br><span><%=f.text_field :celular, :class => "form"%></span></li>
+            <li><label>Email:</label><br><span><%=f.text_field :email, :class => "form"%></span></li>
+			<li><label>Sua Foto:</label><br><span><%=f.file_field :image%></span></li>
+			<li><%=f.submit "Salvar", :class => "form_button"%></li>
+        </ul>
+		<div class="Line_details_pr"></div>		  
+   </div>
+   <div class="clear"></div>
+<%end%>

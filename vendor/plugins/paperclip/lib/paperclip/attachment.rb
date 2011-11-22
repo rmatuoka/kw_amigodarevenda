@@ -13,7 +13,7 @@ module Paperclip
         :styles                => {},
         :processors            => [:thumbnail],
         :convert_options       => {},
-        :default_url           => "/:attachment/:style/missing.png",
+        :default_url           => "/system/:attachment/:style/missing.png",
         :default_style         => :original,
         :storage               => :filesystem,
         :use_timestamp         => true,
