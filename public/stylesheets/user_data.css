@@ -11,7 +11,15 @@
 #Fotobox h1 img
 {
 	margin-right:5px;	
-}								
+}	
+
+#Fotobox h1 a
+{
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:12px;
+	font-weight:normal;
+	color:#999999;
+}							
 #Dadosbox
 {
 	position:relative;

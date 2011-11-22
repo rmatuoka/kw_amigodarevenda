@@ -590,8 +590,74 @@ body
 	background-image:url('/images/progressmeter1om.jpg');
 }
 
+.form
+{
+	border:1px solid #999999;
+	width:350px;
+	height:20px;
+}
+
+.form_button
+{
+	padding:5px !important;
+	border:1px solid #E5E5E5;
+	background-color:#F6F6F6;
+	font-size:15px !important;
+	font-family: 'MyriadPro-Regular';
+	cursor:pointer;
+	color:#919191;
+}
+
+.form_button:hover
+{
+	border:1px solid #F6F6F6;
+	background-color:#E5E5E5;
+}
+
 #flash_notice {
   background-color: #CFC;
   border: solid 1px #6C6;
   padding:5px;
+  font-size:13px !important;
+  font-family: 'MyriadPro-Regular';
+  color:;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid #CF0000;
+  padding: 0px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: 0;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 8px;
+}
+
+#errorExplanation ul {
+  margin: 2px 24px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: disc;
+}
+
+#flash_error {
+  background-color: #FCC;
+  border: solid 1px #C66;
 }
