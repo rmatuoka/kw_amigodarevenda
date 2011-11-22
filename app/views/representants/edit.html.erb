@@ -2,11 +2,14 @@
 		<%=stylesheet_link_tag "user_data"%>
 <%end%>
 <div class="clear"></div>
-<%form_for (@representante, :html => { :multipart => :true }) do |f|%>
+<%=form_for (@representante, :html => { :multipart => :true }) do |f|%>
 <div id="Fotobox"><h1><img src="/images/tit_nomerevendedor.png"/><%=@representante.nome%></h1>
-    <%#=image_tag(@reseller.image.url("c_medio"), :style => "margin:10px auto 0 auto; float:left;")%>
-	<img src="/images/img_perfilfoto.png" width="222" height="222" style="margin:10px auto 0 auto; float:left;" /> 
-	   			
+    
+	<%if @representante.image.blank?%>
+		<img src="/images/img_perfilfoto.png" width="222" height="222" style="margin:10px auto 0 auto; float:left;" /> 
+	<%else%>
+		<%=image_tag(@representante.image.url("c_medio"), :style => "margin:10px auto 0 auto; float:left;")%>
+	<%end%>		
 </div>    
     <div id="Dadosbox">
 	<a href="javascript:history.go(-1);"><img src="/images/btn_voltarbxperfil.png" width="43" height="11" class="bt_voltar_align"/></a>
