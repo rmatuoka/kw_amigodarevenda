@@ -1,4 +1,5 @@
 KwAmigodarevenda::Application.routes.draw do |map|
+  resources :product_requests
   resources :user_sessions
   resources :users
   namespace :admin do
@@ -47,7 +48,6 @@ KwAmigodarevenda::Application.routes.draw do |map|
       end 
     end
     resources :representants
-    resources :product_requests
   end
 
   resources :downloads
