@@ -1,5 +1,4 @@
 KwAmigodarevenda::Application.routes.draw do |map|
-  resources :representants
   resources :user_sessions
   resources :users
   namespace :admin do
@@ -68,8 +67,6 @@ KwAmigodarevenda::Application.routes.draw do |map|
   resources :ajuda
   
   root :to => "home#index"
-  #match '/' => 'home#index'
-  #match '/admin' => 'admin/downloads#index', :as => :admin
   map.login "login", :controller => "user_sessions", :action => "new"
   map.logout "logout", :controller => "user_sessions", :action => "destroy"
 end
