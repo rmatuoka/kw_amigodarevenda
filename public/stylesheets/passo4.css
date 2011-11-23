@@ -1,9 +1,12 @@
 #Box_passo4
 {
+	position:relative;
 	display:inline-block;
 	margin:auto;
 	width:960px;
 	height:658px;
+	margin-top:20px;
+	margin-bottom:50px;	
 }
 b
 {

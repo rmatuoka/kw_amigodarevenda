@@ -85,8 +85,8 @@
 
 <div id="Produtosbox">
         <div class="Titulo_produto">
-			<img src="/images/tit_produtos.png" width="16" height="21" style="float:left;" />
-			<h1 style="margin:3px 0 0 3px;">Produtos</h1>
+			<img src="/images/tit_produtos.png" width="16" height="21" />
+			<h1 class="Tile_h1">Produtos</h1>
 		</div>
         
 		<!-- INICIO LOOP CATEGORIAS -->
@@ -103,13 +103,13 @@
 					<h1><%=p.nome%></h1><h2><!-- R$ 9.999,99 --></h2>
 				</div>
 
-				<div style="float:right; width:210px; display:inline-block;">
+				<div class="Bt_adicionarpedido" >
 					<a href="javascript:void(0);" onclick="grava_pedido(<%=p.id%>)"><img src="/images/btn_adicionarpedido.png" style="margin:auto; float:right;" /></a>
 				</div>
-
-				<div style="float:right; width:232px; display:inline-block; margin:0 0 0 0;">
-					<h1>Quantidade</h1><input id="q<%=p.id%>" type="text" value="0" width="60px" height="25px" align="right" style="margin:0 0 0 7px;"  />
-					<h1>Valor (Un.) R$</h1><input id="p<%=p.id%>" type="text" value="0" width="60px" height="25px" align="right" style="margin:0 0 0 7px;"  />
+				
+				<div class="Campo_qnt_vlr">
+					<label>Quantidade</label><input id="q<%=p.id%>" type="text" value="0" width="60px" height="25px" align="right" style="margin:0 0 0 7px;"  /><br />
+					<label>Valor (Un.) R$</label><input id="p<%=p.id%>" type="text" value="0" width="60px" height="25px" align="right" style="margin:0 0 0 7px;"  />
 				</div>
 				<div class="clear"></div>
 				<%end%>
@@ -122,7 +122,7 @@
 		<!-- PEDIDOS -->
 	    <div id="Meupedbox">
         <div class="Titulo_produto">
-        <img src="/images/tit_meupedido.png" align="left" /><h1 style="margin:3px 0 0 3px; text-align:right;">Meu Pedido</h1></div>
+        <img src="/images/tit_meupedido.png" align="left" /><h1 class="Tile_h1">Meu Pedido</h1></div>
             <div id="Meupedido">
             <div id="Tit_items"><h2>Items</h2></div>
 			<div id="Items">
@@ -138,3 +138,4 @@
    		 	<!--<div id="Sobre_carrinho"><img src="/images/img_interrogacaoo.png" width="10" height="15" style="margin:0 10px 0 0;"/><a href="" style=" text-decoration:underline">Sobre o carrinho</a></div> -->     
 		 </div>
           </div>
+		  <div class="clear"></div>

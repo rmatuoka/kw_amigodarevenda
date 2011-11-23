@@ -33,9 +33,12 @@
 	}
 #Geral #Center #Box_passo3
 {
+	position:relative;
 	margin:auto;
 	width:960px;
 	height:750px;	
+	margin-top:20px;
+	margin-bottom:150px;		
 }
 #Geral #Center #Box_passo3 p
 {
