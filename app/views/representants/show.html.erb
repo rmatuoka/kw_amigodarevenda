@@ -3,8 +3,11 @@
 <%end%>
 <div class="clear"></div>
 <div id="Fotobox"><h1><img src="/images/tit_nomerevendedor.png"/><%=@representante.nome%> | <%=link_to "Editar Perfil", edit_representante_representant_path(@representante)%></h1>
-    <%#=image_tag(@reseller.image.url("c_medio"), :style => "margin:10px auto 0 auto; float:left;")%>
-	<img src="/images/img_perfilfoto.png" width="222" height="222" style="margin:10px auto 0 auto; float:left;" /> 
+    <%if @representante.image.url.blank?%>
+		<img src="/images/img_perfilfoto.png" width="222" height="222" style="margin:10px auto 0 auto; float:left;" /> 
+	<%else%>
+		<%=image_tag(@representante.image.url("c_medio"), :style => "margin:10px auto 0 auto; float:left;")%>
+	<%end%>
 	   			
 </div>       
     <div id="Dadosbox">

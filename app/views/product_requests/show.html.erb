@@ -1,12 +1,74 @@
 <%content_for :head do%>
 	<%=stylesheet_link_tag "product_requests"%>
 <%end%>
-
-	<div id="Dadosbox_p_requests">    
-    <h1 class="Titleh1"><img src="/images/tit_nomerevendedor.png"/>Pedido N.: <%=@pedido.id%><%#=@representante.nome%></h1>
-	<div class="clear"></div>
+	
+	<h1 class="Titleh1"><img src="/images/tit_pedidos.png" width="20" height="20" style="margin:0 10px 0 0; " /> Pedido N.: <%=@pedido.id%><%#=@representante.nome%></h1>
 	<a href="javascript:history.go(-1);"><img src="/images/btn_voltarbxperfil.png" width="43" height="11" class="bt_voltar_align"/></a> 
 	<br />
+	<h2>Status do Pedido: 
+		<%=raw("<span style=color:Red !important;'>") if @pedido.status == "INCOMPLETO"%>
+		<%=raw("<span style=color:Yellow !important;'>") if @pedido.status == "ENCAMINHADO"%>
+		<%=raw("<span style=color:Yellow !important;'>") if @pedido.status == "ENVIADO"%>
+		
+		<%=@pedido.status%><span>
+	<h2>
+	<div class="clear"></div>
+	
+	<div id="Dados_Pedido">
+		<div class="Line_details_pr_1"></div>
+		<h2>Produtos</h2> 
+		<ul>
+		<%if !@produtos.blank?%>
+			<table width="95%" border="0" cellspacing="0" cellpadding="0" border="0">
+				<tr>
+					<th><li><label>Produto</label></li></th>
+					<th><li><label>Quantidade</label></li></th>
+					<th><li><label>Valor Un.</label></li></th>
+				</tr>
+				<%
+				$total = 0
+				@produtos.each do |p|
+				%>
+				<tr>
+					<td><li><span><%=p.product.cod_sistema %> - <%=p.product.nome%></span></li></td>
+					<td><li><span><%=p.quantidade %></span></li></td>
+					<td><li><span><%=number_to_currency(p.valor) %></span></li></td>
+				</tr>
+				<%
+				$total += p.valor
+				end
+				%>
+				<tr>
+					<td colspan="3" height="70">
+						<li style="float:right;"><label class="quinze">Total: </label><label><b class="quinze"><%=number_to_currency($total) %></b></label></li>
+					</td>
+				</tr>
+			</table>
+       <%else%>
+	   		<li><label>Não há produtos cadastrados neste pedido.</label></li>
+		<%end%>
+       </ul>
+
+		<div class="Line_details_pr"></div>
+        <h2>Informações Adicionais</h2> 
+		<ul>
+            <li><label>Frete:</label><span><%=@pedido.tipo_frete%></span></li>
+            <li><label>Informações:</label><span><%=@pedido.informacoes_adicionais%></span></li>
+            <li><label>Fatura para cliente:</label><span><%=@pedido.fatura_para_cliente%></span></li>
+        </ul>
+
+		<div class="Line_details_pr"></div>
+        <h2>Dados da Entrega</h2> 
+		<ul>
+            <li><label>Rua:</label><span><%=@pedido.entrega_rua_numero%></span></li>
+            <li><label>Bairro:</label><span><%=@pedido.entrega_bairro%></span></li>
+            <li><label>Cidade:</label><span><%=@pedido.cidade%></span></li>
+			<li><label>Estado:</label><span><%=@pedido.entrega_uf%></span></li>
+        </ul>
+	</div>
+	
+	<div id="Dadosbox_p_requests">    
+	
 	<div class="Line_details_pr_1"></div>
 		<h2>Dados do Representante</h2> 
 		<ul>
@@ -36,21 +98,9 @@
 		<ul>
             <li><label>Nome:</label><span><%=@pedido.transporter.nome%></span></li>
         </ul>
-		<div class="Line_details_pr"></div>
-        <h2>Informações Adicionais</h2> 
-		<ul>
-            <li><label>Frete:</label><span><%=@pedido.tipo_frete%></span></li>
-            <li><label>Informações:</label><span><%=@pedido.informacoes_adicionais%></span></li>
-            <li><label>Fatura para cliente:</label><span><%=@pedido.fatura_para_cliente%></span></li>
-        </ul>
 
-		<div class="Line_details_pr"></div>
-        <h2>Dados da Entrega</h2> 
-		<ul>
-            <li><label>Rua:</label><span><%=@pedido.entrega_rua_numero%></span></li>
-            <li><label>Bairro:</label><span><%=@pedido.entrega_bairro%></span></li>
-            <li><label>Cidade:</label><span><%=@pedido.cidade%></span></li>
-			<li><label>Estado:</label><span><%=@pedido.entrega_uf%></span></li>
-        </ul>
    </div>
-   <div class="clear"></div>
+	
+    <div class="clear"></div>
+	<div class="Line_details_pr"></div>
+	<%=link_to(image_tag("bt_imprimir.png"), "javascript:window.print();")%>

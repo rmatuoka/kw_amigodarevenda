@@ -196,6 +196,12 @@ body
 			margin:50px auto;
 			width:960px;
 		}
+		#Geral #Center #Box_Center
+		{
+			position:relative; 	
+			margin:50px auto;
+			width:960px;
+		}
 		#Geral #Center #Titulo_tabpedido
 		{
 			width:941px;
@@ -307,7 +313,7 @@ body
 }
 #Fotobox h1 img
 {
-	margin-right:5px;	
+	margin-right:7px;
 }								
 #Dadosbox
 {
@@ -320,7 +326,7 @@ body
 	
 }							
 										
-			#Geral #Center .Titulo
+			#Geral #Center .Titulos
 			{
 				margin:30px 0 17px 5px;	
 			}
@@ -372,12 +378,13 @@ body
 									   position:absolute
 									   left:0px;
 									   display:block;
-									   font-family:Tahoma, Geneva, sans-serif;
-									   font-size:14px;
-									   font-weight:bold;
+									   font-family: 'MyriadPro-Regular';
+									   font-size:20px;
+									   font-weight:normal;
 									   color:#999;
 									   text-align:left;	
 									   margin-top:10px;
+									
 								  }
 							  
 			#Geral #Center #Pesquisa
@@ -474,7 +481,7 @@ body
 				font-family:Tahoma, Geneva, sans-serif;
 				font-size:12px;
 				font-weight:normal;	
-				color:#CCCCCC;				
+				color:#333333;				
 				position:relative;
 				text-align:left;
 			}	
@@ -485,7 +492,7 @@ body
 				font-family:Tahoma, Geneva, sans-serif;
 				font-size:12px;
 				font-weight:normal;
-				color:#CCCCCC;	
+				color:#333333;	
 				position:relative;
 				text-align:left;
 				padding-left:5px;
@@ -493,12 +500,12 @@ body
 			}
 				.Box_noticias a
 				{
-					color:#CCCCCC;
+					color:#333333;
 					text-decoration:none;				
 				}	
 					.Box_noticias a:hover
 					{
-						color:#CCCCCC;				
+						color:#999999C;				
 						text-decoration:underline;
 					}			
 			.Bt_vejamais_not_align
@@ -665,4 +672,25 @@ font-family: 'MyriadPro-Regular';
 #flash_error {
   background-color: #FCC;
   border: solid 1px #C66;
+}
+
+#Tabela_pedido p
+{
+	color:red !important;
+	font-family: 'MyriadPro-Regular';
+}
+
+.quatorze
+{
+	font-size:14px !important;
+}
+
+.quinze
+{
+	font-size:14px !important;
+}
+
+.dezesseis
+{
+	font-size:14px !important;
 }

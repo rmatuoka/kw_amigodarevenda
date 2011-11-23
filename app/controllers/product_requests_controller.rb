@@ -5,5 +5,6 @@ class ProductRequestsController < ApplicationController
   
   def show
     @pedido = current_user.product_requests.find(params[:id])
+    @produtos = @pedido.product_request_items.all
   end
 end

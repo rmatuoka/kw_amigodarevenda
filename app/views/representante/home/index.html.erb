@@ -5,7 +5,8 @@
 		<!--<a href="#"><img src="/images/btn_fazerpedido.png"></a> -->
     </div>
   <div id="Tabela_pedido">
-             <table width="918" class="Table_pedido_title">
+        <%if !@pedidos.blank?%> 
+    	<table width="918" class="Table_pedido_title">
 				<tr style="border:#F2F2F2 solid 1px; border-left:#CCC solid 1px;">
 	                <td width="161">Realizado em:</td>
 	                <td width="144">Status:</td>
@@ -27,13 +28,16 @@
 				<%end%>  
             </table>
 			<%=link_to(image_tag("bt_veja_todas.png",:align => "right", :class => "img_veja_todas_align"), representante_product_requests_path)%>
-  </div>
+  		<%else%>
+			<p>Não há nenhum pedido cadastrado em nosso sistema. <br/><br/><%=link_to image_tag("btn_fazerpedido.png", :style => "float:left;"), representante_pedidos_path%></p>
+		<%end%>
+		</div>
 <div id="Promocoes">
 	<h1><img src="/images/tit_promocoes.png" width="20" height="20" style="margin:0 10px 0 0; float:left;" />Promoções</h1>
 	<%if !@offer.blank?%>
 		<%=image_tag(@offer.image.url("thumb"), :style => "display:block;float:left;")%>
 	<%else%>
-		<p style="display:block;">Não há promoções cadastradas.</p>
+		<p style="display:block;">Não há promoções cadastradas.<br/></p>
 	<%end%>
 </div>
 

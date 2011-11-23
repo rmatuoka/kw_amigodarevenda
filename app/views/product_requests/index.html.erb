@@ -3,7 +3,7 @@
 <%end%>
 
 <div id="Box_Center">
-	<h1><img src="/images/tit_pedidos.png" width="20" height="20" style="margin:0 10px 0 0; " />Pedidos</h1>
+	<h1><img src="/images/tit_pedidos.png" width="20" height="20" style="margin:0 10px 0 0; " /> Lista de Pedidos</h1>
 	<div class="Tabela_pedido_ext_bg_top">
 	
 	<div id="Tabela_pedido_ext">
@@ -24,82 +24,9 @@
 				<td width="161"><%=p.created_at.to_date.strftime("%d/%m/%Y")%> <%=p.created_at.to_time.strftime("%H:%M:%S")%></td>
 				<td width="144"><%=p.status%></td>
 				<td width="460"><%=p.reseller.nome%></td>
-				<td width="133"><%=link_to "[+] DETALHES", representante_product_request_path(p)%></td>
+				<td width="133" class="Font_detalhes"><%=link_to "[+] DETALHES", representante_product_request_path(p)%></td>
 			  </tr>
-			<%end%>
-
-<tr>
-				<td width="161">\\\\\\\\\\\\\\\\\</td>
-				<td width="144">\aaaaaaaaaaaaaa</td>
-				<td width="513">\ssssssssssss</td>
-				<td width="80"></td>
-			  </tr>		
-<tr>
-				<td width="161">\\\\\\\\\\\\\\\\\</td>
-				<td width="144">\aaaaaaaaaaaaaa</td>
-				<td width="513">\ssssssssssss</td>
-				<td width="80"></td>
-			  </tr>	
-<tr>
-				<td width="161">\\\\\\\\\\\\\\\\\</td>
-				<td width="144">\aaaaaaaaaaaaaa</td>
-				<td width="513">\ssssssssssss</td>
-				<td width="80"></td>
-			  </tr>	
-<tr>
-				<td width="161">\\\\\\\\\\\\\\\\\</td>
-				<td width="144">\aaaaaaaaaaaaaa</td>
-				<td width="513">\ssssssssssss</td>
-				<td width="80"></td>
-			  </tr>	
-<tr>
-				<td width="161">\\\\\\\\\\\\\\\\\</td>
-				<td width="144">\aaaaaaaaaaaaaa</td>
-				<td width="513">\ssssssssssss</td>
-				<td width="80"></td>
-			  </tr>	
-<tr>
-				<td width="161">\\\\\\\\\\\\\\\\\</td>
-				<td width="144">\aaaaaaaaaaaaaa</td>
-				<td width="513">\ssssssssssss</td>
-				<td width="80"></td>
-			  </tr>				  
-<tr>
-				<td width="161">\\\\\\\\\\\\\\\\\</td>
-				<td width="144">\aaaaaaaaaaaaaa</td>
-				<td width="513">\ssssssssssss</td>
-				<td width="80"></td>
-			  </tr>			
-			  <tr>
-				<td width="161">\\\\\\\\\\\\\\\\\</td>
-				<td width="144">\aaaaaaaaaaaaaa</td>
-				<td width="513">\ssssssssssss</td>
-				<td width="80"></td>
-			  </tr>			
-			  <tr>
-				<td width="161">\\\\\\\\\\\\\\\\\</td>
-				<td width="144">\aaaaaaaaaaaaaa</td>
-				<td width="513">\ssssssssssss</td>
-				<td width="80"></td>
-			  </tr>			
-			  <tr>
-				<td width="161">\\\\\\\\\\\\\\\\\</td>
-				<td width="144">\aaaaaaaaaaaaaa</td>
-				<td width="513">\ssssssssssss</td>
-				<td width="80"></td>
-			  </tr>			
-			  <tr>
-				<td width="161">\\\\\\\\\\\\\\\\\</td>
-				<td width="144">\aaaaaaaaaaaaaa</td>
-				<td width="513">\ssssssssssss</td>
-				<td width="80"></td>
-			  </tr>			
-			  <tr>
-				<td width="161">\\\\\\\\\\\\\\\\\</td>
-				<td width="144">\aaaaaaaaaaaaaa</td>
-				<td width="513">\ssssssssssss</td>
-				<td width="80"></td>
-			  </tr>			
+			<%end%>		
 			  </table>	
 	</div> 
 	<div class="clear"></div>

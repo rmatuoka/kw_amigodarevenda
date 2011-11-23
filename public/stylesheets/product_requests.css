@@ -2,9 +2,19 @@
 /* CSS Document */
 
 
+#Dados_Pedido
+{
+	float:right;
+	right:0px;
+	width:50%;
+	min-height:100px;
+	height:auto;
+	margin-bottom:20px;
+}
 #Dadosbox_p_requests
 {
-	width:940px;
+	float:left;
+	width:50%;
 	min-height:100px;
 	height:auto;
 	margin-bottom:20px;
@@ -42,14 +52,14 @@
 }
 .Line_details_pr_1
 {
-	width:940px;
+	width:95%;
 	border-bottom:#CCCCCC 1px solid;
 	margin-bottom:5px;
 	margin-top:5px;	
 }
 .Line_details_pr
 {
-	width:940px;
+	width:95%;
 	border-bottom:#CCCCCC 1px solid;
 	margin-bottom:15px;
 	margin-top:15px;
