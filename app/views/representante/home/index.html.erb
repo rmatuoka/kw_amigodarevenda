@@ -31,11 +31,11 @@ $(document).ready(function() {
 	                <td width="161"><%=p.created_at.to_date.strftime("%d/%m/%Y")%> <%=p.created_at.to_time.strftime("%H:%M:%S")%></td>
 	                <td width="144"><%=p.status%></td>
 	                <td width="460"><%=@revenda.nome%></td>
-	                <td width="133" class="Font_detalhes"><%=link_to "[+] DETALHES", representante_product_request_path(p)%></td>
+	                <td width="133" class="Font_detalhes"><%=link_to "[+] DETALHES", product_request_path(p)%></td>
 	              </tr>
 				<%end%>  
             </table>
-			<%=link_to(image_tag("bt_veja_todas.png",:align => "right", :class => "img_veja_todas_align"), representante_product_requests_path)%>
+			<%=link_to(image_tag("bt_veja_todas.png",:align => "right", :class => "img_veja_todas_align"), product_requests_path)%>
   		<%else%>
 			<p>Não há nenhum pedido cadastrado em nosso sistema. <br/><br/><%=link_to image_tag("btn_fazerpedido.png", :style => "float:left;"), representante_pedidos_path%></p>
 		<%end%>

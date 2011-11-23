@@ -32,7 +32,7 @@ $(document).ready(function() {
 				<td width="161"><%=p.created_at.to_date.strftime("%d/%m/%Y")%> <%=p.created_at.to_time.strftime("%H:%M:%S")%></td>
 				<td width="144"><%=p.status%></td>
 				<td width="460"><%=p.reseller.nome%></td>
-				<td width="133" class="Font_detalhes"><%=link_to "[+] DETALHES", representante_product_request_path(p)%></td>
+				<td width="133" class="Font_detalhes"><%=link_to "[+] DETALHES", product_request_path(p)%></td>
 			  </tr>
 			<%end%>		
 			  </table>	

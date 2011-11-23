@@ -2,6 +2,8 @@ KwAmigodarevenda::Application.routes.draw do |map|
   resources :product_requests
   resources :user_sessions
   resources :users
+  resources :representants
+  
   namespace :admin do
       resources :resellers
       resources :updates
@@ -47,7 +49,7 @@ KwAmigodarevenda::Application.routes.draw do |map|
         get 'finalizar'
       end 
     end
-    resources :representants
+    
   end
 
   resources :downloads
