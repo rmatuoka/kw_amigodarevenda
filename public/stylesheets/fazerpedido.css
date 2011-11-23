@@ -1,20 +1,34 @@
 @charset "utf-8";
 /* CSS Document */
 
-			
+#Center
+{
+	*width:1100px !important;
+}
 				#Geral #Center #Produtosbox
 				{
 					display:inline-block;
 					width:700px;
 					min-height:623px;
 					height:auto;
-					margin:35px 5px 0 5px;
+					margin:35px 5px 50px 5px;
 				}
 .Titulo_produto	
 {	
 	text-align:left;
 	width:150px;
 	height:27px;
+}
+.Titulo_produto .Tile_h1
+{	
+	margin:0 auto;	
+	
+}
+.Titulo_produto img
+{	
+	position:relative;
+	float:left;
+	margin-right:5px;
 }
 .Titulo_boxpedido	
 {	
@@ -51,27 +65,64 @@
 {
 	float:left;
 	text-align:left;
-	width:678px;
+	width:700px;
 }
 		#Geral #Center #Produtosbox #Dados_nome
 		{
-			padding:8px 5px 0 5px;
 			display:block;
 			background-color:#EEE;
 			margin:auto;
-			width:690px;
-			height:22px;
+			width:695px;
+			height:17px;
+			padding-left:5px;
+			padding-top:5px;
 		}
+			#Geral #Center #Produtosbox #Dados_nome h1
+			{
+				background-color:#EEE;
+				margin:auto;
+				width:695px;
+				height:14px;
+				padding-left:5px;
+				padding-bottom:8px;
+			}		
 		#Geral #Center #Produtosbox #Dados_categoria h1
 		{
-			display:block;
+			position:relative;
 			font-family:Tahoma, Geneva, sans-serif;
 			color:#999;
 			font-size:11px;
 			font-style:normal;
-			float:left;
 			padding:0;
 		}
+		.Campo_qnt_vlr
+		{
+			position:relative;
+			left:230px;
+			top:-21px;
+			*top:-10px;
+			width:232px; 
+			display:inline-block; 
+			margin:0 0 0 0; 
+			text-align:right;
+		}
+		.Bt_adicionarpedido
+		{
+			position:relative;
+			left:490px;
+			top:3px;
+			*top:15px;
+			width:210px;
+		}
+		#Geral #Center #Produtosbox #Dados_categoria label
+		{
+			position:relative;
+			font-family:Tahoma, Geneva, sans-serif;
+			color:#999;
+			font-size:11px;
+			font-style:normal;
+			padding:0;
+		}		
 		#Geral #Center #Produtosbox #Dados_categoria h2
 		{
 			display:block;
@@ -130,8 +181,9 @@
 				width:221px;
 				height:auto;
 				/*min-height:586px;*/
-				min-height:100px;
+				min-height:245px;
 				display:inline-block;
+				border-bottom:#CCC 1px solid;
 			}			
 		#Geral #Center #Meupedido #Items
 		{
