@@ -36,8 +36,6 @@
 			</p>
 	  </div>
 	<%if @representante.image.file?%>
-		<img src="/images/img_user.png" width="109" height="109" style="" />
-	<%else%>
 		<%=image_tag(@representante.image.url("thumb"), :style => "width:95px; float:right; margin:15px 0px 0 0;")%>
 	<%end%>
 	  
