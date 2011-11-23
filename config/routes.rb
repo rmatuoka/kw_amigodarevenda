@@ -16,7 +16,7 @@ KwAmigodarevenda::Application.routes.draw do |map|
       resources :import
       resources :transporters
       resources :export
-      
+      resources :representants
       root :to => "downloads#index"
   end
 
