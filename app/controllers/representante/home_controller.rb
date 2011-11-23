@@ -8,6 +8,6 @@ class Representante::HomeController < ApplicationController
   def index
     @offer = Offer.get_promocao
     @noticias = Notice.todas_publicadas
-    @pedidos = current_user.product_requests.all(:limit => 5)
+    @pedidos = current_user.product_requests.home
   end
 end

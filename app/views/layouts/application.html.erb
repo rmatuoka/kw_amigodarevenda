@@ -4,6 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Amigo da Revenda <%=yield :title%></title>
 <%=stylesheet_link_tag "estilo"%>
+<%=javascript_include_tag "jquery/jquery"%>
+<%=javascript_include_tag "jquery/jquery.printElement.min.js"%>
 <%=yield :head%>
 </head>
 <body>
@@ -41,7 +43,9 @@
 	  
 	</div>
 	<%end%>
-      <div id="Busca"><input type="text" name="busca" value="Busca" border="none" onfocus="if(this.value=='Busca'){this.value=''};" onblur="if(this.value==''){this.value='Busca'};" /></div>
+    <div id="Busca">
+		<!-- <input type="text" name="busca" value="Busca" border="none" onfocus="if(this.value=='Busca'){this.value=''};" onblur="if(this.value==''){this.value='Busca'};" /> -->
+	</div>
       <%=render :file => "/layouts/_menu.html.erb"%>
       <a href="/home"><div id="Logo" ></div></a>
   </div>

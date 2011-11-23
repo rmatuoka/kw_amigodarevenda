@@ -250,6 +250,11 @@ body
 			color:#FF903B;
 			text-decoration:none;
 		}
+		
+		#Tabela_pedido .Table_pedido td
+		{
+			height:25px;
+		}
 			#Tabela_pedido .Table_pedido .Font_detalhes a:hover
 			{
 				color:#FF903B;
@@ -693,4 +698,14 @@ font-family: 'MyriadPro-Regular';
 .dezesseis
 {
 	font-size:14px !important;
+}
+
+.zebraUm
+{
+	background-color:#e4e4e4;
+}
+
+.Table_pedido_ext td
+{
+	height:28px;
 }

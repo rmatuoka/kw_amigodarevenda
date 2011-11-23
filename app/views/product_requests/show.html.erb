@@ -1,17 +1,31 @@
 <%content_for :head do%>
 	<%=stylesheet_link_tag "product_requests"%>
+
+	<script>
+	function PrintDiv(div)
+	{
+		$('#'+div).printElement();
+	}
+	</script>
 <%end%>
+<div id="Box_Center">
+	
 	
 	<h1 class="Titleh1"><img src="/images/tit_pedidos.png" width="20" height="20" style="margin:0 10px 0 0; " /> Pedido N.: <%=@pedido.id%><%#=@representante.nome%></h1>
 	<a href="javascript:history.go(-1);"><img src="/images/btn_voltarbxperfil.png" width="43" height="11" class="bt_voltar_align"/></a> 
 	<br />
 	<h2>Status do Pedido: 
 		<%=raw("<span style=color:Red !important;'>") if @pedido.status == "INCOMPLETO"%>
-		<%=raw("<span style=color:Yellow !important;'>") if @pedido.status == "ENCAMINHADO"%>
-		<%=raw("<span style=color:Yellow !important;'>") if @pedido.status == "ENVIADO"%>
+		<%=raw("<span style=color:#dad700 !important;'>") if @pedido.status == "ENCAMINHADO"%>
+		<%=raw("<span style=color:Green !important;'>") if @pedido.status == "ENVIADO"%>
 		
-		<%=@pedido.status%><span>
-	<h2>
+		
+		<%=@pedido.status%> </span><br/ >
+		
+	<h2/>
+	<ul>
+		<li><label>Data do Pedido: <%=@pedido.created_at.to_date.strftime("%d/%m/%Y")%></label></li>
+	</ul>
 	<div class="clear"></div>
 	
 	<div id="Dados_Pedido">
@@ -19,7 +33,7 @@
 		<h2>Produtos</h2> 
 		<ul>
 		<%if !@produtos.blank?%>
-			<table width="95%" border="0" cellspacing="0" cellpadding="0" border="0">
+			<table width="95%" border="0" cellspacing="0" cellpadding="0" border="0" id="tblPedidos">
 				<tr>
 					<th><li><label>Produto</label></li></th>
 					<th><li><label>Quantidade</label></li></th>
@@ -103,4 +117,6 @@
 	
     <div class="clear"></div>
 	<div class="Line_details_pr"></div>
-	<%=link_to(image_tag("bt_imprimir.png"), "javascript:window.print();")%>
+	<%=link_to(image_tag("bt_imprimir.png"), "javascript:PrintDiv('Box_Center');")%>
+	
+</div>

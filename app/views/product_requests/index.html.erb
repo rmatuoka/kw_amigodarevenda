@@ -1,5 +1,13 @@
 <%content_for :head do%>
 	<%=stylesheet_link_tag "product_requests_extend"%>
+
+<script>
+$(document).ready(function() {
+   $('.Table_pedido_ext tr:odd').addClass('zebraUm');
+   $('.Table_pedido_ext tr:even').addClass('zebraDois');
+});
+
+</script>
 <%end%>
 
 <div id="Box_Center">

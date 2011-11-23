@@ -27,7 +27,15 @@
 <table width="940" class="Tabdown">
 <%@downloads.each do |d|%>
 	<tr>
-	<td width="5%"><img src="/images/icones/download/"></td>
+	<td width="5%">
+		<%=image_tag("icones/download/doc.png") if d.file.content_type == "application/msword"%>
+		<%=image_tag("icones/download/jpg.png") if d.file.content_type == "image/jpeg" || d.file.content_type == "image/pjpeg"  || d.file.content_type == "image/gif"  || d.file.content_type == "image/png"  || d.file.content_type == "image/x-png"  || d.file.content_type == "image/jpg" %>
+
+		<%=image_tag("icones/download/pdf.png") if d.file.content_type == "application/pdf"%>
+		<%=image_tag("icones/download/ppt.png") if d.file.content_type == "application/vnd.ms-powerpoint"%>
+		<%=image_tag("icones/download/xls.png") if d.file.content_type == "application/vnd.ms-excel"%>
+		<%=image_tag("icones/download/all.png") if d.file.content_type != "application/vnd.ms-excel" && d.file.content_type != "application/vnd.ms-powerpoint"  && d.file.content_type != "application/pdf" && d.file.content_type != "image/jpg" && d.file.content_type != "image/x-png"  && d.file.content_type != "image/png"  && d.file.content_type != "image/gif"  && d.file.content_type != "image/pjpeg"  && d.file.content_type != "image/jpeg"  && d.file.content_type != "application/msword" %>
+	</td>
 	<td width="52%" class="left"><%=d.name%></td>
 	<td width="18%"><%=d.file_file_size%> kb</td>
 	<td width="25%"><%=link_to(image_tag("btn_download.png"), d.file.url)%></td>
