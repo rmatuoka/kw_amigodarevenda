@@ -35,7 +35,9 @@
 				<img src="/images/img_boxinfouser2.png" width="18" height="18" style="margin:auto 15px" /><span class="Boxuser_align_text1"> Configurações</span>
 			</p>
 	  </div>
-	<%if @representante.image.file?%>
+	<%if @representante.image.blank?%>
+		<img src="/images/img_perfilfoto.png" width="222" height="222" style="margin:10px auto 0 auto; float:left;" /> 
+	<%else%>
 		<%=image_tag(@representante.image.url("thumb"), :style => "width:95px; float:right; margin:15px 0px 0 0;")%>
 	<%end%>
 	  

@@ -1,8 +1,10 @@
 <% title "Edit Transporter" %>
+<h1>Editar Transportadora</h1><br />
+<p></p><br />
 
 <%= render :partial => 'form' %>
 
 <p>
-  <%= link_to "Show", @transporter %> |
+  <%= link_to "Show", admin_transporters_path(@transporter) %> |
   <%= link_to "View All", admin_transporters_path %>
 </p>

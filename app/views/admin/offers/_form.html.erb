@@ -1,3 +1,4 @@
+<div id="Box_form">
 <%= form_for ([:admin, @offer], :html => { :multipart => :true }) do |f| %>
   <%= f.error_messages %>
   <p>
@@ -24,9 +25,6 @@
     <%= f.label :published %><br />
     <%= f.check_box :published %>
   </p>
-  <p>
-    <%= f.label :total_clicks %><br />
-    <%= f.text_field :total_clicks %>
-  </p>
-  <p><%= f.submit %></p>
+  <p><%= f.submit "Salvar", :class => "Bt_enviar" %></p>
 <% end %>
+</div>

@@ -1,3 +1,4 @@
+<div id="Box_form">
 <%= form_for [:admin, @notice] do |f| %>
   <%= f.error_messages %>
   <p>
@@ -16,5 +17,6 @@
     <%= f.label :published %><br />
     <%= f.check_box :published %>
   </p>
-  <p><%= f.submit %></p>
+  <p><%= f.submit "Salvar", :class => "Bt_enviar"  %></p>
 <% end %>
+</div>

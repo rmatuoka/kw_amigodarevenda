@@ -1,4 +1,5 @@
-<%= form_for @representant do |f| %>
+<div id="Box_form">
+<%= form_for ([:admin, @representant], :html => { :multipart => :true }) do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :nome %><br />
@@ -16,5 +17,11 @@
     <%= f.label :email %><br />
     <%= f.text_field :email %>
   </p>
-  <p><%= f.submit %></p>
+<p>
+    <%= f.label :user_id, "Associar ao usuário:" %><br />
+    <%= f.select :user_id, @users, :prompt => "Escolha o usuário" %>
+  </p>
+
+  <p><%= f.submit "Salvar", :class => "Bt_enviar" %></p>
 <% end %>
+</div>

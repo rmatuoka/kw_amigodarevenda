@@ -1,23 +1,29 @@
 <% title "Representants" %>
+<h1>Módulo de Representantes</h1><br />
+<p>Visualize abaixo a lista dos representantes registrados no sistema.</p><br />
 
-<table>
-  <tr>
+<table class="tablesorter">
+<thead>  
+<tr>
     <th>Nome</th>
     <th>Telefone</th>
     <th>Celular</th>
     <th>Email</th>
   </tr>
+</thead> 
+  <tbody>
   <% for representant in @representants %>
     <tr>
       <td><%=h representant.nome %></td>
       <td><%=h representant.telefone %></td>
       <td><%=h representant.celular %></td>
       <td><%=h representant.email %></td>
-      <td><%= link_to "Show", representant %></td>
-      <td><%= link_to "Edit", edit_representant_path(representant) %></td>
-      <td><%= link_to "Destroy", representant, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to "Show", admin_representant_path(representant) %></td>
+      <td><%= link_to "Edit", edit_admin_representant_path(representant) %></td>
+      <td><%= link_to "Destroy", admin_representant_path(representant), :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
+</tbody>
 </table>
 
-<p><%= link_to "New Representant", new_representant_path %></p>
+<p><%= link_to "New Representant", new_admin_representant_path %></p>

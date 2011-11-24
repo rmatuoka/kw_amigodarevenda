@@ -1,0 +1,16 @@
+	#General #Content #Right_box #box_registration{
+		position: relative;
+		display: block;
+		padding: 33px 0px 10px 33px;
+		text-align: center;
+		float:left;
+	}
+		#General #Content #Right_box #box_registration form{
+			text-align:right;
+		}
+			#General #Content #Right_box #box_registration form .field{
+				margin-bottom:5px;
+			}
+			#General #Content #Right_box #box_registration form .actions{
+				margin-bottom:5px;
+			}

@@ -1,4 +1,6 @@
 <% title "Representant" %>
+<h1>Representante</h1><br />
+<p></p><br />
 
 <p>
   <strong>Nome:</strong>
@@ -18,7 +20,7 @@
 </p>
 
 <p>
-  <%= link_to "Edit", edit_representant_path(@representant) %> |
-  <%= link_to "Destroy", @representant, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", representants_path %>
+  <%= link_to "Edit", edit_admin_representant_path(@representant) %> |
+  <%= link_to "Destroy", admin_representant_path(@representant), :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", admin_representants_path %>
 </p>

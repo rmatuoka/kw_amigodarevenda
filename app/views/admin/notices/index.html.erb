@@ -1,16 +1,20 @@
 <% title "Notices" %>
+<h1>Módulo de Notícias</h1><br />
+<p>Visualize abaixo a lista dos downloads registrados no sistema.</p><br />
 
-<table>
+<table class="tablesorter">
+  <thead>   
   <tr>
     <th>Name</th>
     <th>Body</th>
     <th>Summary</th>
     <th>Published</th>
   </tr>
+</thead> 
+  <tbody>
   <% for notice in @notices %>
     <tr>
       <td><%=h notice.name %></td>
-      <td><%=h notice.body %></td>
       <td><%=h notice.summary %></td>
       <td><%=h notice.published %></td>
       <td><%= link_to "Show", admin_notice_path(notice) %></td>
@@ -18,6 +22,7 @@
       <td><%= link_to "Destroy", admin_notice_path(notice), :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
+  </tbody>
 </table>
 
 <p><%= link_to "New Notice", new_admin_notice_path %></p>

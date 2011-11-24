@@ -1,8 +1,10 @@
 <% title "Edit Notice" %>
+<h1>Editar Notícia</h1><br />
+<p></p><br />
 
 <%= render :partial => 'form' %>
 
 <p>
-  <%= link_to "Show", @notice %> |
-  <%= link_to "View All", notices_path %>
+  <%= link_to "Show", admin_notice_path(@notice) %> |
+  <%= link_to "View All", admin_notices_path %>
 </p>

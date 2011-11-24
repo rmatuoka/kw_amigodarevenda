@@ -1,4 +1,6 @@
 <% title "Download" %>
+<h1>Visualizar Download</h1><br />
+<p></p><br />
 
 <p>
   <strong>Title:</strong>
@@ -14,7 +16,7 @@
 </p>
 
 <p>
-  <%= link_to "Edit", admin_edit_download_path(@download) %> |
-  <%= link_to "Destroy", @download, :confirm => 'Tem certeza?', :method => :delete %> |
+  <%= link_to "Edit", edit_admin_download_path(@download) %> |
+  <%= link_to "Destroy", admin_download_path(@download), :confirm => 'Tem certeza?', :method => :delete %> |
   <%= link_to "View All", admin_downloads_path %>
 </p>

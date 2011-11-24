@@ -1,0 +1,22 @@
+<% 
+	content_for :title do "Resultado da Busca por: #{params[:keyword]}" end
+%>
+<table>
+  <tr>
+    <th width="200px">Nome</th>
+    <th width="200px">Sobrenome</th>
+	<th width="200px">Email</th>
+  </tr>
+  	<%@Results.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.last_name %></td>
+      <td><%= user.email%></td>
+      <td><%= link_to "Show", admin_user_path(user) %></td>
+      <td><%= link_to "Edit", edit_admin_user_path(user) %></td>
+      <td><%= link_to "Destroy", admin_user_path(user), :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+<br><br>
+<%=link_to "Voltar", admin_users_path%>

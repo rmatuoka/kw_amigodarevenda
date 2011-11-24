@@ -1,92 +1,626 @@
-body {
-  background-color: #4B7399;
-  font-family: Verdana, Helvetica, Arial;
-  font-size: 14px;
-}
-
-a img {
-  border: none;
-}
-
-a {
-  color: #0000FF;
-}
-
-ul
+@charset "utf-8";
+/* CSS Document */
+*
 {
-	margin:0px;
-	padding:0px;
+	margin:0;
+	padding:0;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+	border:none;
 }
 
-li
+#General 
 {
-	list-style-type:none;
+	position:relative;
+	width:100%;
+	min-height:212px;
+	height:auto;
+	overflow:hidden;
 }
 
-.clear {
-  clear: both;
-  height: 0;
-  overflow: hidden;
-}
-
-#container {
-  width: 75%;
-  margin: 0 auto;
-  background-color: #FFF;
-  padding: 20px 40px;
-  border: solid 1px black;
-  margin-top: 20px;
-}
-
-	#container #header
+	#General #Header
 	{
-	
+		position:relative;
+		background-image:url(../images/bg_header.jpg);
+		background-repeat:repeat-x;
+		background-position:top center;
+		width:100%;
+		height:212px;
 	}
-	
-		#container #header #menu
+		#General #Header #User_bar
 		{
-			
+			position:relative;
+			background-image:url(../images/bg_footer.jpg);
+			background-repeat:repeat-x;
+			background-position:top center;	
+			border-bottom:#000 1px solid;	
+			width:100%;
+			height:30px;
+			text-align:left;
+			font-family:Verdana, Geneva, sans-serif;
+			font-size:14px;
+			font-weight:bold;
+			color:#CCCCCC;
+			padding:0 0 0px;
 		}
-		
-			#container #header #menu ul li
+			#General #Header #User_bar #User_bar_content
+			{	
+			    position:relative;
+				width:100%;
+				height:30px;
+				float:left;
+				left:60px;			}
+			#General #Header #User_bar #User_bar_content #User_name
+			{	
+				position:relative;
+			    float:left;
+				top:0px;
+				width:auto;
+			}	
+				#General #Header #User_bar #User_bar_content #User_name span
+				{	
+					position:relative;
+					top:-3px;
+					left:35px;
+				}					
+			#General #Header #User_bar #User_bar_content #Buttons
+			{	
+				position:relative;
+			    float:right;
+				margin-right:100px;
+				width:auto;
+				height:25px !important;
+				top:4px;
+			}
+			#General #Header #User_bar #User_bar_content #Buttons .Usr_bt_align
+			{	
+				margin-left:10px;
+			}						
+				
+			
+		#Logo
+		{
+			position:relative;
+			width:auto;
+			height:auto;
+			float:left;
+			text-align:center;
+			left:83px;
+			top:25px;
+		}
+	#General #Content
+	{
+		position:relative;
+        min-width:940px;		
+		width:auto;
+		min-height:800px;
+		height:auto;
+		padding-top: 30px;
+	}
+		#General #Content a 
+		{
+			color:#aaaaaa;
+		}
+		#General #Content #Left_box
+		{
+			position:relative;
+			float:left;
+			width:20%;
+			min-height:800px;
+			height:auto;
+		}
+		#General #Content #Left_box .Bt_enviar_left
+		{
+			font-family:Verdana, Geneva, sans-serif;
+			font-size:12px;
+			font-weight:bold;
+			/*color:#fff;*/
+			cursor:pointer;
+			text-decoration:none;
+		}
+			#General #Content #Left_box .Bt_enviar_left:hover
 			{
-				display:inline-block;
-				background-color:#4B7399;
-				padding:10px;
+				text-decoration:underline;
+			}
+	
+			#General #Content #Left_box #Item_category
+			{
+				position:relative;
+				width:220px;
+				height:200px;
+				margin-left:60px;
+				
+			}
+			#General #Content #Left_box #Item_category .Tab_menu_left 
+			{
+				position:relative;
+				
+			}			
+			#General #Content #Left_box #Item_category h3
+			{
+				position:relative;	
+				font-family:Verdana, Geneva, sans-serif;
+				font-size:20px;
+				font-weight:normal;
+				color:#999999;
+			}
+				#General #Content #Left_box #Item_category #Item_content
+				{
+					position:relative;					
+					/*border:#F00 1px dashed;*/
+					font-family:Verdana, Geneva, sans-serif;
+					font-size:18px;
+					font-weight:normal;
+					color:#999999;					
+					width:220px;
+					height:auto;	
+				}		
+					#General #Content #Left_box #Item_category #Item_content ul{
+						list-style: none;
+					}
+				
+					#General #Content #Left_box #Item_category #Item_content ul#menu
+					{
+						position:relative;
+						display:block;
+						float:left;
+						height:300px;
+						width: 220px;
+					}
+						#General #Content #Left_box #Item_category #Item_content ul#menu li
+						{
+							position:relative;
+							text-decoration:none;
+							font-family:Verdana, Geneva, sans-serif;
+							font-size:12px;
+							padding: 4px 0px;
+						}
+							#General #Content #Left_box #Item_category #Item_content ul#menu li a
+							{
+								display:block;
+							}
+							#General #Content #Left_box #Item_category #Item_content ul#menu li.parent
+							{
+								margin-bottom:10px;
+							}	
+								#General #Content #Left_box #Item_category #Item_content ul#menu li.parent > a
+								{
+									text-decoration:none;
+									background: transparent url(../images/img_line_down.png) right bottom no-repeat;
+									padding-bottom: 10px;
+								}
+								#General #Content #Left_box #Item_category #Item_content ul#menu li.aberto > a
+								{
+									background-color:blue; /* Aqui vai a imagem para fechar*/
+									background: transparent url(../images/img_line_up.png) right bottom no-repeat;
+								}												
+								#General #Content #Left_box #Item_category #Item_content ul#menu li ul.sub-menu
+								{
+									margin-left:10px;
+									/*display:none;*/
+								}
+									#General #Content #Left_box #Item_category #Item_content ul#menu li ul.sub-menu li a
+									{
+										position:relative;
+										text-decoration:none;
+										font-family:Verdana, Geneva, sans-serif;
+										color:#999999;
+										font-size:12px;
+									}
+										#General #Content #Left_box #Item_category #Item_content ul#menu li ul.sub-menu li a:hover
+										{
+											position:relative;
+											text-decoration:underline;
+											font-family:Verdana, Geneva, sans-serif;
+											color:#1AD714;
+											font-size:12px;
+										}
+					
+		#General #Content #Right_box
+		{
+			position:relative;
+			float:right;
+			width:70%;
+			min-height:800px;
+			height:auto;
+			padding-right: 5%;
+		}
+		#General #Content #Right_box .ls_arrow_align
+		{
+			margin-right:14px;	
+		}			
+		#General #Content #Right_box .List_boxright
+		{
+			left:0px;
+			position:relative;
+			display:block;
+			margin:22px 0px 22px 0px;
+			width:300px;
+			min-height:20px;
+			height:auto;
+			font-family:Verdana, Geneva, sans-serif;
+			color:#999999;
+			font-size:12px;
+			font-weight:normal;
+		}
+			#General #Content #Right_box .List_boxright li
+			{
+				left:0px;
+				position:relative;
+				display:block;
+				margin:3px 0px 3px 0px;
+				width:300px;
+				min-height:20px;
+				height:auto;
+				font-family:Verdana, Geneva, sans-serif;
+				color:#999999;
+				font-size:12px;
+				font-weight:normal;
+			}				
+		#General #Content #Right_box .Sub_list_boxright
+		{
+			left:48px;
+			list-style:square;
+			display: list-item !important;
+			position:relative;
+			text-align:center;
+			width:300px;
+			min-height:20px;
+			height:auto;
+			font-family:Verdana, Geneva, sans-serif;
+			color:#999999;
+			font-size:12px;
+			font-weight:normal;
+		}	
+			#General #Content #Right_box .Sub_list_boxright li
+			{
+				display: list-item !important;
+				position:relative;
+				font-family:Verdana, Geneva, sans-serif;
+				color:#999999;
+				font-size:12px;
+				font-weight:normal;
+			}				
+			#General #Content #Right_box ul li
+		{
+			left:0px;
+			position:relative;
+			text-align:left;
+			font-family:Verdana, Geneva, sans-serif;
+			color:#999999;
+			font-size:12px;
+			font-weight:normal;
+		}
+		#General #Content #Right_box ul li a
+		{
+			position:relative;
+			text-align:center;
+			font-family:Verdana, Geneva, sans-serif;
+			color:#999999;
+			font-size:12px;
+			font-weight:normal;
+		}
+		#General #Content #Right_box #Box_form
+		{
+			width: 95%;
+			text-align:left;
+		}						
+		#General #Content #Right_box form
+		{
+			position:relative;
+			display:block;
+			padding:0px 0px 10px 0px;
+			text-align:right;
+		}			
+		#General #Content #Right_box form p
+		{
+			margin-bottom:10px;
+		}
+		#General #Content #Right_box h1
+		{
+			position:relative;
+			font-family:Verdana, Geneva, sans-serif;
+			font-size:20px;
+			font-weight:normal;
+			color:#999;
+		}					
+		#General #Content #Right_box p
+		{
+			position:relative;
+			font-family:Verdana, Geneva, sans-serif;
+			font-size:12px;
+			font-weight:normal;
+			color:#999;
+		}	
+		#General #Content #Right_box #Bg_citation
+		{
+			position:relative;
+			height:135px;
+			width:548px;
+			background:#666;
+			opacity:0.20;
+	        -moz-opacity: 0.20;
+            filter: alpha(opacity=10);
+			margin:auto;
+		}
+			#General #Content #Right_box #Citation
+			{
+				position:relative;
+				width:100%;
+				height:auto;
+			}
+			#General #Content #Right_box .Text
+			{
+				font-family:Verdana, Geneva, sans-serif;
+				font-size:12px;
+				font-weight:normal;
+				color:#999;			
+				position:relative;
+				background:#000;
+			}	
+								
+				#General #Content #Right_box #Bg_citation #Citation p
+				{
+					position:relative;
+					font-family:Verdana, Geneva, sans-serif;
+					font-size:12px;
+					font-weight:normal;
+					color:#fff;					
+				}
+		#General #Content #Right_box form label
+		{
+			text-align:left;
+			float:left;
+			position:relative;
+			font-family:Verdana, Geneva, sans-serif;
+			font-size:12px;
+			font-weight:normal;
+			color:#999;
+			border-radius: 5px; /* Implementação W3C */
+			-moz-border-radius: 5px; /* Implementação Mozilla */
+			-webkit-border-radius: 5px; /* Implementação para browsers que renderizam via webkit */
+			behavior: url(PIE.htc);/* Comportamento adicionado para renderização das prop no ie7 e 8*/
+		}																	
+		#General #Content #Right_box form input
+		{
+			position:relative;
+			width:100%;
+			height:27px;
+			font-family:Verdana, Geneva, sans-serif;
+			font-size:12px;
+			font-weight:normal;
+			color:#999;
+			border:none;
+			border-radius: 10px; /* Implementação W3C */
+			-moz-border-radius: 10px; /* Implementação Mozilla */
+			-webkit-border-radius: 10px; /* Implementação para browsers que renderizam via webkit */
+			behavior: url(PIE.htc);/* Comportamento adicionado para renderização das prop no ie7 e 8*/
+			background:#EEE;
+			padding:0px 5px 0px 5px;
+		}	
+		#General #Content #Right_box form .input_radio
+		{
+			position:relative;
+			width: 15px;
+			height: 15px;
+			font-family:Verdana, Geneva, sans-serif;
+			font-size:12px;
+			font-weight:normal;
+			color:#999;
+			border:none;
+			border-radius: 10px; /* Implementação W3C */
+			-moz-border-radius: 10px; /* Implementação Mozilla */
+			-webkit-border-radius: 10px; /* Implementação para browsers que renderizam via webkit */
+			behavior: url(PIE.htc);/* Comportamento adicionado para renderização das prop no ie7 e 8*/
+			background:#EEE;
+			margin-left:15px;
+		}		
+		#General #Content #Right_box #Select
+		{
+			position:relative;
+        	width:100%;
+			height:27px;
+			margin-left:35px;
+			font-family:Verdana, Geneva, sans-serif;
+			font-size:12px;
+			font-weight:normal;
+			color:#999;
+			border-radius: 10px; /* Implementação W3C */
+			-moz-border-radius: 10px; /* Implementação Mozilla */
+			-webkit-border-radius: 10px; /* Implementação para browsers que renderizam via webkit */
+			behavior: url(PIE.htc);/* Comportamento adicionado para renderização das prop no ie7 e 8*/
+			background:#EEE;
+			cursor: pointer;
+		}		
+		#General #Content #Right_box textarea
+		{
+			position: relative;
+			width: 100%;
+			height: 143px;
+			font-family: Verdana, Geneva, sans-serif;
+			font-size: 12px;
+			font-weight: normal;
+			color: #999;
+			cursor: pointer;
+			border-radius: 10px;
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+			behavior: url(PIE.htc);
+			background: #EEE;
+			padding: 10px 10px 5px 10px;
+		}	
+		#General #Content #Right_box .Bt_enviar
+		{
+			position:relative;
+        	width:102px;
+			height:32px;	
+		/*	margin-left:152px;*/
+			cursor: pointer;
+			border-radius: 10px;
+			background:#999;
+			font-family:Verdana, Geneva, sans-serif;
+			font-size:12px;
+			font-weight:bold;
+			color:#fff;
+			background: linear-gradient(#D6D6D6, #2F2F2F 70%); /* Implementação W3C */
+			background: -moz-linear-gradient(#D6D6D6, #2F2F2F 70%); /* Implementação Mozilla */
+			background: -webkit-gradient(linear, 0 0, 0 70%, from(#D6D6D6), to(#2F2F2F));/* Implementação para browsers que renderizam via webkit */
+			-pie-background: linear-gradient(#D6D6D6, #2F2F2F 70%); /*Propriedade adicionada para renderização das propriedades acima no IE 7 e IE 8 */
+			background: url (image.png) repeat-x 0px 0px; /* Background com imagem para degradê para o Opera 10 */
+			cursor:pointer;
+		}
+		#General #Content #Right_box #flash_error_cadastro
+		{
+			position:relative;
+			/*background-repeat:no-repeat;
+			background-position:top center;*/
+			width:699px;
+			height:auto;	
+			/*margin:auto;	
+			padding:10px 0px 10px 0px;	*/
+		}
+			#General #Content #Right_box .flash_ops
+			{
+				background-image:url(../images/bg_ops.png);
+			}
+			#General #Content #Right_box .flash_ok
+			{
+				background-image:url(../images/bg_ok.png);
 			}
 			
-			#container #header #menu ul li:hover
+			#General #Content #Right_box #Box_warning_img
 			{
-				background-color:#4B7380;
+				position:absolute;
+				top:50%;
+				margin-top:-35px;
+				left:32px;
 			}
-			
-			#container #header #menu ul li a
+		#General #Content #Right_box .Box_warning_text
+		{
+			position:relative;
+			width:526px;
+			min-height:102px;
+			height:auto;
+			float:right;
+			top:15px;
+			font-family:Verdana, Geneva, sans-serif;
+			font-size:12px;
+			font-weight:normal;
+			color:#666;			
+		}	
+			#General #Content #Right_box .Box_warning_text h2
 			{
-				color:#fff;
+				position:relative;
+				text-align:left;
+				font-family:Verdana, Geneva, sans-serif;
+				font-size:20px;
+				font-weight:normal;
+				color:#666;			
+			}	
+			#General #Content #Right_box .Box_warning_text p
+			{
+				position:relative;
+				text-align:left;
+				font-family:Verdana, Geneva, sans-serif;
+				font-size:12px;
+				font-weight:normal;
+				color:#666;			
+			}
+			.tablesorter{
+				width:100%; 
+				margin-top:10px;
+			}
+				.tablesorter th{
+					text-align:left; 
+					background-color:#CCC;
+				}
+				.tablesorter th.header { 
+				    background-image: url(../images/bg.gif);     
+				    cursor: pointer; 
+				    font-weight: bold; 
+				    background-repeat: no-repeat; 
+				    background-position: center left; 
+				    padding-left: 20px; 
+				  /*  border: 1px solid #dad9c7; 
+				    margin-left: -1px;*/ 
+				}	
+				.tablesorter th.headerSortUp { 
+				    background-image: url(../images/asc.gif); 
+				    background-color: #aaa; 
+				}
+				.tablesorter th.headerSortDown { 
+				    background-image: url(../images/desc.gif); 
+				    background-color: #aaa; 
+				}
+				.tablesorter td { 
+					height:20px;
+				}
+				.notactive { 
+ 					background-color:red;
+				}				
+	
+									
+	#General #Footer
+	{
+		position:relative;
+		background-image:url(../images/bg_footer.jpg);
+		background-repeat:repeat-x;
+		background-position:top center;	
+		width:100%;
+		height:166px;
+		margin:0 auto;
+	}
+		#General #Footer #Footer_content
+		{
+			position:relative;
+			width:940px;
+			height:166px;
+			margin:0 auto;
+			border-top:10px transparent solid;
+			color:#CCC;
+		}	
+		#General #Footer #Footer_content ul
+		{
+			position:relative;
+			float:right;
+			color:#666;
+			top:-15px;
+		}
+			#General #Footer #Footer_content ul li
+			{
+				position:relative;	
 				text-decoration:none;
+				list-style:none;
+				float:left;
+				font-family:Verdana, Geneva, sans-serif;
+				font-size:12px;
+				font-weight:normal;
+				color:#CCCCCC;
 			}
-
-#flash_notice, #flash_error {
-  padding: 5px 8px;
-  margin: 10px 0;
-}
-
-#flash_notice {
-  background-color: #CFC;
-  border: solid 1px #6C6;
-}
-
-#flash_error {
-  background-color: #FCC;
-  border: solid 1px #C66;
-}
-
+				#General #Footer #Footer_content ul li a
+				{
+					position:relative;
+					text-decoration:none;
+					list-style:none;
+					float:left;
+					font-family:Verdana, Geneva, sans-serif;
+					color:#CCC;
+					font-size:12px;
+					font-weight:normal;
+					color:#CCCCCC;					
+				}	
+				
+.clear{clear:both;}
+.zebraUm
+{
+	background-color:#e4e4e4;
+}	
 .fieldWithErrors {
   display: inline;
 }
 
 #errorExplanation {
-  width: 400px;
+  width: 100%;
   border: 2px solid #CF0000;
   padding: 0px;
   padding-bottom: 12px;
@@ -95,6 +629,7 @@ li
 }
 
 #errorExplanation h2 {
+
   text-align: left;
   font-weight: bold;
   padding: 5px 5px 5px 15px;
@@ -105,9 +640,10 @@ li
 }
 
 #errorExplanation p {
-  color: #333;
+  color: #000 !important;
   margin-bottom: 0;
   padding: 8px;
+  text-align:left;
 }
 
 #errorExplanation ul {

@@ -1,6 +1,9 @@
 <% title "Offers" %>
+<h1>Módulo de Promoções</h1><br />
+<p>Visualize abaixo a lista dos downloads registrados no sistema.</p><br />
 
-<table>
+<table class="tablesorter">
+	<thead>
   <tr>
     <th>Name</th>
     <th>Body</th>
@@ -9,6 +12,8 @@
     <th>Published</th>
     <th>Total Clicks</th>
   </tr>
+</thead> 
+  <tbody>
   <% for offer in @offers %>
     <tr>
       <td><%=offer.name %></td>
@@ -22,6 +27,7 @@
       <td><%= link_to "Destroy", admin_offer_path(offer), :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
+</tbody>
 </table>
 
 <p><%= link_to "New Offer", new_admin_offer_path %></p>

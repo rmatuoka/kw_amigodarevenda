@@ -1,8 +1,10 @@
+<div id="Box_form">
 <%= form_for [:admin, @transporter] do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :nome %><br />
     <%= f.text_field :nome %>
   </p>
-  <p><%= f.submit %></p>
+  <p><%= f.submit "Salvar", :class => "Bt_enviar" %></p>
 <% end %>
+</div>

@@ -1,5 +1,6 @@
 <% title "Update" %>
-
+<h1>Atualização</h1><br />
+<p></p><br />
 <p>
   <strong>Name:</strong>
   <%=h @update.name %>
@@ -20,13 +21,9 @@
   <strong>Data Fim:</strong>
   <%=h @update.data_fim %>
 </p>
-<p>
-  <strong>Total Lidos:</strong>
-  <%=h @update.total_lidos %>
-</p>
 
 <p>
-  <%= link_to "Edit", edit_update_path(@update) %> |
-  <%= link_to "Destroy", @update, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", updates_path %>
+  <%= link_to "Edit", edit_admin_update_path(@update) %> |
+  <%= link_to "Destroy", admin_update_path(@update), :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", admin_updates_path %>
 </p>

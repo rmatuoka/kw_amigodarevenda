@@ -1,9 +1,8 @@
 KwAmigodarevenda::Application.routes.draw do |map|
   resources :product_requests
   resources :user_sessions
-  resources :users
   resources :representants
-  
+  resources :users
   namespace :admin do
       resources :resellers
       resources :updates
@@ -17,6 +16,7 @@ KwAmigodarevenda::Application.routes.draw do |map|
       resources :transporters
       resources :export
       resources :representants
+      resources :users
       root :to => "downloads#index"
   end
 

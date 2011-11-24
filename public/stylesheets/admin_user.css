@@ -1,0 +1,17 @@
+#General #Content #Right_box #Box_register_form{
+	float:left;
+}
+	#General #Content #Right_box #Box_register_form form{
+		text-align:right;
+	}
+		#General #Content #Right_box #Box_register_form form .field{
+			margin:5px 0px;
+		}
+		
+		#General #Content #Right_box #Box_register_form form #Box_register_form_regras{
+			text-align:left;
+		}
+		#General #Content #Right_box #Box_register_form form #Box_register_form_regras input{
+			height:10px !important;
+			width:10px !important;
+		}

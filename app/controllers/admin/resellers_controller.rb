@@ -1,5 +1,6 @@
 class Admin::ResellersController < ApplicationController
   layout "admin"
+  before_filter :load_representants, :except => [:show, :index]  
   
   def index
     @resellers = Reseller.all
@@ -42,5 +43,10 @@ class Admin::ResellersController < ApplicationController
     @reseller.destroy
     flash[:notice] = "Successfully destroyed reseller."
     redirect_to admin_resellers_path
+  end
+  
+  protected  
+  def load_representants
+    @representants = Representant.all.collect { |c| [c.nome, c.id] }  
   end
 end

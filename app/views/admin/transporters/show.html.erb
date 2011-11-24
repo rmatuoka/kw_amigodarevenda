@@ -1,4 +1,6 @@
 <% title "Transporter" %>
+<h1>Transportadora</h1><br />
+<p></p><br />
 
 <p>
   <strong>Nome:</strong>
@@ -7,6 +9,6 @@
 
 <p>
   <%= link_to "Edit", edit_admin_transporter_path(@transporter) %> |
-  <%= link_to "Destroy", @transporter, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "Destroy",admin_transporter_path(@transporter), :confirm => 'Are you sure?', :method => :delete %> |
   <%= link_to "View All", admin_transporters_path %>
 </p>

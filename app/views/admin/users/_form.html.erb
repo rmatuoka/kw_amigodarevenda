@@ -1,0 +1,29 @@
+<div id="Box_form">	
+		<%= form_for [:admin, @user] do |f| %>
+		<p>
+			<%= f.label :username, "usuário" %>
+			<%= f.text_field :username %>
+		</p>
+		<p>
+			<%= f.label :email, "E-mail" %>
+			<%= f.text_field :email %>
+		</p>
+		<p>
+			<%= f.label :password, "Senha" %>
+			<%= f.password_field :password %>
+		</p>
+		<p>
+			<%= f.label :password_confirmation, "Confirmar Senha" %>
+			<%= f.password_field :password_confirmation %>
+		</p>
+		<div id="Box_register_form_regras" style="text-align:left;">
+		  <h2>Permissão de Acesso</h2><br />
+		  <p>
+			<%= f.radio_button :role, :admin, :class => "input_radio"%>Administrador<br/>
+			<%= f.radio_button :role, :revendedor, :class => "input_radio" %>Revendedor<br/>
+			<%= f.radio_button :role, :representante, :class => "input_radio" %>Representante<br/>			
+		  </p><br />
+		</div>
+  		<p><%= f.submit "Atualizar", :class => "Bt_enviar" %></p>
+		<%end%>
+</div>

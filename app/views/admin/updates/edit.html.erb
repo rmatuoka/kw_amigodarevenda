@@ -1,8 +1,10 @@
 <% title "Edit Update" %>
+<h1>Editar Atualização</h1><br />
+<p></p><br />
 
 <%= render :partial => 'form' %>
 
 <p>
-  <%= link_to "Show", @update %> |
-  <%= link_to "View All", updates_path %>
+  <%= link_to "Show", admin_update_path(@update) %> |
+  <%= link_to "View All", admin_updates_path %>
 </p>

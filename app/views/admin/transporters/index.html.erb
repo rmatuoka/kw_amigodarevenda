@@ -1,9 +1,14 @@
 <% title "Transporters" %>
+<h1>Módulo de Transportadoras</h1><br />
+<p>Visualize abaixo a lista das transportadoras registrados no sistema.</p><br />
 
-<table>
-  <tr>
+<table class="tablesorter">
+<thead>  
+<tr>
     <th>Nome</th>
   </tr>
+</thead> 
+  <tbody>
   <% for transporter in @transporters %>
     <tr>
       <td><%=h transporter.nome %></td>
@@ -12,6 +17,7 @@
       <td><%= link_to "Destroy", admin_transporter_path(transporter), :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
+</tbody>
 </table>
 
 <p><%= link_to "New Transporter", new_admin_transporter_path %></p>

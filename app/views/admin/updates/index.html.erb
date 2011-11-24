@@ -1,9 +1,10 @@
 <% title "Updates" %>
+<h1>Módulo de Atualizações</h1><br />
+<p>Visualize abaixo a lista das atualizações registrados no sistema.</p><br />
 
 <table>
   <tr>
     <th>Name</th>
-    <th>Body</th>
     <th>Published</th>
     <th>Data Inicio</th>
     <th>Data Fim</th>
@@ -12,14 +13,13 @@
   <% for update in @updates %>
     <tr>
       <td><%=h update.name %></td>
-      <td><%=h update.body %></td>
       <td><%=h update.published %></td>
       <td><%=h update.data_inicio %></td>
       <td><%=h update.data_fim %></td>
       <td><%=h update.total_lidos %></td>
       <td><%= link_to "Show", admin_update_path(update) %></td>
       <td><%= link_to "Edit", edit_admin_update_path(update) %></td>
-      <td><%= link_to "Destroy", admin_update_path, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to "Destroy", admin_update_path(update), :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>

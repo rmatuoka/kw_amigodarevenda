@@ -1,8 +1,10 @@
 <% title "Edit Reseller" %>
+<h1>Editar Revenda</h1><br />
+<p></p><br />
 
 <%= render :partial => 'form' %>
 
 <p>
-  <%= link_to "Show", @reseller %> |
-  <%= link_to "View All", resellers_path %>
+  <%= link_to "Show", admin_reseller_path(@reseller) %> |
+  <%= link_to "View All", admin_resellers_path %>
 </p>

@@ -1,4 +1,7 @@
 class Admin::RepresentantsController < ApplicationController
+  layout "admin"
+  before_filter :load_users, :except => [:show, :index]  
+  
   def index
     @representants = Representant.all
   end
@@ -15,7 +18,7 @@ class Admin::RepresentantsController < ApplicationController
     @representant = Representant.new(params[:representant])
     if @representant.save
       flash[:notice] = "Successfully created representant."
-      redirect_to @representant
+      redirect_to admin_representant_path(@representant)
     else
       render :action => 'new'
     end
@@ -29,7 +32,7 @@ class Admin::RepresentantsController < ApplicationController
     @representant = Representant.find(params[:id])
     if @representant.update_attributes(params[:representant])
       flash[:notice] = "Successfully updated representant."
-      redirect_to @representant
+      redirect_to admin_representant_path(@representant)
     else
       render :action => 'edit'
     end
@@ -39,6 +42,11 @@ class Admin::RepresentantsController < ApplicationController
     @representant = Representant.find(params[:id])
     @representant.destroy
     flash[:notice] = "Successfully destroyed representant."
-    redirect_to representants_url
+    redirect_to admin_representants_path
+  end
+  
+  protected  
+  def load_users  
+    @users = User.all.collect { |c| [c.username, c.id] }  
   end
 end

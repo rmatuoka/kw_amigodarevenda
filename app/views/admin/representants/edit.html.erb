@@ -1,8 +1,10 @@
 <% title "Edit Representant" %>
+<h1>Editar Representante</h1><br />
+<p></p><br />
 
 <%= render :partial => 'form' %>
 
 <p>
-  <%= link_to "Show", @representant %> |
-  <%= link_to "View All", representants_path %>
+  <%= link_to "Show", admin_representant_path(@representant) %> |
+  <%= link_to "View All", admin_representants_path %>
 </p>
