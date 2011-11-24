@@ -1,0 +1,66 @@
+<div id="Box_form">
+<%= form_for [:admin, @product_request] do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :user_id %><br />
+	<%= f.select :user_id, @users, :prompt => "Escolha o usuário" %>
+  </p>
+  <p>
+    <%= f.label :status %><br />
+	<%#= f.select(:status, options_for_select([['INCOMPLETO', "INCOMPLETO"], ['ENCAMINHADO', 'ENCAMINHADO']])) %>
+  </p>
+  <p>
+    <%= f.label :transporter_id %><br />
+	<%= f.select :transporter_id, @transportadoras, :prompt => "Escolha a transportadora" %>
+  </p>
+  <p>
+    <%= f.label :reseller_id %><br />
+	<%= f.select :reseller_id, @revendas, :prompt => "Escolha a revenda" %>
+  </p>
+  <p>
+    <%= f.label :tipo_frete %><br />
+    <%= f.text_field :tipo_frete %>
+  </p>
+  <p>
+    <%= f.label :informacoes_adicionais %><br />
+    <%= f.text_area :informacoes_adicionais %>
+  </p>
+  <p>
+    <%= f.label :fatura_para_cliente %><br />
+    <%= f.text_area :fatura_para_cliente %>
+  </p>
+  <p>
+    <%= f.label :endereco %><br />
+    <%= f.text_field :endereco %>
+  </p>
+  <p>
+    <%= f.label :bairro %><br />
+    <%= f.text_field :bairro %>
+  </p>
+  <p>
+    <%= f.label :cidade %><br />
+    <%= f.text_field :cidade %>
+  </p>
+  <p>
+    <%= f.label :uf %><br />
+    <%= f.text_field :uf %>
+  </p>
+  <p>
+    <%= f.label :entrega_rua_numero %><br />
+    <%= f.text_field :entrega_rua_numero %>
+  </p>
+  <p>
+    <%= f.label :entrega_bairro %><br />
+    <%= f.text_field :entrega_bairro %>
+  </p>
+  <p>
+    <%= f.label :entrega_cidade %><br />
+    <%= f.text_field :entrega_cidade %>
+  </p>
+  <p>
+    <%= f.label :entrega_uf %><br />
+    <%= f.text_field :entrega_uf %>
+  </p>
+  <p><%= f.submit "Salvar", :class => "Bt_enviar" %></p>
+<% end %>
+</div>

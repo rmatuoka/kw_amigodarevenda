@@ -1,0 +1,78 @@
+<% title "Admin/Product Request" %>
+<h1>Pedido</h1><br />
+<p></p><br />
+
+<p>
+  <strong>User:</strong>
+  <%= @product_request.user_id %>
+</p>
+<p>
+  <strong>Status:</strong>
+  <%= @product_request.status %>
+</p>
+<p>
+  <strong>Created At:</strong>
+  <%= @product_request.created_at %>
+</p>
+<p>
+  <strong>Updated At:</strong>
+  <%= @product_request.updated_at %>
+</p>
+<p>
+  <strong>Transporter:</strong>
+  <%= @product_request.transporter_id %>
+</p>
+<p>
+  <strong>Reseller:</strong>
+  <%= @product_request.reseller_id %>
+</p>
+<p>
+  <strong>Tipo Frete:</strong>
+  <%= @product_request.tipo_frete %>
+</p>
+<p>
+  <strong>Informacoes Adicionais:</strong>
+  <%= @product_request.informacoes_adicionais %>
+</p>
+<p>
+  <strong>Fatura Para Cliente:</strong>
+  <%= @product_request.fatura_para_cliente %>
+</p>
+<p>
+  <strong>Endereco:</strong>
+  <%= @product_request.endereco %>
+</p>
+<p>
+  <strong>Bairro:</strong>
+  <%= @product_request.bairro %>
+</p>
+<p>
+  <strong>Cidade:</strong>
+  <%= @product_request.cidade %>
+</p>
+<p>
+  <strong>Uf:</strong>
+  <%= @product_request.uf %>
+</p>
+<p>
+  <strong>Entrega Rua Numero:</strong>
+  <%= @product_request.entrega_rua_numero %>
+</p>
+<p>
+  <strong>Entrega Bairro:</strong>
+  <%= @product_request.entrega_bairro %>
+</p>
+<p>
+  <strong>Entrega Cidade:</strong>
+  <%= @product_request.entrega_cidade %>
+</p>
+<p>
+  <strong>Entrega Uf:</strong>
+  <%= @product_request.entrega_uf %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_admin_product_request_path(@product_request) %> |
+  <%= link_to "Destroy", [:admin, @product_request], :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", admin_product_requests_path %>
+</p>

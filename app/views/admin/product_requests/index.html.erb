@@ -1,0 +1,39 @@
+<% title "Admin/Product Requests" %>
+<h1>Módulo de Pedidos</h1><br />
+<p>Visualize abaixo a lista dos pedidos registrados no sistema.</p><br />
+
+<table class="tablesorter">
+	<thead>
+  <tr>
+    <th>Usuário</th>
+    <th>Status</th>
+    <th>Transportadora</th>
+    <th>Revenda</th>
+    <th>Tipo Frete</th>
+    <th>Entrega - Rua, numero</th>
+    <th>Entrega - Bairro</th>
+    <th>Entrega - Cidade</th>
+    <th>Entrega - Uf</th>
+  </tr>
+</thead> 
+  <tbody>
+  <% for product_request in @product_requests %>
+    <tr>
+      <td><%= product_request.user.username %></td>
+      <td><%= product_request.status %></td>
+      <td><%= product_request.transporter.nome %></td>
+      <td><%= product_request.reseller.nome %></td>
+      <td><%= product_request.tipo_frete %></td>
+      <td><%= product_request.entrega_rua_numero %></td>
+      <td><%= product_request.entrega_bairro %></td>
+      <td><%= product_request.entrega_cidade %></td>
+      <td><%= product_request.entrega_uf %></td>
+      <td><%= link_to "Show", [:admin, product_request] %></td>
+      <td><%= link_to "Edit", edit_admin_product_request_path(product_request) %></td>
+      <td><%= link_to "Destroy", [:admin, product_request], :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+	</tbody>
+</table>
+
+<p><%#= link_to "New Admin/Product Request", new_admin_product_request_path %></p>
