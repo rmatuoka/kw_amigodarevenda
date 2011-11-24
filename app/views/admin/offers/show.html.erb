@@ -29,6 +29,6 @@
 
 <p>
   <%= link_to "Edit", edit_admin_offer_path(@offer) %> |
-  <%= link_to "Destroy", @offer, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "Destroy", admin_offer_path(@offer), :confirm => 'Are you sure?', :method => :delete %> |
   <%= link_to "View All", admin_offers_path %>
 </p>
