@@ -7,7 +7,7 @@
   </p>
   <p>
     <%= f.label :status %><br />
-	<%#= f.select(:status, options_for_select([['INCOMPLETO', "INCOMPLETO"], ['ENCAMINHADO', 'ENCAMINHADO']])) %>
+	<%= f.select :status, ([['INCOMPLETO', "INCOMPLETO"], ['ENCAMINHADO', 'ENCAMINHADO']]) %>
   </p>
   <p>
     <%= f.label :transporter_id %><br />
