@@ -1,9 +1,13 @@
 class Representante::PedidosController < ApplicationController
+  require "rails3-jquery-autocomplete"
+  autocomplete :category, :cod_sistema, {:limit => 200}
+  autocomplete :product, :cod_sistema, {:limit => 200}
+  
   #before_filter :carrega_info
   access_control do
-    allow :representante, :to => [:index, :passo2, :create, :passo3, :passo4, :new]
+    allow :representante, :all
   end
-  
+
   def index
     @representante = current_user.representants.first
   end
@@ -60,7 +64,7 @@ class Representante::PedidosController < ApplicationController
       #ERRO
     else
       #REDIRECIONAR PARA PASSO2
-      redirect_to passo2_representante_pedido_path(@pedido)
+      redirect_to passo2_cod_representante_pedido_path(@pedido)
     end
   end
   
@@ -68,6 +72,13 @@ class Representante::PedidosController < ApplicationController
     #CARREGA AS Categorias
     @categorias = Category.all
     @pedido = ProductRequest.find(params[:id])
+  end
+  
+  def passo2_cod
+    #CARREGA AS Categorias
+    @categorias = Category.all
+    @pedido = ProductRequest.find(params[:id])
+    
   end
   
   def passo3
@@ -97,12 +108,14 @@ class Representante::PedidosController < ApplicationController
     end
   end
   
+  #def autocomplete_category_cod_sistema
+  #end
+  
   def finalizar
     @pedido = ProductRequest.find(params[:id])
     #ATUALIZA STATUS PEDIDO
     @pedido.status = "ENCAMINHADO"
-    
-    
+
     if !@pedido.save
       #erro
       @out = "Erro ao gravar o pedido. Entre em contato com o suporte."

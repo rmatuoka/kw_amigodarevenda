@@ -12,23 +12,34 @@ class AjaxPedidosController < ApplicationController
   
   def gravar
     #GRAVA PRODUTOS
-    if !params[:produto].blank? && !params[:quantidade].blank?
-      #VERIFICA SE O PRODUTO JÁ FOI INSERIDO
-      produto = @pedido.product_request_items.first(:conditions => ['product_id = ?', params[:produto]])
+    if !params[:produto].blank? && !params[:quantidade].blank? && !params[:categoria].blank?
       
-      if !produto
-        produto = @pedido.product_request_items.build
-        quantidade = params[:quantidade]
-      else
-        quantidade = produto.quantidade + params[:quantidade].to_i
-      end
-      produto.product_id = params[:produto]
-      produto.quantidade = quantidade
-      produto.valor = params[:preco]
-      produto.save
+      produto_id = Product.first(:conditions => ['cod_sistema = ? AND cod_categoria_sistema = ?', params[:produto], params[:categoria]])
+      
+      if produto_id
+        #VERIFICA SE O PRODUTO JÁ FOI INSERIDO
+        produto = @pedido.product_request_items.first(:conditions => ['product_id = ?', produto_id.id])
+      
+        if !produto
+          produto = @pedido.product_request_items.build
+          quantidade = params[:quantidade]
+        else
+          quantidade = produto.quantidade + params[:quantidade].to_i
+        end
+        produto.product_id = produto_id.id
+        produto.quantidade = quantidade
+        produto.valor = params[:preco]
+        produto.save
+    else
+      puts "VAZIO"
+      @alerts = "<script>alert('Produto inválido! Confira o código do produto/categoria.');</script>"
     end
     
     carrega_carrinho
+    
+    end
+    
+    
   end
   
   def limpar

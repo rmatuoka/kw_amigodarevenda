@@ -1,0 +1,164 @@
+<%content_for :head do%>
+	<%=stylesheet_link_tag "fazerpedido"%>
+	<%=stylesheet_link_tag "passo3"%>
+	
+	<script>
+	function mostra_produtos(x)
+	{
+		if($("#d" + x).hasClass('hide'))
+		{
+			//MOSTRA
+			$("#seta" + x).attr('src', '/images/img_setacatcima.png');
+			$("#d" + x).slideDown('slow');
+			$("#d" + x).removeClass('hide')
+		}
+		else
+		{
+			//ESCONDE\
+			$("#seta" + x).attr('src', '/images/img_setacatbaixo.png');
+			$("#d" + x).slideUp('slow');
+			$("#d" + x).addClass('hide')
+		}
+	}
+	
+	function load_pedido()
+	{
+		$.ajax({
+			type:     "GET",
+			dataType: "html",
+			url:      "/ajax_pedidos/gravar",
+			data:     "pedido=<%=params[:id]%>",
+			success: function(msg){
+				$("#Items").html(msg);
+			}
+		});
+	}
+	
+	function grava_pedido()
+	{
+		var quantidade = $("#quantidade").val();
+		var preco = $("#preco").val();
+		var categoria = $("#category").val();
+		var produto = $("#product").val();
+		$.ajax({
+			type:     "GET",
+			dataType: "html",
+			url:      "/ajax_pedidos/gravar",
+			data:     "produto="+ produto +"&quantidade="+ quantidade +"&pedido=<%=params[:id]%>" +"&preco=" + preco + "&categoria=" + categoria,
+			success: function(msg){
+				$("#Items").html(msg);
+				
+				//LIMPA CAMPOS
+				$("#quantidade").val("");
+				$("#preco").val("");
+				$("#category").val("");
+				$("#product").val("");
+			}
+		});
+	}
+	
+	function limpar_carrinho()
+	{
+		$.ajax({
+			type:     "GET",
+			dataType: "html",
+			url:      "/ajax_pedidos/limpar",
+			data:     "pedido=<%=params[:id]%>",
+			success: function(msg){
+				$("#Items").html(msg);
+			}
+		});
+	}
+	
+	function finalizar_pedido()
+	{
+		$.ajax({
+			type:     "GET",
+			dataType: "html",
+			url:      "/ajax_pedidos/finalizar",
+			data:     "pedido=<%=params[:id]%>",
+			success: function(msg){
+				$("#Items").html(msg);
+			}
+		});
+	}
+	
+	$(document).ready(function() {
+		load_pedido()
+	});
+	</script>
+<%end%>
+
+<div id="Produtosbox">
+	<div class="Titulo_produto">
+		<img src="/images/tit_produtos.png" width="16" height="21" />
+		<h1 class="Tile_h1">Produtos</h1>
+	</div>
+	
+	<div id="name">
+		<p class="Box_noticias">
+			Para continuar, digite o código do grupo, código do produto, quantidade, preço, e sem seguida clique em "Adicionar ao pedido".
+			<br><br>
+		</p>
+		<table border="0" cellspacing="0" cellpadding="0">
+		<%form_tag '/representantes/home'%>
+			<tr>
+				<td><p style="float:none;" class="Box_noticias">Código do grupo: </p></td>
+				<td><%=autocomplete_field_tag 'category', '', autocomplete_category_cod_sistema_representante_pedidos_path, :size => 20, :class => "Input2"%></td>
+			</tr>
+			<tr>
+				<td height="10"></td>
+			</tr>
+			<tr>
+				<td><p style="float:none;" class="Box_noticias">Código do produto:</p></td>
+				<td><%=autocomplete_field_tag 'product', '', autocomplete_product_cod_sistema_representante_pedidos_path, :size => 20, :class => "Input2"%></td>
+			</tr>
+			<tr>
+				<td height="10"></td>
+			</tr>
+			<tr>
+				<td><p style="float:none;" class="Box_noticias">Quantidade</p></td>
+				<td><%=text_field_tag 'quantidade', nil, :class => "Input2"%></td>
+			</tr>
+			<tr>
+				<td height="10"></td>
+			</tr>
+			<tr>
+				<td><p style="float:none;" class="Box_noticias">Valor (Un.) R$ </p></td>
+				<td><%=text_field_tag 'preco', nil, :class => "Input2"%></td>
+			</tr>
+			<tr>
+				<td height="10"></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="left">
+					<a href="javascript:void(0);" onclick="grava_pedido()">
+					<img src="/images/btn_adicionarpedido.png"/>
+					</a>
+				</td>
+			</tr>
+		</form>
+		</table>
+
+	</div>
+</div>
+		<!-- PEDIDOS -->
+	    <div id="Meupedbox">
+        <div class="Titulo_produto">
+        <img src="/images/tit_meupedido.png" align="left" /><h1 class="Tile_h1">Meu Pedido</h1></div>
+            <div id="Meupedido">
+            <div id="Tit_items"><h2>Items</h2></div>
+			<div id="Items">
+  
+            </div>
+             <div id="Total_bottom">
+             	<div id="Total"><!--<h4>Unidades Totais:</h4>&nbsp;&nbsp;&nbsp;&nbsp;<h5>R$ 9.999,99</h5> --></div>
+                <!-- <div id="Total"><h4>Valor Total:</h4>&nbsp;&nbsp;&nbsp;&nbsp;<h5>R$ 9.999,99</h5></div> -->
+             </div>
+            <div id="Prod_bottom">
+       	    	<%=link_to image_tag("btn_finalizarpedido.png"), passo3_representante_pedido_path(@pedido)%>
+				<a href="javascript:void(0);" onclick="limpar_carrinho()"><img src="/images/btn_limparcarrinho.png" width="212" height="22" /></a></div>
+   		 	<!--<div id="Sobre_carrinho"><img src="/images/img_interrogacaoo.png" width="10" height="15" style="margin:0 10px 0 0;"/><a href="" style=" text-decoration:underline">Sobre o carrinho</a></div> -->     
+		 </div>
+          </div>
+		  <div class="clear"></div>

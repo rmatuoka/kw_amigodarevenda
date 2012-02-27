@@ -42,12 +42,16 @@ KwAmigodarevenda::Application.routes.draw do |map|
   namespace :representante do
     resources :home
     resources :pedidos do
+      get :autocomplete_category_cod_sistema, :on => :collection
+      get :autocomplete_product_cod_sistema, :on => :collection
       member do
         get 'passo2'
+        get 'passo2_cod'
         get 'passo3'
         get 'passo4'
         post 'passo4'
         get 'finalizar'
+        
       end 
     end
     

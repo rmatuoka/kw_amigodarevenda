@@ -48,7 +48,7 @@
 	text-align:center;
 		
 }
-#Geral #Center #Box_passo3 .Input1
+.Input1
 {
 	background-image:url(../images/back_inputbox_pedido3.png);
 	background-repeat:no-repeat;
@@ -58,7 +58,7 @@
 	border:none;
 	padding:10px;
 }
-#Geral #Center #Box_passo3 .Input2
+.Input2
 {
 	background-image:url(../images/back_inputbox2_pedido3.png);
 	background-repeat:no-repeat;
