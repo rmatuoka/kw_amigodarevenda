@@ -1,0 +1,126 @@
+00000000000001;NAUTILUS DEPTO VENDAS                                                           ;NAUTILUS DEPTO VENDA
+00000000000004;NAUTILUS TERMODINAMICA LTDA.                                                    ;NAUTILUS TERMO
+00000000000005;ANTUNES E CIA LTDA. (DJAIR)                                                     ;DJAIR
+00000000000007;J. A. GIL REPRESENTACOES LTDA.                                                  ;GIL
+00000000000009;MILTON COSTA ALMEIDA                                                            ;MILTON
+00000000000010;ROBERTO MUMME                                                                   ;ROBERTO
+00000000000012;SCHEFFER REPRESENTACOES LTDA.                                                   ;ADROALDO AYALA SCHEF
+00000000000013;NAUTILUS (INT. SP)                                                              ;NAUTILUS (INT. SP)
+00000000000014;NAUTILUS (PR)                                                                   ;NAUTILUS (PR)
+00000000000015;PORTEIRA REP.( DALMO)                                                           ;DALMO
+00000000000017;EVERALDO                                                                        ;EVERALDO
+00000000000019;EDSON LUIZ SOUZA DA COSTA                                                       ;EDSON
+00000000000020;LAMARTINE RORIZ NETO                                                            ;LAMARTINE
+00000000000021;NAUTILUS CADASTRO ESPECIAL                                                      ;NAUTILUS CAD. ESP.
+00000000000022;CARLOS ALEXANDRE CATOSSO                                                        ;ALEXANDRE
+00000000000023;VAGNER OLIVA SOUZA CHAVES                                                       ;VAGNER
+00000000000024;LUIS FERNANDO ( SHUMACHER )                                                     ;SHUMACHER
+00000000000025;ELIANE GUIMARAES SALGADO                                                        ;ELIANE
+00000000000026;ADELINO ANGELO DE OLIVEIRA NETO                                                 ;ADELINO
+00000000000027;ROBSON NUNES DE AZEVEDO                                                         ;ROBSON REP.
+00000000000028;NAUTILUS RIO DE JANEIRO                                                         ;NAUTILUS RJ
+00000000000029;MARCO ANTONIO GUIMARAES DE FREITAS                                              ;MARCO ANTONIO
+00000000000030;H. BORGHI REPRESENTACOES LTDA.                                                  ;HELDER
+00000000000031;MARIO CESAR MASSA REPRESENTACOES                                                ;MARIO MASSA
+00000000000032;NAUTILUS OESTE DE ST. CATARINA                                                  ;NAUTILUS S.CATARINA
+00000000000033;NAUTILUS BELO HORIZONTE E REGIAO                                                ;NAUTILUS BH
+00000000000034;ANTONIO DE OLIVEIRA LOPES                                                       ;HIDROLOPES COM. REP.
+00000000000035;NAUTILUS SUL DE MINAS                                                           ;NAUTILUS S.MINAS
+00000000000036;RM REPRESENTACOES LTDA.                                                         ;RM  (ROBERTO)
+00000000000037;GLORIA'S RIO REPRESENTACOES LTDA                                                ;GLORIA'S RIO
+00000000000038;JOSE FABIANO DO NASCIMENTO                                                      ;JOSE FABIANO
+00000000000039;NAUTILUS (REGIAO DO SCHUMACHER)                                                 ;NAUTILUS(SCHUMA)
+00000000000040;ALEXANDRE RENATO TEIXEIRA GOMES                                                 ;ELCAI REP. ALEXANDRE
+00000000000041;LEANDRO HUERTAS MORALES                                                         ;LEANDRO
+00000000000042;RICARDO VIEIRA CORTEZ                                                           ;RICARDO
+00000000000043;MARCONDES & FILHO REP. COML. LTDA.                                              ;ARAMIS TREGLIA
+00000000000044;HEITOR CAMPOS DE MELLO                                                          ;HEITOR
+00000000000045;SANTOS E OLIVEIRA REPRESENTACOES LTDA                                           ;ROBSON / LONDRINA
+00000000000046;CARLOS EDUARDO DOS ANJOS                                                        ;CARLOS
+00000000000047;NAUTILUS (REGIAO DE CURITIBA)                                                   ;NAUTILUS CURITIBA
+00000000000048;A. D.  SANTOS REPRESENTACOES COMERCIAIS LTDA                                    ;ADRIANO
+00000000000049;NAUTILUS RIO GRANDE DO SUL                                                      ;NAUTILUS RS
+00000000000050;VERA LUCIA S. SANTIAGO REPRESENTACOES                                           ;VERA LUCIA
+00000000000051;NAUTILUS - MT/MS/RR                                                             ;NAUTILUS - MT/MS/RR
+00000000000052;BAUERTEC COMERCIO REP. LTDA.                                                    ;CLAYTON
+00000000000053;LUIZ EDUARDO REPRESENTACOES E COM. LTDA.                                        ;LUIZ EDUARDO
+00000000000054;FLAVIO E. S. DA SILVA                                                           ;FLAVIO
+00000000000055;LAIELI REPRESENTACOES E COM. LTDA                                               ;ELIEZER
+00000000000056;ALFREDO GRUPIONI                                                                ;ALFREDO
+00000000000057;ANDRE - FASTERM                                                                 ;
+00000000000058;ANDRE ANDRETTA                                                                  ;ANDRE - FASTERM
+00000000000059;JOSE CARLOS GOMES                                                               ;JOSE CARLOS
+00000000000060;EDSON RODRIGO MUCK                                                              ;EDSON
+00000000000061;NAUTILUS  VENDAS FASTERM                                                        ;VENDAS FASTERM
+00000000000062;HEITOR CAMPOS DE MELLO - DF/GO                                                  ;HEITOR - DF/GO
+00000000000063;PATRICIA DA SILVA OLIVIERA                                                      ;PATRICIA  FASTERM
+00000000000064;THAIS MAYARA DE OLIVIERA BONATO                                                 ;THAIS FASTERM
+00000000000065;HEITOR CAMPOS MELLO - ES                                                        ;HEITOR - ES
+00000000000066;NAUTILUS TRIANGULO MINEIRO                                                      ;NAUTILUS TRIANGULO
+00000000000067;JOSE CARLOS GOMES TRIANGULO MINEIRO                                             ;JOSE CARLOS TRIANGUL
+00000000000068;ASSISTENCIA TECNICA                                                             ;ASSISTENCIA
+00000000000069;P.R. REIS ASSESSORIA COMERCIAL LTDA - ME                                        ;PAULO RICARDO
+00000000000070;PVB - CONSULTORIA E REPRESENTACOES LTDA                                         ;PAULO BARBOZA
+00000000000001;NAUTILUS DEPTO VENDAS                                                           ;NAUTILUS DEPTO VENDA
+00000000000004;NAUTILUS TERMODINAMICA LTDA.                                                    ;NAUTILUS TERMO
+00000000000005;ANTUNES E CIA LTDA. (DJAIR)                                                     ;DJAIR
+00000000000007;J. A. GIL REPRESENTACOES LTDA.                                                  ;GIL
+00000000000009;MILTON COSTA ALMEIDA                                                            ;MILTON
+00000000000010;ROBERTO MUMME                                                                   ;ROBERTO
+00000000000012;SCHEFFER REPRESENTACOES LTDA.                                                   ;ADROALDO AYALA SCHEF
+00000000000013;NAUTILUS (INT. SP)                                                              ;NAUTILUS (INT. SP)
+00000000000014;NAUTILUS (PR)                                                                   ;NAUTILUS (PR)
+00000000000015;PORTEIRA REP.( DALMO)                                                           ;DALMO
+00000000000017;EVERALDO                                                                        ;EVERALDO
+00000000000019;EDSON LUIZ SOUZA DA COSTA                                                       ;EDSON
+00000000000020;LAMARTINE RORIZ NETO                                                            ;LAMARTINE
+00000000000021;NAUTILUS CADASTRO ESPECIAL                                                      ;NAUTILUS CAD. ESP.
+00000000000022;CARLOS ALEXANDRE CATOSSO                                                        ;ALEXANDRE
+00000000000023;VAGNER OLIVA SOUZA CHAVES                                                       ;VAGNER
+00000000000024;LUIS FERNANDO ( SHUMACHER )                                                     ;SHUMACHER
+00000000000025;ELIANE GUIMARAES SALGADO                                                        ;ELIANE
+00000000000026;ADELINO ANGELO DE OLIVEIRA NETO                                                 ;ADELINO
+00000000000027;ROBSON NUNES DE AZEVEDO                                                         ;ROBSON REP.
+00000000000028;NAUTILUS RIO DE JANEIRO                                                         ;NAUTILUS RJ
+00000000000029;MARCO ANTONIO GUIMARAES DE FREITAS                                              ;MARCO ANTONIO
+00000000000030;H. BORGHI REPRESENTACOES LTDA.                                                  ;HELDER
+00000000000031;MARIO CESAR MASSA REPRESENTACOES                                                ;MARIO MASSA
+00000000000032;NAUTILUS OESTE DE ST. CATARINA                                                  ;NAUTILUS S.CATARINA
+00000000000033;NAUTILUS BELO HORIZONTE E REGIAO                                                ;NAUTILUS BH
+00000000000034;ANTONIO DE OLIVEIRA LOPES                                                       ;HIDROLOPES COM. REP.
+00000000000035;NAUTILUS SUL DE MINAS                                                           ;NAUTILUS S.MINAS
+00000000000036;RM REPRESENTACOES LTDA.                                                         ;RM  (ROBERTO)
+00000000000037;GLORIA'S RIO REPRESENTACOES LTDA                                                ;GLORIA'S RIO
+00000000000038;JOSE FABIANO DO NASCIMENTO                                                      ;JOSE FABIANO
+00000000000039;NAUTILUS (REGIAO DO SCHUMACHER)                                                 ;NAUTILUS(SCHUMA)
+00000000000040;ALEXANDRE RENATO TEIXEIRA GOMES                                                 ;ELCAI REP. ALEXANDRE
+00000000000041;LEANDRO HUERTAS MORALES                                                         ;LEANDRO
+00000000000042;RICARDO VIEIRA CORTEZ                                                           ;RICARDO
+00000000000043;MARCONDES & FILHO REP. COML. LTDA.                                              ;ARAMIS TREGLIA
+00000000000044;HEITOR CAMPOS DE MELLO                                                          ;HEITOR
+00000000000045;SANTOS E OLIVEIRA REPRESENTACOES LTDA                                           ;ROBSON / LONDRINA
+00000000000046;CARLOS EDUARDO DOS ANJOS                                                        ;CARLOS
+00000000000047;NAUTILUS (REGIAO DE CURITIBA)                                                   ;NAUTILUS CURITIBA
+00000000000048;A. D.  SANTOS REPRESENTACOES COMERCIAIS LTDA                                    ;ADRIANO
+00000000000049;NAUTILUS RIO GRANDE DO SUL                                                      ;NAUTILUS RS
+00000000000050;VERA LUCIA S. SANTIAGO REPRESENTACOES                                           ;VERA LUCIA
+00000000000051;NAUTILUS - MT/MS/RR                                                             ;NAUTILUS - MT/MS/RR
+00000000000052;BAUERTEC COMERCIO REP. LTDA.                                                    ;CLAYTON
+00000000000053;LUIZ EDUARDO REPRESENTACOES E COM. LTDA.                                        ;LUIZ EDUARDO
+00000000000054;FLAVIO E. S. DA SILVA                                                           ;FLAVIO
+00000000000055;LAIELI REPRESENTACOES E COM. LTDA                                               ;ELIEZER
+00000000000056;ALFREDO GRUPIONI                                                                ;ALFREDO
+00000000000057;ANDRE - FASTERM                                                                 ;
+00000000000058;ANDRE ANDRETTA                                                                  ;ANDRE - FASTERM
+00000000000059;JOSE CARLOS GOMES                                                               ;JOSE CARLOS
+00000000000060;EDSON RODRIGO MUCK                                                              ;EDSON
+00000000000061;NAUTILUS  VENDAS FASTERM                                                        ;VENDAS FASTERM
+00000000000062;HEITOR CAMPOS DE MELLO - DF/GO                                                  ;HEITOR - DF/GO
+00000000000063;PATRICIA DA SILVA OLIVIERA                                                      ;PATRICIA  FASTERM
+00000000000064;THAIS MAYARA DE OLIVIERA BONATO                                                 ;THAIS FASTERM
+00000000000065;HEITOR CAMPOS MELLO - ES                                                        ;HEITOR - ES
+00000000000066;NAUTILUS TRIANGULO MINEIRO                                                      ;NAUTILUS TRIANGULO
+00000000000067;JOSE CARLOS GOMES TRIANGULO MINEIRO                                             ;JOSE CARLOS TRIANGUL
+00000000000068;ASSISTENCIA TECNICA                                                             ;ASSISTENCIA
+00000000000069;P.R. REIS ASSESSORIA COMERCIAL LTDA - ME                                        ;PAULO RICARDO
+00000000000070;PVB - CONSULTORIA E REPRESENTACOES LTDA                                         ;PAULO BARBOZA

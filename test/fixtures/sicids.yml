@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  cod_pais: MyString
+  cod_estado: MyString
+  cod_cidade: MyString
+  cidade: MyString
+
+two:
+  cod_pais: MyString
+  cod_estado: MyString
+  cod_cidade: MyString
+  cidade: MyString

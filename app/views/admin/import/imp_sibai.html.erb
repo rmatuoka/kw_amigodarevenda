@@ -1,0 +1,12 @@
+<% title "Importar" %>
+
+<%=	notice %>
+
+<% if !@Bairros.blank?%>
+	<% @Bairros.each do |bairro| %>
+		|<%= bairro.cod_pais %>|<%= bairro.cod_estado %>|<%= bairro.cod_cidade %>|<%= bairro.cod_zona %>|<%= bairro.cod_bairro %>|<%= preeche_espaco(bairro.bairro, 30) %>|<br />
+	<% end %>
+	<p>Bairros importados:<%= @Bairros.count%>.</p>
+<% else %>
+	<p>Não existe arquivo para ser importado!</p>
+<% end %>

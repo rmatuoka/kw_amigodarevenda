@@ -1,15 +1,16 @@
-# This file is auto-generated from the current state of the database. Instead of editing this file, 
-# please use the migrations feature of Active Record to incrementally modify your database, and
-# then regenerate this schema definition.
+# This file is auto-generated from the current state of the database. Instead
+# of editing this file, please use the migrations feature of Active Record to
+# incrementally modify your database, and then regenerate this schema definition.
 #
-# Note that this schema.rb definition is the authoritative source for your database schema. If you need
-# to create the application database on another system, you should be using db:schema:load, not running
-# all the migrations from scratch. The latter is a flawed and unsustainable approach (the more migrations
+# Note that this schema.rb definition is the authoritative source for your
+# database schema. If you need to create the application database on another
+# system, you should be using db:schema:load, not running all the migrations
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110210142135) do
+ActiveRecord::Schema.define(:version => 20120321231034) do
 
   create_table "categories", :force => true do |t|
     t.string   "cod_sistema"
@@ -168,6 +169,87 @@ ActiveRecord::Schema.define(:version => 20110210142135) do
   create_table "roles_users", :id => false, :force => true do |t|
     t.integer  "user_id"
     t.integer  "role_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sibais", :id => false, :force => true do |t|
+    t.string   "cod_pais"
+    t.string   "cod_estado"
+    t.string   "cod_cidade"
+    t.string   "cod_zona"
+    t.string   "cod_bairro"
+    t.string   "bairro"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sicids", :id => false, :force => true do |t|
+    t.string   "cod_pais"
+    t.string   "cod_estado"
+    t.string   "cod_cidade"
+    t.string   "cidade"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "siests", :id => false, :force => true do |t|
+    t.string   "cod_pais"
+    t.string   "cod_estado"
+    t.string   "estado"
+    t.string   "uf"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sipais", :id => false, :force => true do |t|
+    t.string   "cod_pais"
+    t.string   "pais"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sizonas", :id => false, :force => true do |t|
+    t.string   "cod_pais"
+    t.string   "cod_estado"
+    t.string   "cod_cidade"
+    t.string   "cod_zona"
+    t.string   "zona"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "supertemporaries", :id => false, :force => true do |t|
+    t.string   "field01"
+    t.string   "field02"
+    t.string   "field03"
+    t.string   "field04"
+    t.string   "field05"
+    t.string   "field06"
+    t.string   "field07"
+    t.string   "field08"
+    t.string   "field09"
+    t.string   "field10"
+    t.string   "field11"
+    t.string   "field12"
+    t.string   "field13"
+    t.string   "field14"
+    t.string   "field15"
+    t.string   "field16"
+    t.string   "field17"
+    t.string   "field18"
+    t.string   "field19"
+    t.string   "field20"
+    t.string   "field21"
+    t.string   "field22"
+    t.string   "field23"
+    t.string   "field24"
+    t.string   "field25"
+    t.string   "field26"
+    t.string   "field27"
+    t.string   "field28"
+    t.string   "field29"
+    t.string   "field30"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

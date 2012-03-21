@@ -1,0 +1,12 @@
+<% title "Importar Pais" %>
+
+<%=	notice %>
+
+<% if !@Pais.blank?%>
+	<% @Pais.each do |pais| %>
+		|<%= pais.cod_pais %>|<%= preeche_espaco(pais.pais, 50) %>|<br />
+	<% end %>
+	<p>Estados importados:<%= @Pais.count%>.</p>
+<% else %>
+	<p>Não existe arquivo para ser importado!</p>
+<% end %>

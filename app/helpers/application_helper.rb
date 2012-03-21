@@ -11,5 +11,12 @@ module ApplicationHelper
           meses = Array.new  
           meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]  
           return meses[mes - 1]
+    end
+    
+    def preeche_espaco(texto, quantidade)
+      while texto.length < quantidade do
+        texto = texto + " "
       end
+      return texto
+    end
 end

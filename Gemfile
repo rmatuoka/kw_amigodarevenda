@@ -5,12 +5,13 @@ gem 'rails', '3.0.10'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
+gem 'mysql2', "0.2.7"
 gem "nifty-generators", :group => :development
 gem 'mongrel'
 gem 'will_paginate'
 gem 'jquery-rails', '>=1.0.12'
 #gem 'rails3-jquery-autocomplete'
+gem "fastercsv", "~> 1.5.4"
 
 # Use unicorn as the web server
 # gem 'unicorn'

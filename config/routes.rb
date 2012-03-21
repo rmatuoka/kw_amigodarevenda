@@ -12,7 +12,15 @@ KwAmigodarevenda::Application.routes.draw do |map|
       resources :notices
       resources :offers
       resources :downloads
-      resources :import
+      resources :import do
+        collection do
+          get :imp_sipais
+          get :imp_siest
+          get :imp_sicid
+          get :imp_sizona          
+          get :imp_sibai
+        end
+      end
       resources :transporters
       resources :export
       resources :representants

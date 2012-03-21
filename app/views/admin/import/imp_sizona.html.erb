@@ -1,0 +1,12 @@
+<% title "Importar Zonas" %>
+
+<%=	notice %>
+
+<% if !@Zonas.blank?%>
+	<% @Zonas.each do |zona| %>
+		|<%= zona.cod_pais %>|<%= zona.cod_estado %>|<%= zona.cod_cidade %>|<%= zona.cod_zona %>|<%= preeche_espaco(zona.zona, 10) %>|<br />
+	<% end %>
+	<p>Estados importados:<%= @Zonas.count%>.</p>
+<% else %>
+	<p>Não existe arquivo para ser importado!</p>
+<% end %>

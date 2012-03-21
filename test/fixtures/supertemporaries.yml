@@ -1,0 +1,65 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  field01: MyString
+  field02: MyString
+  field03: MyString
+  field04: MyString
+  field05: MyString
+  field06: MyString
+  field07: MyString
+  field08: MyString
+  field09: MyString
+  field10: MyString
+  field11: MyString
+  field12: MyString
+  field13: MyString
+  field14: MyString
+  field15: MyString
+  field16: MyString
+  field17: MyString
+  field18: MyString
+  field19: MyString
+  field20: MyString
+  field21: MyString
+  field22: MyString
+  field23: MyString
+  field24: MyString
+  field25: MyString
+  field26: MyString
+  field27: MyString
+  field28: MyString
+  field29: MyString
+  field30: MyString
+
+two:
+  field01: MyString
+  field02: MyString
+  field03: MyString
+  field04: MyString
+  field05: MyString
+  field06: MyString
+  field07: MyString
+  field08: MyString
+  field09: MyString
+  field10: MyString
+  field11: MyString
+  field12: MyString
+  field13: MyString
+  field14: MyString
+  field15: MyString
+  field16: MyString
+  field17: MyString
+  field18: MyString
+  field19: MyString
+  field20: MyString
+  field21: MyString
+  field22: MyString
+  field23: MyString
+  field24: MyString
+  field25: MyString
+  field26: MyString
+  field27: MyString
+  field28: MyString
+  field29: MyString
+  field30: MyString

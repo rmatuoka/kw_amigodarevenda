@@ -1,0 +1,12 @@
+<% title "Importar Cidades" %>
+
+<%=	notice %>
+
+<% if !@Cidades.blank?%>
+	<% @Cidades.each do |cidade| %>
+		|<%= cidade.cod_pais %>|<%= cidade.cod_estado %>|<%= cidade.cod_cidade %>|<%= preeche_espaco(cidade.cidade, 50) %>|<br />
+	<% end %>
+	<p>Estados importados:<%= @Cidades.count%>.</p>
+<% else %>
+	<p>Não existe arquivo para ser importado!</p>
+<% end %>
