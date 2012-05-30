@@ -34,7 +34,7 @@ GEM
     daemons (1.1.8)
     erubis (2.6.6)
       abstract (>= 1.0.0)
-    fastercsv (1.5.4)
+    fastercsv (1.5.5)
     fastthread (1.0.7)
     gem_plugin (0.2.3)
     i18n (0.5.0)
@@ -47,10 +47,7 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    metaclass (0.0.1)
     mime-types (1.17.2)
-    mocha (0.10.4)
-      metaclass (~> 0.0.1)
     mongrel (1.1.5)
       cgi_multipart_eof_fix (>= 2.4)
       daemons (>= 1.0.3)
@@ -94,9 +91,8 @@ PLATFORMS
 DEPENDENCIES
   fastercsv (~> 1.5.4)
   jquery-rails (>= 1.0.12)
-  mocha
   mongrel
   mysql2 (= 0.2.7)
   nifty-generators
   rails (= 3.0.10)
-  will_paginate
+  will_paginate (= 3.0.3)
