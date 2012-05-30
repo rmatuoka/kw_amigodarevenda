@@ -8,7 +8,7 @@ gem 'rails', '3.0.10'
 gem 'mysql2', "0.2.7"
 gem "nifty-generators", :group => :development
 gem 'mongrel'
-gem 'will_paginate', "3.0.3"
+#gem 'will_paginate', "3.0.3"
 gem 'jquery-rails', '>=1.0.12'
 #gem 'rails3-jquery-autocomplete'
 #gem "fastercsv", "~> 1.5.4"
