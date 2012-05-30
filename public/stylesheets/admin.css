@@ -66,7 +66,7 @@
 			#General #Header #User_bar #User_bar_content #Buttons
 			{	
 				position:relative;
-			    float:right;
+			    /*float:right;*/
 				margin-right:100px;
 				width:auto;
 				height:25px !important;
@@ -225,6 +225,7 @@
 			height:auto;
 			padding-right: 5%;
 		}
+
 		#General #Content #Right_box .ls_arrow_align
 		{
 			margin-right:14px;	
@@ -310,7 +311,7 @@
 			position:relative;
 			display:block;
 			padding:0px 0px 10px 0px;
-			text-align:right;
+			text-align:left;
 		}			
 		#General #Content #Right_box form p
 		{
@@ -323,7 +324,17 @@
 			font-size:20px;
 			font-weight:normal;
 			color:#999;
-		}					
+		}	
+		#General #Content #Right_box h2
+		{
+			position:relative;
+			font-family:Verdana, Geneva, sans-serif;
+			font-size:16px;
+			font-weight:normal;
+			color:#666;
+			margin-bottom:10px;
+			margin-top:10px;
+		}				
 		#General #Content #Right_box p
 		{
 			position:relative;
@@ -331,6 +342,7 @@
 			font-size:12px;
 			font-weight:normal;
 			color:#999;
+			
 		}	
 		#General #Content #Right_box #Bg_citation
 		{

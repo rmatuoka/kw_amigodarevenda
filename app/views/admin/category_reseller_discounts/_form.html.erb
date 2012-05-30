@@ -1,0 +1,45 @@
+<div id="Box_form">
+	<%= form_for [:admin, @category_reseller_discount] do |f| %>
+	  <%= f.error_messages %>
+	  <p>
+	    <%= f.label :category_id %><br />
+	    <%= f.select :category_id, @categories, :prompt => "Escolha o grupo" %>
+	  </p>
+	  <p>
+	    <%= f.label :reseller_id %><br />
+	    <%= f.select :reseller_id, @resellers, :prompt => "Escolha a revenda" %>
+	  </p>
+	  <p>
+	    <%= f.label :discount %><br />
+	    <%= f.text_field :discount %>
+	  </p>
+	<p>
+	    <%= f.label :discount2 %><br />
+	    <%= f.text_field :discount2 %>
+	  </p>
+	<p>
+	    <%= f.label :discount3 %><br />
+	    <%= f.text_field :discount3 %>
+	  </p>
+	<p>
+	    <%= f.label :discount4 %><br />
+	    <%= f.text_field :discount4 %>
+	  </p>
+	<p>
+	    <%= f.label :discount5 %><br />
+	    <%= f.text_field :discount5 %>
+	  </p>
+	<p>
+	    <%= f.label :discount6 %><br />
+	    <%= f.text_field :discount6 %>
+	  </p>
+	<p>
+	    <%= f.label :discount7 %><br />
+	    <%= f.text_field :discount7 %>
+	  </p>
+	  <p><%= f.submit "Enviar" , :class => "Bt_enviar" %></p>
+	<% end %>
+</div>
+
+
+

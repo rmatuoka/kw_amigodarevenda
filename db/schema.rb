@@ -10,13 +10,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120323194634) do
+ActiveRecord::Schema.define(:version => 20120530205950) do
 
   create_table "categories", :force => true do |t|
     t.string   "cod_sistema"
     t.string   "nome"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "category_reseller_discounts", :force => true do |t|
+    t.integer  "category_id"
+    t.integer  "reseller_id"
+    t.decimal  "discount",    :precision => 10, :scale => 2, :default => 0.0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.decimal  "discount2",   :precision => 10, :scale => 2, :default => 0.0
+    t.decimal  "discount3",   :precision => 10, :scale => 2, :default => 0.0
+    t.decimal  "discount4",   :precision => 10, :scale => 2, :default => 0.0
+    t.decimal  "discount5",   :precision => 10, :scale => 2, :default => 0.0
+    t.decimal  "discount6",   :precision => 10, :scale => 2, :default => 0.0
+    t.decimal  "discount7",   :precision => 10, :scale => 2, :default => 0.0
   end
 
   create_table "downloads", :force => true do |t|
@@ -156,6 +170,7 @@ ActiveRecord::Schema.define(:version => 20120323194634) do
     t.string   "senha"
     t.integer  "representant_id"
     t.string   "cod_sistema"
+    t.integer  "ultima_transportadora"
   end
 
   create_table "roles", :force => true do |t|

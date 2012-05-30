@@ -8,6 +8,7 @@ class Admin::ResellersController < ApplicationController
   
   def show
     @reseller = Reseller.find(params[:id])
+    @discounts = @reseller.category_reseller_discounts.all
   end
   
   def new
@@ -26,6 +27,7 @@ class Admin::ResellersController < ApplicationController
   
   def edit
     @reseller = Reseller.find(params[:id])
+    
   end
   
   def update

@@ -1,0 +1,28 @@
+<% title "Grupos de Descontos" %>
+<h1>Módulo de Grupo de Descontos</h1><br />
+<p>Visualize abaixo a lista dos descontos cadastrados registrados no sistema.</p><br />
+
+<table class="tablesorter">
+  <thead>
+  <tr>
+    <th>Grupo</th>
+    <th>Revenda</th>
+    <th>Desconto</th>
+	<th colspan="3" align="center">Ações</th>
+  </tr>
+  </thead> 
+  <tbody>
+  	 <% for category_reseller_discount in @category_reseller_discounts %>
+	    <tr>
+	      <td><%= category_reseller_discount.category.cod_sistema %> - <%= category_reseller_discount.category.nome %></td>
+	      <td><%= category_reseller_discount.reseller.cod_representante %> - <%= category_reseller_discount.reseller.nome %></td>
+	      <td><%= category_reseller_discount.discount %> %</td>
+	      <td><%= link_to "Show", [:admin, category_reseller_discount] %></td>
+	      <td><%= link_to "Edit", edit_admin_category_reseller_discount_path(category_reseller_discount) %></td>
+	      <td><%= link_to "Destroy", [:admin, category_reseller_discount], :confirm => 'Are you sure?', :method => :delete %></td>
+	    </tr>
+	  <% end %>
+  </tbody>
+</table>
+
+<p><%= link_to "Cadastrar novo Desconto", new_admin_category_reseller_discount_path %></p>

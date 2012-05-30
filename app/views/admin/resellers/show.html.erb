@@ -1,12 +1,36 @@
 <% title "Reseller" %>
 
-<p>
-  <strong>Cod Representante:</strong>
-  <%=h @reseller.cod_representante %>
-</p>
+<h2>Dados Cadastrais</h2>
+
 <p>
   <strong>Nome:</strong>
   <%=h @reseller.nome %>
+</p>
+<p>
+  <strong>Nome Fantasia:</strong>
+  <%=h @reseller.nome_fantasia %>
+</p>
+<p>
+  <strong>CNPJ:</strong>
+  <%=h @reseller.cnpj %>
+</p>
+<p>
+  <strong>Inscrição Estadual:</strong>
+  <%=h @reseller.inscricao_estadual %>
+</p>
+<p>
+  <strong>Responsável:</strong>
+  <%=h @reseller.responsavel %>
+</p>
+
+<h2>Dados de Contato</h2>
+<p>
+  <strong>E-mail:</strong>
+  <%=h @reseller.email %>
+</p>
+<p>
+  <strong>Celular:</strong>
+  <%=h @reseller.celular %>
 </p>
 <p>
   <strong>Endereco:</strong>
@@ -33,6 +57,13 @@
   <%=h @reseller.fax %>
 </p>
 
+<p>
+<h2>Grupos de Desconto</h2>
+  <%@discounts.each do |d|%>
+  	<%=d.category.cod_sistema%> - <%=d.category.nome%>  = <%=d.discount%> + <%=d.discount2%> + <%=d.discount3%> + <%=d.discount4%> + <%=d.discount5%> + <%=d.discount6%> + <%=d.discount7%> 
+  <%end%>
+</p>
+<br/><br/>
 <p>
   <%= link_to "Edit", edit_admin_reseller_path(@reseller) %> |
   <%= link_to "Destroy", admin_reseller_path(@reseller), :confirm => 'Are you sure?', :method => :delete %> |

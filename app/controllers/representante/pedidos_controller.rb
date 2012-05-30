@@ -104,6 +104,8 @@ class Representante::PedidosController < ApplicationController
     if !@pedido.save
       #erro
     else
+      #EXIBIR TELA DE SUCESSO
+      #DISPARAR EMAIL PARA NAUTILUS E REPRESENTANTE
       redirect_to root_path
     end
   end

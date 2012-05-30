@@ -1,0 +1,9 @@
+one:
+  category_id: 1
+  reseller_id: 1
+  discount: 9.99
+
+two:
+  category_id: 1
+  reseller_id: 1
+  discount: 9.99

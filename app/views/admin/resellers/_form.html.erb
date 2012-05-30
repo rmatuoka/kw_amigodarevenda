@@ -1,10 +1,7 @@
 <div id="Box_form">
 <%= form_for ([:admin, @reseller], :html => { :multipart => :true }) do |f| %>
   <%= f.error_messages %>
-  <p>
-    <%= f.label :cod_representante %><br />
-    <%= f.text_field :cod_representante %>
-</p>
+  <h2>Dados de Cadastrais</h2>
   <p>
     <%= f.label :nome %><br />
     <%= f.text_field :nome %>
@@ -25,6 +22,8 @@
     <%= f.label :responsavel %><br />
     <%= f.text_field :responsavel %>
   </p>
+
+  <h2>Dados de Contato</h2>
   <p>
     <%= f.label :email %><br />
     <%= f.text_field :email %>
@@ -65,7 +64,10 @@
     <%= f.label :representant_id, "Associar ao representante:" %><br />
     <%= f.select :representant_id, @representants, :prompt => "Escolha o representante" %>
   </p>
+  
+  
 
+	
   <p><%= f.submit "Salvar", :class => "Bt_enviar" %></p>
 <% end %>
 </div>

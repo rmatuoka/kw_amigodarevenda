@@ -1,0 +1,46 @@
+<% title "Grupos de Descontos" %>
+<h1>Módulo de Grupo de Descontos</h1><br />
+<p>Cadastrado com sucesso!</p><br />
+
+<p>
+  <strong>Grupo:</strong>
+  <%= @category_reseller_discount.category.nome %>
+</p>
+<p>
+  <strong>Revenda:</strong>
+  <%= @category_reseller_discount.reseller.nome %>
+</p>
+<p>
+  <strong>Desconto:</strong>
+  <%= @category_reseller_discount.discount %>
+</p>
+<p>
+  <strong>Desconto2:</strong>
+  <%= @category_reseller_discount.discount2 %>
+</p>
+<p>
+  <strong>Desconto3:</strong>
+  <%= @category_reseller_discount.discount3 %>
+</p>
+<p>
+  <strong>Desconto4:</strong>
+  <%= @category_reseller_discount.discount4 %>
+</p>
+<p>
+  <strong>Desconto5:</strong>
+  <%= @category_reseller_discount.discount5 %>
+</p>
+<p>
+  <strong>Desconto6:</strong>
+  <%= @category_reseller_discount.discount6 %>
+</p>
+<p>
+  <strong>Desconto7:</strong>
+  <%= @category_reseller_discount.discount7 %>
+</p>
+<br><br>
+<p>
+  <%= link_to "Editar", edit_admin_category_reseller_discount_path(@category_reseller_discount) %> |
+  <%= link_to "Deletar", [:admin, @category_reseller_discount], :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "Ver todos", admin_category_reseller_discounts_path %>
+</p>
