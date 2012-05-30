@@ -11,7 +11,7 @@ gem 'mongrel'
 gem 'will_paginate'
 gem 'jquery-rails', '>=1.0.12'
 #gem 'rails3-jquery-autocomplete'
-gem "fastercsv", "~> 1.5.4"
+#gem "fastercsv", "~> 1.5.4"
 
 # Use unicorn as the web server
 # gem 'unicorn'

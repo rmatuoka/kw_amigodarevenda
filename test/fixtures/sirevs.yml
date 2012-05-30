@@ -1,0 +1,33 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  cod_revenda: MyString
+  revenda: MyString
+  fantasia: MyString
+  cod_pais: MyString
+  cod_estado: MyString
+  cod_cidade: MyString
+  cod_zona: MyString
+  cod_bairro: MyString
+  endereco: MyString
+  nr: MyString
+  cep: MyString
+  telefone: MyString
+  email1: MyString
+  email2: MyString
+
+two:
+  cod_revenda: MyString
+  revenda: MyString
+  fantasia: MyString
+  cod_pais: MyString
+  cod_estado: MyString
+  cod_cidade: MyString
+  cod_zona: MyString
+  cod_bairro: MyString
+  endereco: MyString
+  nr: MyString
+  cep: MyString
+  telefone: MyString
+  email1: MyString
+  email2: MyString
