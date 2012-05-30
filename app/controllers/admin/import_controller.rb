@@ -1,12 +1,12 @@
 class Admin::ImportController < ApplicationController
   layout "blank"
   require 'fileutils'
-#  require 'faster_csv'  
+  require 'faster_csv'  
 
   def index
 
   end
-=begin
+
   def imp_sipais
     if File.exists?('public/import/new/SIPAIS.TXT')
       Sipais.delete_all
@@ -93,7 +93,7 @@ class Admin::ImportController < ApplicationController
       @Bairros = Sibai.all
     end
   end  
-=end
+
 
   
 #  def index
