@@ -114,7 +114,7 @@ class Representante::PedidosController < ApplicationController
       #DISPARAR EMAIL PARA NAUTILUS E REPRESENTANTE
       UserMailer.transaction_completed(@pedido).deliver
       UserMailer.transaction_completed_alert(@pedido).deliver
-      #redirect_to root_path      
+      redirect_to root_path      
     end
   end
   

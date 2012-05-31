@@ -10,7 +10,7 @@ class UserMailer < ActionMailer::Base
   
   #Email enviado para Nautilus
   def transaction_completed_alert(pedido_alert)
-    @pedido = pedido
+    @pedido = pedido_alert
     @produtos = @pedido.product_request_items.all
 		mail(:to => "bsilva@korewa.com.br", :bcc => "log@korewa.com.br", :subject => "UM NOVO PEDIDO FOI EFETUADO!")       
   end
