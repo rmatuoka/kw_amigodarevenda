@@ -391,6 +391,20 @@ body
 									   margin-top:10px;
 									
 								  }
+								
+								#Geral #Center h2
+								 {
+									   position:absolute
+									   left:0px;
+									   display:block;
+									   font-family: 'MyriadPro-Regular';
+									   font-size:16px;
+									   font-weight:normal;
+									   color:#666;
+									   text-align:left;	
+									   margin-top:10px;
+
+								  }
 							  
 			#Geral #Center #Pesquisa
 			{

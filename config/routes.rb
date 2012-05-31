@@ -1,5 +1,4 @@
 KwAmigodarevenda::Application.routes.draw do |map|
-
   resources :product_requests
   resources :user_sessions
   resources :representants
@@ -28,6 +27,7 @@ KwAmigodarevenda::Application.routes.draw do |map|
       resources :users
       resources :product_requests
       resources :category_reseller_discounts
+      resources :payments
       root :to => "downloads#index"
   end
 
@@ -61,7 +61,6 @@ KwAmigodarevenda::Application.routes.draw do |map|
         get 'passo4'
         post 'passo4'
         get 'finalizar'
-        
       end 
     end
     
@@ -74,6 +73,7 @@ KwAmigodarevenda::Application.routes.draw do |map|
       get 'gravar'
       get 'finalizar'
       get 'limpar'
+      get 'discount'
     end
   end
   resources :sessions

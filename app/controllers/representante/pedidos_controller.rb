@@ -84,6 +84,9 @@ class Representante::PedidosController < ApplicationController
   def passo3
     @pedido = ProductRequest.find(params[:id])
     session[:pedido_id] = @pedido.id
+    
+    #carrega formas de pagamento
+    @payments = Payment.all
   end
   
   def passo4
@@ -100,6 +103,9 @@ class Representante::PedidosController < ApplicationController
     @pedido.entrega_cidade = params[:entrega_cidade]
     @pedido.entrega_uf = params[:entrega_uf]
     @pedido.status = "ENCAMINHADO"
+    @pedido.payment_id = params[:payment]
+    
+    #SETA FORMAS DE PAGAMENTO
     
     if !@pedido.save
       #erro
@@ -125,4 +131,5 @@ class Representante::PedidosController < ApplicationController
       @out = ""
     end
   end
+
 end

@@ -44,23 +44,81 @@
 				@produtos.each do |p|
 				%>
 				<tr>
-					<td><li><span><%=p.product.cod_sistema %> - <%=p.product.nome%></span></li></td>
+					<td><li><span><%=p.product.cod_sistema %> - <%=p.product.nome%> <br>
+						<i>
+							<%= "*Decontos " if p.discount > 0%>
+							<%=p.discount.to_s + "%" if p.discount > 0 %> 
+							<%=p.discount2.to_s + "%" if p.discount2 > 0 %>
+							<%=p.discount3.to_s + "%" if p.discount3 > 0 %>
+							<%=p.discount4.to_s + "%" if p.discount4 > 0 %>
+							<%=p.discount5.to_s + "%" if p.discount5 > 0 %>
+							<%=p.discount6.to_s + "%" if p.discount6 > 0 %>
+							<%=p.discount7.to_s + "%" if p.discount7 > 0 %>
+						</i></span></li>
+					</td>
 					<td><li><span><%=p.quantidade %></span></li></td>
-					<td><li><span><%=number_to_currency(p.valor) %></span></li></td>
+					<td><li>
+					<span>
+						<%
+						$valorun = p.valor
+						
+						$valorun = $valorun - ($valorun * (p.discount / 100)) if p.discount > 0
+						$valorun = $valorun - ($valorun * (p.discount2 / 100)) if p.discount2 > 0
+						$valorun = $valorun - ($valorun * (p.discount3 / 100)) if p.discount3 > 0
+						$valorun = $valorun - ($valorun * (p.discount4 / 100)) if p.discount4 > 0
+						$valorun = $valorun - ($valorun * (p.discount5 / 100)) if p.discount5 > 0
+						$valorun = $valorun - ($valorun * (p.discount6 / 100)) if p.discount6 > 0
+						$valorun = $valorun - ($valorun * (p.discount7 / 100)) if p.discount7 > 0
+						%>
+						
+						<%=number_to_currency($valorun) %>
+					</span></li></td>
 				</tr>
 				<%
-				$total += p.valor
+				$total += $valorun * p.quantidade
 				end
 				%>
 				<tr>
 					<td colspan="3" height="70">
-						<li style="float:right;"><label class="quinze">Total: </label><label><b class="quinze"><%=number_to_currency($total) %></b></label></li>
+						<li style="float:right;"><label class="quinze">Total: </label><label><span class="quinze"><%=number_to_currency($total) %></span></label></li>
 					</td>
 				</tr>
 			</table>
        <%else%>
 	   		<li><label>Não há produtos cadastrados neste pedido.</label></li>
 		<%end%>
+       </ul>
+
+		<div class="Line_details_pr_1"></div>
+		<h2>Forma de Pagamento</h2>
+		<ul>
+           <li><label>Tipo do pagamento:</label><span><%=@pedido.payment.descricao%></span></li>
+           <li>
+		   <label>
+           <%if @pedido.payment.tipo?%>	
+			Desconto de:
+		   <%else%>
+			Juros de:
+		   <%end%>
+           </label><span><%=@pedido.payment.valor%> %</span></li>
+			<li><label class="quinze">Total Final:</label>
+			<b>
+				<%if @pedido.payment.tipo?%>
+					<!-- DESCONTO -->
+					<%
+					$total = $total - ($total * (@pedido.payment.valor / 100))
+					%>
+					
+				<%else%>
+					<!-- JUROS -->
+					<%
+					$total = $total + ($total * (@pedido.payment.valor / 100))
+					%>
+				<%end%>
+				
+				<%=number_to_currency($total) %>
+			</b>
+			</li>
        </ul>
 
 		<div class="Line_details_pr"></div>

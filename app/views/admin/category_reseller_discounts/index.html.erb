@@ -7,7 +7,7 @@
   <tr>
     <th>Grupo</th>
     <th>Revenda</th>
-    <th>Desconto</th>
+    <th>Descontos</th>
 	<th colspan="3" align="center">Ações</th>
   </tr>
   </thead> 
@@ -16,7 +16,15 @@
 	    <tr>
 	      <td><%= category_reseller_discount.category.cod_sistema %> - <%= category_reseller_discount.category.nome %></td>
 	      <td><%= category_reseller_discount.reseller.cod_representante %> - <%= category_reseller_discount.reseller.nome %></td>
-	      <td><%= category_reseller_discount.discount %> %</td>
+	      <td>
+			<%= category_reseller_discount.discount %>
+			<%= ", " + category_reseller_discount.discount2.to_s if category_reseller_discount.discount2 > 0%>
+			<%= ", " + category_reseller_discount.discount3.to_s  if category_reseller_discount.discount3 > 0%>
+			<%= ", " + category_reseller_discount.discount4.to_s  if category_reseller_discount.discount4 > 0%>
+			<%= ", " + category_reseller_discount.discount5.to_s  if category_reseller_discount.discount5 > 0%>
+			<%= ", " + category_reseller_discount.discount6.to_s  if category_reseller_discount.discount6 > 0%>
+			<%= ", " + category_reseller_discount.discount7.to_s  if category_reseller_discount.discount7 > 0%>
+		  </td>
 	      <td><%= link_to "Show", [:admin, category_reseller_discount] %></td>
 	      <td><%= link_to "Edit", edit_admin_category_reseller_discount_path(category_reseller_discount) %></td>
 	      <td><%= link_to "Destroy", [:admin, category_reseller_discount], :confirm => 'Are you sure?', :method => :delete %></td>

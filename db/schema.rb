@@ -10,7 +10,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20120530222525) do
+=======
+ActiveRecord::Schema.define(:version => 20120531000404) do
+>>>>>>> muts
 
   create_table "categories", :force => true do |t|
     t.string   "cod_sistema"
@@ -74,6 +78,14 @@ ActiveRecord::Schema.define(:version => 20120530222525) do
     t.datetime "data_fim"
   end
 
+  create_table "payments", :force => true do |t|
+    t.string   "descricao"
+    t.boolean  "tipo"
+    t.decimal  "valor",      :precision => 10, :scale => 2, :default => 0.0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "poll_questions", :force => true do |t|
     t.integer  "poll_id"
     t.string   "question"
@@ -100,6 +112,13 @@ ActiveRecord::Schema.define(:version => 20120530222525) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.float    "valor",              :limit => 10
+    t.decimal  "discount",                         :precision => 10, :scale => 2, :default => 0.0
+    t.decimal  "discount2",                        :precision => 10, :scale => 2, :default => 0.0
+    t.decimal  "discount3",                        :precision => 10, :scale => 2, :default => 0.0
+    t.decimal  "discount4",                        :precision => 10, :scale => 2, :default => 0.0
+    t.decimal  "discount5",                        :precision => 10, :scale => 2, :default => 0.0
+    t.decimal  "discount6",                        :precision => 10, :scale => 2, :default => 0.0
+    t.decimal  "discount7",                        :precision => 10, :scale => 2, :default => 0.0
   end
 
   create_table "product_requests", :force => true do |t|
@@ -120,6 +139,7 @@ ActiveRecord::Schema.define(:version => 20120530222525) do
     t.string   "entrega_bairro"
     t.string   "entrega_cidade"
     t.string   "entrega_uf"
+    t.integer  "payment_id"
   end
 
   create_table "products", :force => true do |t|
