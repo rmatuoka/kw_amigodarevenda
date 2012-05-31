@@ -10,11 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20120530222525) do
-=======
-ActiveRecord::Schema.define(:version => 20120531000404) do
->>>>>>> muts
+ActiveRecord::Schema.define(:version => 20120531003941) do
 
   create_table "categories", :force => true do |t|
     t.string   "cod_sistema"
@@ -189,7 +185,7 @@ ActiveRecord::Schema.define(:version => 20120531000404) do
     t.string   "senha"
     t.integer  "representant_id"
     t.string   "cod_sistema"
-    t.string   "cod_representante",  :limit => 14
+    t.string   "cod_representante"
     t.string   "zona"
     t.string   "pais"
     t.string   "cep"
@@ -324,6 +320,7 @@ ActiveRecord::Schema.define(:version => 20120531000404) do
     t.string   "nome"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "cod_transportadora"
   end
 
   create_table "updates", :force => true do |t|
