@@ -47,6 +47,6 @@ class Admin::RepresentantsController < ApplicationController
   
   protected  
   def load_users  
-    @users = User.all.collect { |c| [c.username, c.id] }  
+    @users = User.all(:order=>"username").collect { |c| [c.username, c.id] }  
   end
 end

@@ -91,6 +91,7 @@ PLATFORMS
 DEPENDENCIES
   fastercsv (~> 1.5.4)
   jquery-rails (>= 1.0.12)
+  mail
   mongrel
   mysql2 (= 0.2.7)
   nifty-generators

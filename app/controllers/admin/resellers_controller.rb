@@ -75,6 +75,6 @@ class Admin::ResellersController < ApplicationController
   
   protected  
   def load_representants
-    @representants = Representant.all.collect { |c| [c.nome, c.id] }  
+    @representants = Representant.all(:order=>"nome").collect { |c| [c.nome, c.id] }  
   end
 end

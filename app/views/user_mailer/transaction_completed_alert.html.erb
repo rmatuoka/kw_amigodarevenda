@@ -1,0 +1,174 @@
+<html>
+<head>
+<title>UM NOVO PEDIDO FOI EFETUADO!</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+	<div id="Box_Center">
+		<h1 class="Titleh1"><img src="/images/tit_pedidos.png" width="20" height="20" style="margin:0 10px 0 0; " /> Pedido N.: <%=@pedido.id%><%#=@representante.nome%></h1>
+		<a href="javascript:history.go(-1);"><img src="/images/btn_voltarbxperfil.png" width="43" height="11" class="bt_voltar_align"/></a> 
+		<br />
+		<h2>Status do Pedido: 
+			<%=raw("<span style=color:Red !important;'>") if @pedido.status == "INCOMPLETO"%>
+			<%=raw("<span style=color:#dad700 !important;'>") if @pedido.status == "ENCAMINHADO"%>
+			<%=raw("<span style=color:Green !important;'>") if @pedido.status == "ENVIADO"%>
+
+
+			<%=@pedido.status%> </span><br/ >
+
+		<h2/>
+		<ul>
+			<li><label>Data do Pedido: <%=@pedido.created_at.to_date.strftime("%d/%m/%Y")%></label></li>
+		</ul>
+		<div class="clear"></div>
+
+		<div id="Dados_Pedido">
+			<div class="Line_details_pr_1"></div>
+			<h2>Produtos</h2> 
+			<ul>
+			<%if !@produtos.blank?%>
+				<table width="95%" border="0" cellspacing="0" cellpadding="0" border="0" id="tblPedidos">
+					<tr>
+						<th><li><label>Produto</label></li></th>
+						<th><li><label>Quantidade</label></li></th>
+						<th><li><label>Valor Un.</label></li></th>
+					</tr>
+					<%
+					$total = 0
+					@produtos.each do |p|
+					%>
+					<tr>
+						<td><li><span><%=p.product.cod_sistema %> - <%=p.product.nome%> <br>
+							<i>
+								<%= "*Decontos " if p.discount > 0%>
+								<%=p.discount.to_s + "%" if p.discount > 0 %> 
+								<%=p.discount2.to_s + "%" if p.discount2 > 0 %>
+								<%=p.discount3.to_s + "%" if p.discount3 > 0 %>
+								<%=p.discount4.to_s + "%" if p.discount4 > 0 %>
+								<%=p.discount5.to_s + "%" if p.discount5 > 0 %>
+								<%=p.discount6.to_s + "%" if p.discount6 > 0 %>
+								<%=p.discount7.to_s + "%" if p.discount7 > 0 %>
+							</i></span></li>
+						</td>
+						<td><li><span><%=p.quantidade %></span></li></td>
+						<td><li>
+						<span>
+							<%
+							$valorun = p.valor
+
+							$valorun = $valorun - ($valorun * (p.discount / 100)) if p.discount > 0
+							$valorun = $valorun - ($valorun * (p.discount2 / 100)) if p.discount2 > 0
+							$valorun = $valorun - ($valorun * (p.discount3 / 100)) if p.discount3 > 0
+							$valorun = $valorun - ($valorun * (p.discount4 / 100)) if p.discount4 > 0
+							$valorun = $valorun - ($valorun * (p.discount5 / 100)) if p.discount5 > 0
+							$valorun = $valorun - ($valorun * (p.discount6 / 100)) if p.discount6 > 0
+							$valorun = $valorun - ($valorun * (p.discount7 / 100)) if p.discount7 > 0
+							%>
+
+							<%=number_to_currency($valorun) %>
+						</span></li></td>
+					</tr>
+					<%
+					$total += $valorun * p.quantidade
+					end
+					%>
+					<tr>
+						<td colspan="3" height="70">
+							<li style="float:right;"><label class="quinze">Total: </label><label><span class="quinze"><%=number_to_currency($total) %></span></label></li>
+						</td>
+					</tr>
+				</table>
+	       <%else%>
+		   		<li><label>Não há produtos cadastrados neste pedido.</label></li>
+			<%end%>
+	       </ul>
+
+			<div class="Line_details_pr_1"></div>
+			<h2>Forma de Pagamento</h2>
+			<ul>
+	           <li><label>Tipo do pagamento:</label><span><%=@pedido.payment.descricao%></span></li>
+	           <li>
+			   <label>
+	           <%if @pedido.payment.tipo?%>	
+				Desconto de:
+			   <%else%>
+				Juros de:
+			   <%end%>
+	           </label><span><%=@pedido.payment.valor%> %</span></li>
+				<li><label class="quinze">Total Final:</label>
+				<b>
+					<%if @pedido.payment.tipo?%>
+						<!-- DESCONTO -->
+						<%
+						$total = $total - ($total * (@pedido.payment.valor / 100))
+						%>
+
+					<%else%>
+						<!-- JUROS -->
+						<%
+						$total = $total + ($total * (@pedido.payment.valor / 100))
+						%>
+					<%end%>
+
+					<%=number_to_currency($total) %>
+				</b>
+				</li>
+	       </ul>
+
+			<div class="Line_details_pr"></div>
+	        <h2>Informações Adicionais</h2> 
+			<ul>
+	            <li><label>Frete:</label><span><%=@pedido.tipo_frete%></span></li>
+	            <li><label>Informações:</label><span><%=@pedido.informacoes_adicionais%></span></li>
+	            <li><label>Fatura para cliente:</label><span><%=@pedido.fatura_para_cliente%></span></li>
+	        </ul>
+
+			<div class="Line_details_pr"></div>
+	        <h2>Dados da Entrega</h2> 
+			<ul>
+	            <li><label>Rua:</label><span><%=@pedido.entrega_rua_numero%></span></li>
+	            <li><label>Bairro:</label><span><%=@pedido.entrega_bairro%></span></li>
+	            <li><label>Cidade:</label><span><%=@pedido.cidade%></span></li>
+				<li><label>Estado:</label><span><%=@pedido.entrega_uf%></span></li>
+	        </ul>
+		</div>
+
+		<div id="Dadosbox_p_requests">    
+
+		<div class="Line_details_pr_1"></div>
+			<h2>Dados do Representante</h2> 
+			<ul>
+	            <li><label>Nome:</label><span><%=@pedido.reseller.representant.nome%></span></li>
+	            <li><label>Telefone:</label><span><%=@pedido.reseller.representant.telefone%></span></li>
+	            <li><label>Celular:</label><span><%=@pedido.reseller.representant.celular%></span></li>
+				<li><label>E-mail:</label><span><%=@pedido.reseller.representant.email%></span></li>
+	        </ul>
+			<div class="Line_details_pr"></div>
+	        <h2>Dados da Revenda</h2> 
+			<ul>
+	            <li><label>Nome:</label><span><%=@pedido.reseller.nome%></span></li>
+	            <li><label>Nome Fantasia:</label><span><%=@pedido.reseller.nome_fantasia%></span></li>
+				<li><label>CNPJ:</label><%=@pedido.reseller.cnpj%></span></li>
+				<li><label>Inscrição Estadual:</label><span><%=@pedido.reseller.inscricao_estadual%></span></li>
+				<li><label>Responsável:</label><span><%=@pedido.reseller.responsavel%></span></li>
+				<li><label>Telefone:</label><span><%=@pedido.reseller.telefone%></span></li>
+	            <li><label>Fax:</label><span><%=@pedido.reseller.fax%></span></li>
+	            <li><label>E-Mail:</label><span><%=@pedido.reseller.email%></span></li>
+				<li><label>Endereço:</label><span><%=@pedido.reseller.endereco%></span></li>
+				<li><label>Bairro:</label><span><%=@pedido.reseller.bairro%></span></li>
+				<li><label>Cidade:</label><span><%=@pedido.reseller.cidade%></span></li>
+				<li><label>Estado:</label><span><%=@pedido.reseller.estado%></span></li>
+	        </ul>	
+			<div class="Line_details_pr"></div>
+	        <h2>Dados da Transportadora</h2> 
+			<ul>
+	            <li><label>Nome:</label><span><%=@pedido.transporter.nome%></span></li>
+	        </ul>
+
+	   </div>
+
+	    <div class="clear"></div>
+		<div class="Line_details_pr"></div>
+	</div>
+</body>
+</html>

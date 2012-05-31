@@ -12,7 +12,7 @@
 		<%=image_tag "representante/selecione_revenda.png", :style => "margin-bottom:90px;"%>
 		<div class="bgEscolha">
 			<br>
-			<%=select("revenda", "reseller_id", @representante.resellers.all.collect {|p| [ p.nome, p.id ] })%>
+			<%=select("revenda", "reseller_id", @representante.resellers.all(:order=>"nome").collect {|p| [ p.nome, p.id ] })%>
 			
 		</div>
 	</div>
@@ -21,7 +21,7 @@
 		<%=image_tag "representante/selecione_transportadora.png", :style => "margin-bottom:90px;"%>
 		<div class="bgEscolha">
 			<br>
-			<%=select("transportadora", "transporter_id", Transporter.all.collect {|p| [ p.nome, p.id ] })%>
+			<%=select("transportadora", "transporter_id", Transporter.all(:order=>"nome").collect {|p| [ p.nome, p.id ] })%>
 		</div>
 	</div>
 	

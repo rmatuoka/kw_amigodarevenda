@@ -12,6 +12,7 @@ gem 'will_paginate', "3.0.3"
 gem 'jquery-rails', '>=1.0.12'
 #gem 'rails3-jquery-autocomplete'
 gem "fastercsv", "~> 1.5.4"
+gem 'mail'
 
 # Use unicorn as the web server
 # gem 'unicorn'
