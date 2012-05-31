@@ -30,7 +30,7 @@ jQuery(document).ready(function()
 					<div id="User_name">
 						<%= link_to image_tag("img_house.png", :width=>"28", :height=>"23", :class=>"Usr_bt_align"), admin_root_path%><span>Bem Vindo, <%= current_user.username %></span>
 					</div>
-					<div id="Buttons">
+					<div id="Buttons" style="float:right;">
 						<%= link_to(image_tag("bt_config.png", :width=>"22", :height=>"22") , edit_user_path(:current), :class => "Usr_bt_align") %>
 						<%= link_to(image_tag("bt_ajuda.png", :width=>"22", :height=>"22") , "", :class => "Usr_bt_align") %>
 						<%= link_to(image_tag("bt_logout.png", :width=>"22", :height=>"22") , logout_path, :class => "Usr_bt_align") %>
@@ -57,6 +57,7 @@ jQuery(document).ready(function()
 									<li><%= link_to "Representantes",admin_representants_path%></li>
 									<li><%= link_to "Revendas",admin_resellers_path%></li>
 									<li><%= link_to "Grupos de Desconto",admin_category_reseller_discounts_path%></li>
+									<li><%= link_to "Formas de Pagamento",admin_payments_path%></li>
 									<li><%= link_to "Transportadoras",admin_transporters_path%></li>
 									<li><%= link_to "Usuários",admin_users_path%></li>
 									

@@ -40,11 +40,23 @@
 		var preco = $("#preco").val();
 		var categoria = $("#category").val();
 		var produto = $("#product").val();
+		
+		//descontos
+		var desconto = $("#desconto1").val();
+		var desconto2 = $("#desconto2").val();
+		var desconto3 = $("#desconto3").val();
+		var desconto4 = $("#desconto4").val();
+		var desconto5 = $("#desconto5").val();
+		var desconto6 = $("#desconto6").val();
+		var desconto7 = $("#desconto7").val();
+		
 		$.ajax({
 			type:     "GET",
 			dataType: "html",
 			url:      "/ajax_pedidos/gravar",
-			data:     "produto="+ produto +"&quantidade="+ quantidade +"&pedido=<%=params[:id]%>" +"&preco=" + preco + "&categoria=" + categoria,
+			data:     "produto="+ produto +"&quantidade="+ quantidade +"&pedido=<%=params[:id]%>" +"&preco=" + preco + "&categoria=" + categoria + "&discount=" + desconto+ "&discount2=" + desconto2+ "&discount3=" + desconto3+ "&discount4=" + desconto4+ "&discount5=" + desconto5+ "&discount6=" + desconto6+ "&discount7=" + desconto7
+			
+			,
 			success: function(msg){
 				$("#Items").html(msg);
 				
@@ -83,6 +95,30 @@
 		});
 	}
 	
+	function load_discount(x)
+	{
+		if(x.val() != "")
+		{
+			$("#discount").html("<img src='/images/loader_laranja.gif' />")
+			
+			$.ajax({
+				type:     "GET",
+				dataType: "html",
+				url:      "/ajax_pedidos/discount",
+				data:     "grupo="+ x.val() +"&reseller=<%=@pedido.reseller_id%>",
+				success: function(msg){
+					//FOI
+					$("#discount").html(msg)
+				}
+			});
+		}
+		else
+		{
+			//CAMPO VAZIO
+			//alert("vazio");
+		}
+	}
+	
 	$(document).ready(function() {
 		load_pedido()
 	});
@@ -100,32 +136,43 @@
 			Para continuar, digite o código do grupo, código do produto, quantidade, preço, e sem seguida clique em "Adicionar ao pedido".
 			<br><br>
 		</p>
-		<table border="0" cellspacing="0" cellpadding="0">
+		<table width="100%" cellspacing="0" cellpadding="0">
 		<%form_tag '/representantes/home'%>
 			<tr>
-				<td><p style="float:none;" class="Box_noticias">Código do grupo: </p></td>
-				<td><%=autocomplete_field_tag 'category', '', autocomplete_category_cod_sistema_representante_pedidos_path, :size => 20, :class => "Input2"%></td>
+				<td width="120"><p style="float:none;" class="Box_noticias">Código do grupo: </p></td>
+				<td align="left"><%=autocomplete_field_tag 'category', '', autocomplete_category_cod_sistema_representante_pedidos_path, :size => 20, :class => "Input2", :onblur => "load_discount($(this))"%></td>
 			</tr>
 			<tr>
 				<td height="10"></td>
 			</tr>
 			<tr>
 				<td><p style="float:none;" class="Box_noticias">Código do produto:</p></td>
-				<td><%=autocomplete_field_tag 'product', '', autocomplete_product_cod_sistema_representante_pedidos_path, :size => 20, :class => "Input2"%></td>
+				<td align="left"><%=autocomplete_field_tag 'product', '', autocomplete_product_cod_sistema_representante_pedidos_path, :size => 20, :class => "Input2"%></td>
 			</tr>
 			<tr>
 				<td height="10"></td>
 			</tr>
 			<tr>
 				<td><p style="float:none;" class="Box_noticias">Quantidade</p></td>
-				<td><%=text_field_tag 'quantidade', nil, :class => "Input2"%></td>
+				<td align="left"><%=text_field_tag 'quantidade', nil, :class => "Input2"%></td>
 			</tr>
 			<tr>
 				<td height="10"></td>
 			</tr>
 			<tr>
 				<td><p style="float:none;" class="Box_noticias">Valor (Un.) R$ </p></td>
-				<td><%=text_field_tag 'preco', nil, :class => "Input2"%></td>
+				<td align="left"><%=text_field_tag 'preco', nil, :class => "Input2"%></td>
+			</tr>
+			<tr>
+				<td height="10"></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="left">					
+					<h2>Grupo de Descontos</h2>
+					<div id="discount">
+						<p class="Box_noticias" style="color:red;">Para visualizar os descontos, digite o código do grupo.</p>
+					</div>	
+				</td>
 			</tr>
 			<tr>
 				<td height="10"></td>
@@ -139,7 +186,6 @@
 			</tr>
 		</form>
 		</table>
-
 	</div>
 </div>
 		<!-- PEDIDOS -->

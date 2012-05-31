@@ -1,0 +1,9 @@
+one:
+  descricao: MyString
+  tipo: false
+  valor: 9.99
+
+two:
+  descricao: MyString
+  tipo: false
+  valor: 9.99

@@ -28,7 +28,17 @@ class AjaxPedidosController < ApplicationController
         end
         produto.product_id = produto_id.id
         produto.quantidade = quantidade
-        produto.valor = params[:preco]
+        produto.valor = params[:preco].gsub(",",".").to_f
+        
+        #salva descontos
+        produto.discount = params[:discount] if params[:discount] != "undefined"
+        produto.discount2 = params[:discount2] if params[:discount2] != "undefined"
+        produto.discount3 = params[:discount3] if params[:discount3] != "undefined"
+        produto.discount4 = params[:discount4] if params[:discount4] != "undefined"
+        produto.discount5 = params[:discount5] if params[:discount5] != "undefined"
+        produto.discount6 = params[:discount6] if params[:discount6] != "undefined"
+        produto.discount7 = params[:discount7] if params[:discount7] != "undefined"
+        
         produto.save
     else
       puts "VAZIO"
@@ -38,8 +48,28 @@ class AjaxPedidosController < ApplicationController
     carrega_carrinho
     
     end
-    
-    
+  end
+  
+  def discount
+    if !params[:grupo].blank? && !params[:reseller].blank?
+      @category = Category.first(:conditions => ['cod_sistema = ?', params[:grupo]])
+      @reseller = Reseller.find(params[:reseller])
+      @discounts = @reseller.category_reseller_discounts.first(:conditions => ['category_id = ?', @category.id])
+      
+      @out = ""
+      
+      if !@discounts.blank?
+        @out += "<select name='desconto1' id='desconto1'><option>0</option><option>#{@discounts.discount}</option></select> " if @discounts.discount > 0
+        @out += "<select name='desconto2' id='desconto2'><option>0</option><option>#{@discounts.discount2}</option></select> " if @discounts.discount2 > 0
+        @out += "<select name='desconto3' id='desconto3'><option>0</option><option>#{@discounts.discount3}</option></select> " if @discounts.discount3 > 0
+        @out += "<select name='desconto4' id='desconto4'><option>0</option><option>#{@discounts.discount4}</option></select> " if @discounts.discount4 > 0
+        @out += "<select name='desconto5' id='desconto5'><option>0</option><option>#{@discounts.discount5}</option></select> " if @discounts.discount5 > 0
+        @out += "<select name='desconto6' id='desconto6'><option>0</option><option>#{@discounts.discount6}</option></select> " if @discounts.discount6 > 0
+        @out += "<select name='desconto7' id='desconto7'><option>0</option><option>#{@discounts.discount7}</option></select> " if @discounts.discount7 > 0
+      else
+        @out = "<p class=\"Box_noticias\" style=\"color:red;\">Não há descontos cadastrados neste grupo para esta revenda.</p>"
+      end
+    end
   end
   
   def limpar

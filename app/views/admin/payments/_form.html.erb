@@ -1,0 +1,22 @@
+<div id="Box_form">
+	<%= form_for [:admin, @payment] do |f| %>
+	  <%= f.error_messages %>
+	  <p>
+	    <%= f.label :descricao %><br />
+	    <%= f.text_field :descricao %>
+	  </p>
+	  <p>
+	    <%= f.label :Desconto? %><br />
+	    <%= f.check_box :tipo %>
+	  </p>
+	  <p>
+	    <%= f.label :valor %><br />
+	    <%= f.text_field :valor %>
+	  </p>
+	  <p><%= f.submit "Enviar" , :class => "Bt_enviar" %></p>
+	<% end %>
+
+</div>
+
+
+

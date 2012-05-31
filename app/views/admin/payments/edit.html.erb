@@ -1,0 +1,10 @@
+<% title "Editar Forma de Pagamento" %>
+<h1>Editar Forma de Pagamento</h1><br />
+<p>Preenchar os campos abaixo para editar o registro.</p><br />
+
+<%= render 'form' %>
+
+<p>
+  <%= link_to "Mostrar", [:admin, @payment] %> |
+  <%= link_to "Ver todos", admin_payments_path %>
+</p>

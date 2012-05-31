@@ -1,0 +1,22 @@
+<% title "Forma de Pagamento" %>
+<h1>Módulo de Formas de Pagamento</h1><br />
+<p></p><br />
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @payment.descricao %>
+</p>
+<p>
+  <strong>É desconto?:</strong>
+  <%= @payment.tipo %>
+</p>
+<p>
+  <strong>Valor:</strong>
+  <%= @payment.valor %>
+</p>
+
+<p>
+  <%= link_to "Editar", edit_admin_payment_path(@payment) %> |
+  <%= link_to "Deletar", [:admin, @payment], :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "Mostrar todos", admin_payments_path %>
+</p>
