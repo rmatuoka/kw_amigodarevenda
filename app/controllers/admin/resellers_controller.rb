@@ -7,7 +7,33 @@ class Admin::ResellersController < ApplicationController
   end
   
   def show
-    @reseller = Reseller.find(params[:id])
+    @reseller = Reseller.find(params[:id],
+    :select=> "`resellers`.*,`sipais`.`pais` as `nomepais`, `siests`.`UF`as `nomeestado`,`sicids`.`cidade` as `nomecidade`,`sizonas`.`zona` as `nomezona`, `sibais`.`bairro` as `nomebairro`",
+    :joins=> "INNER JOIN `sipais`
+    ON `resellers`.`pais` = `sipais`.`cod_pais`
+
+    INNER JOIN `siests`
+    ON  `resellers`.`pais` = `siests`.`cod_pais` 
+    AND `resellers`.`estado` = `siests`.`cod_estado`
+
+    INNER JOIN `sicids`
+    ON  `resellers`.`pais` = `sicids`.`cod_pais` 
+    AND `resellers`.`estado` = `sicids`.`cod_estado`  
+    AND `resellers`.`cidade` = `sicids`.`cod_cidade`
+
+    INNER JOIN `sizonas`
+    ON `resellers`.`pais` = `sizonas`.`cod_pais` 
+    AND `resellers`.`estado` = `sizonas`.`cod_estado`  
+    AND `resellers`.`cidade` = `sizonas`.`cod_cidade` 
+    AND `resellers`.`zona` = `sizonas`.`cod_zona`
+
+    INNER JOIN `sibais`
+    ON `resellers`.`pais` = `sibais`.`cod_pais` 
+    AND `resellers`.`estado` = `sibais`.`cod_estado`  
+    AND `resellers`.`cidade` = `sibais`.`cod_cidade` 
+    AND `resellers`.`zona` = `sibais`.`cod_zona`
+    AND `resellers`.`bairro` = `sibais`.`cod_bairro`")
+    
     @discounts = @reseller.category_reseller_discounts.all
   end
   

@@ -19,7 +19,7 @@
       <td><%=h reseller.cidade %></td>
       <td><%=h reseller.estado %></td>
       <td><%=h reseller.telefone %></td>
-	  <td><%=h reseller.representant.nome %></td>
+	  <td><%=h reseller.representant.nome if !reseller.representant_id.blank?  %></td>
       <td><%= link_to "Show", admin_reseller_path(reseller) %></td>
       <td><%= link_to "Edit", edit_admin_reseller_path(reseller) %></td>
       <td><%= link_to "Destroy", admin_reseller_path(reseller), :confirm => 'Are you sure?', :method => :delete %></td>

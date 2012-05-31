@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120530205950) do
+ActiveRecord::Schema.define(:version => 20120530222525) do
 
   create_table "categories", :force => true do |t|
     t.string   "cod_sistema"
@@ -147,7 +147,6 @@ ActiveRecord::Schema.define(:version => 20120530205950) do
   end
 
   create_table "resellers", :force => true do |t|
-    t.integer  "cod_representante"
     t.string   "nome"
     t.string   "endereco"
     t.string   "bairro"
@@ -170,7 +169,11 @@ ActiveRecord::Schema.define(:version => 20120530205950) do
     t.string   "senha"
     t.integer  "representant_id"
     t.string   "cod_sistema"
-    t.integer  "ultima_transportadora"
+    t.string   "cod_representante",  :limit => 14
+    t.string   "zona"
+    t.string   "pais"
+    t.string   "cep"
+    t.string   "numero"
   end
 
   create_table "roles", :force => true do |t|

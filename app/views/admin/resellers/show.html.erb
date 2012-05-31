@@ -1,7 +1,10 @@
 <% title "Reseller" %>
 
 <h2>Dados Cadastrais</h2>
-
+<p>
+  <strong>Código:</strong>
+  <%=h @reseller.cod_representante %>
+</p>
 <p>
   <strong>Nome:</strong>
   <%=h @reseller.nome %>
@@ -37,16 +40,32 @@
   <%=h @reseller.endereco %>
 </p>
 <p>
+  <strong>Número:</strong>
+  <%=h @reseller.numero %>
+</p>
+<p>
   <strong>Bairro:</strong>
-  <%=h @reseller.bairro %>
+  <%=h @reseller.bairro %>- <%=h @reseller.nomebairro %>
+</p>
+<p>
+  <strong>Cep:</strong>
+  <%=h @reseller.cep %>
 </p>
 <p>
   <strong>Cidade:</strong>
-  <%=h @reseller.cidade %>
+  <%=h @reseller.cidade %> - <%=h @reseller.nomecidade %>
 </p>
 <p>
   <strong>Estado:</strong>
-  <%=h @reseller.estado %>
+  <%=h @reseller.estado %> - <%=h @reseller.nomeestado %>
+</p>
+<p>
+  <strong>Zona:</strong>
+  <%=h @reseller.zona %> - <%=h @reseller.nomezona %>
+</p>
+<p>
+  <strong>Pais:</strong>
+  <%=h @reseller.pais %> - <%=h @reseller.nomepais %>
 </p>
 <p>
   <strong>Telefone:</strong>
