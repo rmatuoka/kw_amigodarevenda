@@ -11,7 +11,7 @@
 <div id="Box_Center">
 	
 	
-	<h1 class="Titleh1"><img src="/images/tit_pedidos.png" width="20" height="20" style="margin:0 10px 0 0; " /> Pedido N.: <%=@pedido.id%><%#=@representante.nome%></h1>
+	<h1 class="Titleh1"><img src="/images/tit_pedidos.png" width="20" height="20" style="margin:0 10px 0 0; " /> Protocolo N.: <%=@pedido.id%><%#=@representante.nome%></h1>
 	<a href="javascript:history.go(-1);"><img src="/images/btn_voltarbxperfil.png" width="43" height="11" class="bt_voltar_align"/></a> 
 	<br />
 	<h2>Status do Pedido: 
@@ -71,6 +71,19 @@
 						$valorun = $valorun - ($valorun * (p.discount7 / 100)) if p.discount7 > 0
 						%>
 						
+						<%if @pedido.payment.tipo?%>
+							<!-- DESCONTO -->
+							<%
+							$valorun = $valorun - ($valorun * (@pedido.payment.valor / 100))
+							%>
+
+						<%else%>
+							<!-- JUROS -->
+							<%
+							$valorun = $valorun + ($valorun * (@pedido.payment.valor / 100))
+							%>
+						<%end%>
+						
 						<%=number_to_currency($valorun) %>
 					</span></li></td>
 				</tr>
@@ -98,27 +111,11 @@
            <%if @pedido.payment.tipo?%>	
 			Desconto de:
 		   <%else%>
-			Juros de:
+			Acréscimo de:
 		   <%end%>
-           </label><span><%=@pedido.payment.valor%> %</span></li>
-			<li><label class="quinze">Total Final:</label>
-			<b>
-				<%if @pedido.payment.tipo?%>
-					<!-- DESCONTO -->
-					<%
-					$total = $total - ($total * (@pedido.payment.valor / 100))
-					%>
-					
-				<%else%>
-					<!-- JUROS -->
-					<%
-					$total = $total + ($total * (@pedido.payment.valor / 100))
-					%>
-				<%end%>
-				
-				<%=number_to_currency($total) %>
-			</b>
+           </label><span><%=@pedido.payment.valor%> %</span>
 			</li>
+		
        </ul>
 
 		<div class="Line_details_pr"></div>

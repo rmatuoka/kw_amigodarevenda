@@ -6,6 +6,6 @@ class ProductRequest < ActiveRecord::Base
   belongs_to :payment
   
   def self.home
-    ProductRequest.all(:conditions => ["NOT status = 'INCOMPLETO'"], :limit => 5)
+    ProductRequest.all(:conditions => ["NOT status = 'INCOMPLETO'"], :limit => 5, :order => "id DESC")
   end
 end

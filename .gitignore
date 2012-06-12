@@ -1,4 +1,10 @@
-log/*
+.bundle
+*~
+.DS_Store
+db/*.sqlite3
+log/*.log
+tmp/**/*
 config/database.yml
 config/environment.rb
 config/initializers/setup_mail.rb
+public/system/**/*

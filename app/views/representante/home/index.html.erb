@@ -16,7 +16,8 @@ $(document).ready(function() {
         <%if !@pedidos.blank?%> 
     	<table width="918" class="Table_pedido_title">
 				<tr style="border:#F2F2F2 solid 1px; border-left:#CCC solid 1px;">
-	                <td width="161">Realizado em:</td>
+	                <td width="80">Protocolo:</td>
+					<td width="161">Realizado em:</td>
 	                <td width="144">Status:</td>
 	                <td width="513">Revenda:</td>
 	                <td width="80"><%=link_to image_tag("btn_fazerpedido.png", :style => "float:right;"), representante_pedidos_path%></td>
@@ -28,7 +29,8 @@ $(document).ready(function() {
 				@revenda = Reseller.find(p.reseller_id)
 				%>
 				<tr style="border:#F2F2F2 solid 1px; border-left:#CCC solid 1px;">
-	                <td width="161"><%=p.created_at.to_date.strftime("%d/%m/%Y")%> <%=p.created_at.to_time.strftime("%H:%M:%S")%></td>
+	                <td width="80"><%=p.id%></td>
+					<td width="161"><%=p.created_at.to_date.strftime("%d/%m/%Y")%> <%=p.created_at.to_time.strftime("%H:%M:%S")%></td>
 	                <td width="144"><%=p.status%></td>
 	                <td width="460"><%=@revenda.nome%></td>
 	                <td width="133" class="Font_detalhes"><%=link_to "[+] DETALHES", product_request_path(p)%></td>

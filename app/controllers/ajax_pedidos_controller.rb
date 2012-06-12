@@ -59,13 +59,14 @@ class AjaxPedidosController < ApplicationController
       @out = ""
       
       if !@discounts.blank?
-        @out += "<select name='desconto1' id='desconto1'><option>0</option><option>#{@discounts.discount}</option></select> " if @discounts.discount > 0
-        @out += "<select name='desconto2' id='desconto2'><option>0</option><option>#{@discounts.discount2}</option></select> " if @discounts.discount2 > 0
-        @out += "<select name='desconto3' id='desconto3'><option>0</option><option>#{@discounts.discount3}</option></select> " if @discounts.discount3 > 0
-        @out += "<select name='desconto4' id='desconto4'><option>0</option><option>#{@discounts.discount4}</option></select> " if @discounts.discount4 > 0
-        @out += "<select name='desconto5' id='desconto5'><option>0</option><option>#{@discounts.discount5}</option></select> " if @discounts.discount5 > 0
-        @out += "<select name='desconto6' id='desconto6'><option>0</option><option>#{@discounts.discount6}</option></select> " if @discounts.discount6 > 0
-        @out += "<select name='desconto7' id='desconto7'><option>0</option><option>#{@discounts.discount7}</option></select> " if @discounts.discount7 > 0
+        @out += "<select name='desconto1' id='desconto1' class='cb_discount'><option>0</option><option>#{@discounts.discount}</option></select> " if @discounts.discount > 0
+        @out += "<select name='desconto2' id='desconto2' class='cb_discount'><option>0</option><option>#{@discounts.discount2}</option></select> " if @discounts.discount2 > 0
+        @out += "<select name='desconto3' id='desconto3' class='cb_discount'><option>0</option><option>#{@discounts.discount3}</option></select> " if @discounts.discount3 > 0
+        @out += "<select name='desconto4' id='desconto4' class='cb_discount'><option>0</option><option>#{@discounts.discount4}</option></select> " if @discounts.discount4 > 0
+        @out += "<select name='desconto5' id='desconto5' class='cb_discount'><option>0</option><option>#{@discounts.discount5}</option></select> " if @discounts.discount5 > 0
+        @out += "<select name='desconto6' id='desconto6' class='cb_discount'><option>0</option><option>#{@discounts.discount6}</option></select> " if @discounts.discount6 > 0
+        @out += "<select name='desconto7' id='desconto7' class='cb_discount'><option>0</option><option>#{@discounts.discount7}</option></select> " if @discounts.discount7 > 0
+       
       else
         @out = "<p class=\"Box_noticias\" style=\"color:red;\">Não há descontos cadastrados neste grupo para esta revenda.</p>"
       end
@@ -97,14 +98,32 @@ class AjaxPedidosController < ApplicationController
   
   def carrega_carrinho
     #GERA HTML
+    @total_final = 0
     @out = ""
     @pedido_items = @pedido.product_request_items.all
     @pedido_items.each do |p|
       @item = Product.find(p.product_id)
       if @item
+        #CALCULA OS DESCONTOS
+        $valorun = p.valor
+				
+				$valorun = $valorun - ($valorun * (p.discount / 100)) if p.discount > 0
+				$valorun = $valorun - ($valorun * (p.discount2 / 100)) if p.discount2 > 0
+				$valorun = $valorun - ($valorun * (p.discount3 / 100)) if p.discount3 > 0
+				$valorun = $valorun - ($valorun * (p.discount4 / 100)) if p.discount4 > 0
+				$valorun = $valorun - ($valorun * (p.discount5 / 100)) if p.discount5 > 0
+				$valorun = $valorun - ($valorun * (p.discount6 / 100)) if p.discount6 > 0
+				$valorun = $valorun - ($valorun * (p.discount7 / 100)) if p.discount7 > 0
+				
+				$valorun = $valorun * p.quantidade
+				
         @out += "<div id='Nomeproduto'><h3 style='margin:8px 0 0 10px;'>"+ @item.nome
-      	@out += "</h3></div><div id='Unidade>'></div>"
+      	@out += "</h3></div><div id='Unidade'><h4>#{p.quantidade}<h4></div>"
+      	@out += "<div id='Preco'>R$ #{$valorun}</div>"
+      	
+      	@total_final += $valorun
       end
     end
+    @out += "<div id='Total'><h4>Total final:</h4> R$ #{@total_final}</div>"
   end
 end

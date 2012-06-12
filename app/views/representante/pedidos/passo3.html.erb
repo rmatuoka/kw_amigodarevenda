@@ -15,8 +15,8 @@
             </tr>
             <tr>
             <td style="vertical-align:top;"><h2>Tipo de Frete :</h2></td>
-            <td width="465">
-				<%=select_tag :tipo_frete,options_for_select([["SIF","SIF"],["FOB","FOB"]])%>
+            <td width="465" align="left">
+				<%=select_tag :tipo_frete,options_for_select([["CIF","CIF"],["FOB","FOB"]])%>
 			</td>
             </tr>
             <tr>
@@ -35,19 +35,18 @@
          
           <h1 style="text-align:left;width:750px;margin:0 0px 0 0px">Endereço para Cobrança:<img src="/images/img_linha_passo3.png" align="rigth" style="margin:0px 0px 0 10px;"></h1>
           <br>
-            <table  style="text-align:right;">
+            <table style="text-align:right;" border="0">
             <tr>
-            <th colspan="2">&nbsp;</th>
+            <th colspan="4">&nbsp;</th>
             </tr>
             <tr>
-            <td width="170" height="28" style="vertical-align:top;"><h2>Rua/Número:</h2></td>
-            <td width="148"><%=text_area_tag :endereco,nil, :class => "Input2"%></td>
-            <td width="145" height="28" style="vertical-align:top;"><h2>Bairro:</h2></td>
-            <td width="148"><%=text_area_tag :bairro,nil, :class => "Input2"%></td>
+            <td width="80" height="28" style="vertical-align:top;"><h2>Rua/Número:</h2></td>
+            <td width="242" align="left"><%=text_area_tag :endereco,nil, :class => "Input2"%></td>
+            <td width="50" height="28" style="vertical-align:top;"><h2>Bairro:</h2></td>
+            <td width="242"><%=text_area_tag :bairro,nil, :class => "Input2"%></td>
             </tr>
             <tr>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
+              <td colspan="4">&nbsp;</td>
             </tr>
             <tr>
             <td style="vertical-align:top;"><h2>Cidade:</h2></td>
@@ -64,9 +63,9 @@
             <th colspan="2">&nbsp;</th>
             </tr>
             <tr>
-            <td width="170" height="28" style="vertical-align:top;"><h2>Rua/Número:</h2></td>
+            <td width="80" height="28" style="vertical-align:top;"><h2>Rua/Número:</h2></td>
             <td width="148"><%=text_area_tag :entrega_rua_numero,nil, :class => "Input2"%></td>
-            <td width="145" height="28" style="vertical-align:top;"><h2>Bairro:</h2></td>
+            <td width="50" height="28" style="vertical-align:top;"><h2>Bairro:</h2></td>
             <td width="148"><%=text_area_tag :entrega_bairro,nil, :class => "Input2"%></td>
             </tr>
             <tr>

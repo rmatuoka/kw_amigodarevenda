@@ -54,9 +54,7 @@
 			type:     "GET",
 			dataType: "html",
 			url:      "/ajax_pedidos/gravar",
-			data:     "produto="+ produto +"&quantidade="+ quantidade +"&pedido=<%=params[:id]%>" +"&preco=" + preco + "&categoria=" + categoria + "&discount=" + desconto+ "&discount2=" + desconto2+ "&discount3=" + desconto3+ "&discount4=" + desconto4+ "&discount5=" + desconto5+ "&discount6=" + desconto6+ "&discount7=" + desconto7
-			
-			,
+			data:     "produto="+ produto +"&quantidade="+ quantidade +"&pedido=<%=params[:id]%>" +"&preco=" + preco + "&categoria=" + categoria + "&discount=" + desconto+ "&discount2=" + desconto2+ "&discount3=" + desconto3+ "&discount4=" + desconto4+ "&discount5=" + desconto5+ "&discount6=" + desconto6+ "&discount7=" + desconto7,
 			success: function(msg){
 				$("#Items").html(msg);
 				
@@ -119,13 +117,24 @@
 		}
 	}
 	
+	function change_discount()
+	{
+		if ($(".cb_discount").length)
+		{
+			
+		}
+	}
+	
+	
 	$(document).ready(function() {
 		load_pedido()
+	
+		
 	});
 	</script>
 <%end%>
 
-<div id="Produtosbox">
+<div id="Produtosbox" style="width:480px;">
 	<div class="Titulo_produto">
 		<img src="/images/tit_produtos.png" width="16" height="21" />
 		<h1 class="Tile_h1">Produtos</h1>
@@ -153,15 +162,15 @@
 				<td height="10"></td>
 			</tr>
 			<tr>
-				<td><p style="float:none;" class="Box_noticias">Quantidade</p></td>
-				<td align="left"><%=text_field_tag 'quantidade', nil, :class => "Input2"%></td>
+				<td><p style="float:none;" class="Box_noticias">Preço de tabela (R$) </p></td>
+				<td align="left"><%=text_field_tag 'preco', nil, :class => "Input2"%></td>
 			</tr>
 			<tr>
 				<td height="10"></td>
 			</tr>
 			<tr>
-				<td><p style="float:none;" class="Box_noticias">Valor (Un.) R$ </p></td>
-				<td align="left"><%=text_field_tag 'preco', nil, :class => "Input2"%></td>
+				<td><p style="float:none;" class="Box_noticias">Quantidade</p></td>
+				<td align="left"><%=text_field_tag 'quantidade', nil, :class => "Input2"%></td>
 			</tr>
 			<tr>
 				<td height="10"></td>
@@ -171,7 +180,11 @@
 					<h2>Grupo de Descontos</h2>
 					<div id="discount">
 						<p class="Box_noticias" style="color:red;">Para visualizar os descontos, digite o código do grupo.</p>
-					</div>	
+					
+						
+					</div>
+					
+					
 				</td>
 			</tr>
 			<tr>
@@ -189,16 +202,16 @@
 	</div>
 </div>
 		<!-- PEDIDOS -->
-	    <div id="Meupedbox">
+	    <div id="Meupedbox" style="width:400px;">
         <div class="Titulo_produto">
         <img src="/images/tit_meupedido.png" align="left" /><h1 class="Tile_h1">Meu Pedido</h1></div>
-            <div id="Meupedido">
+            <div id="Meupedido" style="width:100%;">
             <div id="Tit_items"><h2>Items</h2></div>
 			<div id="Items">
   
             </div>
              <div id="Total_bottom">
-             	<div id="Total"><!--<h4>Unidades Totais:</h4>&nbsp;&nbsp;&nbsp;&nbsp;<h5>R$ 9.999,99</h5> --></div>
+             	<!-- <div id="Total"><h4>Unidades Totais:</h4>&nbsp;&nbsp;&nbsp;&nbsp;<h5>R$ 9.999,99</h5></div> -->
                 <!-- <div id="Total"><h4>Valor Total:</h4>&nbsp;&nbsp;&nbsp;&nbsp;<h5>R$ 9.999,99</h5></div> -->
              </div>
             <div id="Prod_bottom">

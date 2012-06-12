@@ -166,7 +166,7 @@
 			{
 				display:inline-block;
 				float:right;
-				width:225px;
+				width:100%;
 				/*min-height:368px;*/
 				min-height:100px;
 				height:auto;
@@ -178,7 +178,7 @@
 				background-repeat:no-repeat;
 				background-position:center top;
 				margin:0 auto;
-				width:221px;
+				width:100%;
 				height:auto;
 				/*min-height:586px;*/
 				min-height:245px;
@@ -261,26 +261,47 @@
 			background-color:#EEEEEE;
 			margin:2px 2px 1px 2px;
 			text-align:left;
-			width:192px;
+			width:230px;
 			height:auto;
 			min-height:28px;
-			display:inline-block;	
+			display:inline-block;
+			vertical-align:middle;
 		}
-		#Geral #Center #Meupedido #Unidade
+		#Unidade
 		{
 			text-align:center;
 			background-color:#F0F0F0;
 			margin:2px 2px 1px 2px;
-			width:192px;
+			width:50px;
 			height:16px;
 			display:inline-block;	
+			vertical-align:middle;
+		}
+		#Preco
+		{
+			text-align:center;
+			background-color:#F0F0F0;
+			margin:2px 2px 1px 2px;
+			width:80px;
+			height:16px;
+			display:inline-block;	
+			vertical-align:middle;
+			font-family:Tahoma, Geneva, sans-serif;
+			color:#999;
+			text-align:left;
+			font-size:11px;
+			font-weight:bold;
 		}
 		#Geral #Center #Meupedido #Total
 		{
-			margin:2px 2px 1px 2px;
-			width:192px;
-			height:16px;
-			display:inline-block;	
+			margin:15px 2px 1px 2px;
+			width:100%;
+			height:18px;
+			display:inline-block;
+			text-align:left;
+			font-family:Tahoma, Geneva, sans-serif;
+			color:Green;
+			background-color:#F0F0F0;	
 		}
 		
 .hide

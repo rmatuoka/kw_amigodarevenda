@@ -65,6 +65,19 @@
 							$valorun = $valorun - ($valorun * (p.discount7 / 100)) if p.discount7 > 0
 							%>
 
+							<%if @pedido.payment.tipo?%>
+								<!-- DESCONTO -->
+								<%
+								$valorun = $valorun - ($valorun * (@pedido.payment.valor / 100))
+								%>
+
+							<%else%>
+								<!-- JUROS -->
+								<%
+								$valorun = $valorun + ($valorun * (@pedido.payment.valor / 100))
+								%>
+							<%end%>
+
 							<%=number_to_currency($valorun) %>
 						</span></li></td>
 					</tr>
@@ -95,24 +108,6 @@
 				Juros de:
 			   <%end%>
 	           </label><span><%=@pedido.payment.valor%> %</span></li>
-				<li><label class="quinze">Total Final:</label>
-				<b>
-					<%if @pedido.payment.tipo?%>
-						<!-- DESCONTO -->
-						<%
-						$total = $total - ($total * (@pedido.payment.valor / 100))
-						%>
-
-					<%else%>
-						<!-- JUROS -->
-						<%
-						$total = $total + ($total * (@pedido.payment.valor / 100))
-						%>
-					<%end%>
-
-					<%=number_to_currency($total) %>
-				</b>
-				</li>
 	       </ul>
 
 			<div class="Line_details_pr"></div>

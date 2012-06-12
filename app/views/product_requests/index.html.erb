@@ -18,6 +18,7 @@ $(document).ready(function() {
 			
 		 <table width="918" class="Table_pedido_title_ext">
 			<tr >
+				<td width="80">Protocolo:</td>
 				<td width="156">Realizado em:</td>
 				<td width="142">Status:</td>
 				<td width="490">Revenda:</td>
@@ -29,6 +30,7 @@ $(document).ready(function() {
 			@pedidos.each do |p|
 			%>
 			<tr>
+				<td width="80"><%=p.id%></td>
 				<td width="161"><%=p.created_at.to_date.strftime("%d/%m/%Y")%> <%=p.created_at.to_time.strftime("%H:%M:%S")%></td>
 				<td width="144"><%=p.status%></td>
 				<td width="460"><%=p.reseller.nome%></td>
