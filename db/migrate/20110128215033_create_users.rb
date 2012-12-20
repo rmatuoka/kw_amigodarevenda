@@ -6,8 +6,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :crypted_password
       t.string :password_salt
       t.string :persistence_token
-      t.string :login_count
-      t.string :failed_login_count
+      t.integer :login_count,       :null => false, :default => 0
+      t.integer :failed_login_count,:null => false, :default => 0
       t.string :last_login_count
       t.timestamps
     end

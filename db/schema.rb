@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(:version => 20120531003941) do
 
   create_table "categories", :force => true do |t|
-    t.string   "cod_sistema"
+    t.integer  "cod_sistema"
     t.string   "nome"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(:version => 20120531003941) do
     t.integer  "poll_id"
     t.string   "question"
     t.boolean  "published"
-    t.integer  "total_votes", :default => 0
+    t.integer  "total_votes"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -107,14 +107,14 @@ ActiveRecord::Schema.define(:version => 20120531003941) do
     t.integer  "product_request_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.float    "valor",              :limit => 10
-    t.decimal  "discount",                         :precision => 10, :scale => 2, :default => 0.0
-    t.decimal  "discount2",                        :precision => 10, :scale => 2, :default => 0.0
-    t.decimal  "discount3",                        :precision => 10, :scale => 2, :default => 0.0
-    t.decimal  "discount4",                        :precision => 10, :scale => 2, :default => 0.0
-    t.decimal  "discount5",                        :precision => 10, :scale => 2, :default => 0.0
-    t.decimal  "discount6",                        :precision => 10, :scale => 2, :default => 0.0
-    t.decimal  "discount7",                        :precision => 10, :scale => 2, :default => 0.0
+    t.decimal  "valor",              :precision => 10, :scale => 0
+    t.decimal  "discount",           :precision => 10, :scale => 2, :default => 0.0
+    t.decimal  "discount2",          :precision => 10, :scale => 2, :default => 0.0
+    t.decimal  "discount3",          :precision => 10, :scale => 2, :default => 0.0
+    t.decimal  "discount4",          :precision => 10, :scale => 2, :default => 0.0
+    t.decimal  "discount5",          :precision => 10, :scale => 2, :default => 0.0
+    t.decimal  "discount6",          :precision => 10, :scale => 2, :default => 0.0
+    t.decimal  "discount7",          :precision => 10, :scale => 2, :default => 0.0
   end
 
   create_table "product_requests", :force => true do |t|
@@ -139,7 +139,7 @@ ActiveRecord::Schema.define(:version => 20120531003941) do
   end
 
   create_table "products", :force => true do |t|
-    t.string   "cod_sistema"
+    t.integer  "cod_sistema"
     t.string   "nome"
     t.integer  "category_id"
     t.datetime "created_at"
@@ -262,6 +262,8 @@ ActiveRecord::Schema.define(:version => 20120531003941) do
     t.datetime "updated_at"
   end
 
+  add_index "sirevs", ["cod_revenda"], :name => "index_sirevs_on_cod_revenda", :unique => true
+
   create_table "sizonas", :id => false, :force => true do |t|
     t.string   "cod_pais"
     t.string   "cod_estado"
@@ -340,8 +342,8 @@ ActiveRecord::Schema.define(:version => 20120531003941) do
     t.string   "crypted_password"
     t.string   "password_salt"
     t.string   "persistence_token"
-    t.integer  "login_count"
-    t.integer  "failed_login_count"
+    t.integer  "login_count",        :default => 0, :null => false
+    t.integer  "failed_login_count", :default => 0, :null => false
     t.string   "last_login_count"
     t.datetime "created_at"
     t.datetime "updated_at"

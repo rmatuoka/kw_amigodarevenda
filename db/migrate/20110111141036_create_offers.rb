@@ -4,7 +4,6 @@ class CreateOffers < ActiveRecord::Migration
       t.string :name
       t.text :body
       t.datetime :date_inicio
-      t.date_time :data_fim
       t.integer :published
       t.integer :total_clicks
       t.timestamps

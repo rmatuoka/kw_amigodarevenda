@@ -1,7 +1,7 @@
 class CreateSirevs < ActiveRecord::Migration
   def self.up
-    create_table :sirevs, :id => false do |t|
-      t.string :cod_revenda, :primary => true
+    create_table :sirevs, :id => false, :force => true do |t|
+      t.string :cod_revenda
       t.string :revenda
       t.string :fantasia
       t.string :cod_pais
@@ -15,9 +15,9 @@ class CreateSirevs < ActiveRecord::Migration
       t.string :telefone
       t.string :email1
       t.string :email2
-
       t.timestamps
     end
+    add_index :sirevs, :cod_revenda, :unique => true
   end
 
   def self.down

@@ -1,0 +1,12 @@
+<% title "Importar" %>
+
+<%=	notice %>
+
+<% if !@Revendas.blank?%>
+	<% @Revendas.each do |revenda| %>
+		|<%= revenda.cod_revenda %>|<%= revenda.revenda %>|<%= revenda.fantasia %>|<%= revenda.cod_pais %>|<%= revenda.cod_estado %>|<%= revenda.cod_cidade %>|<%= revenda.cod_zona %>|<%= revenda.cod_bairro %>|<%= revenda.endereco %>|<%= revenda.nr %>|<%= revenda.cep %>|<%= revenda.telefone %>|<%= revenda.email1 %>|<%= revenda.email2 %>|<br />
+	<% end %>
+	<p>Revendas importadas:<%= @Revendas.count%>.</p>
+<% else %>
+	<p>Não existe arquivo para ser importado!</p>
+<% end %>
