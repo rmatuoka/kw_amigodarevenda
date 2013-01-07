@@ -4,7 +4,9 @@
 
 <% if !@Revendas.blank?%>
 	<% @Revendas.each do |revenda| %>
-		|<%= revenda.cod_revenda %>|<%= revenda.revenda %>|<%= revenda.fantasia %>|<%= revenda.cod_pais %>|<%= revenda.cod_estado %>|<%= revenda.cod_cidade %>|<%= revenda.cod_zona %>|<%= revenda.cod_bairro %>|<%= revenda.endereco %>|<%= revenda.nr %>|<%= revenda.cep %>|<%= revenda.telefone %>|<%= revenda.email1 %>|<%= revenda.email2 %>|<br />
+		|<%= revenda.cod_revenda %>|<%= revenda.revenda %>|<%= revenda.fantasia %>|<%= revenda.cod_pais %>|<%= revenda.cod_estado %>|<%= revenda.cod_cidade %>|<%= revenda.cod_zona %>
+		|<%= revenda.cod_bairro %>|<%= revenda.endereco %>|<%= revenda.nr %>|<%= revenda.cep %>|<%= revenda.telefone %>|<%= revenda.email1 %>|<%= revenda.email2 %>
+		|<%= revenda.cod_repre %> - <%= revenda.sirepre.representante%>|<%= revenda.cod_trans %>|<%= revenda.flag_ati %>|<br />
 	<% end %>
 	<p>Revendas importadas:<%= @Revendas.count%>.</p>
 <% else %>

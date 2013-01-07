@@ -1,0 +1,12 @@
+<% title "Importar" %>
+
+<%=	notice %>
+
+<% if !@Representantes.blank?%>
+	<% @Representantes.each do |representante| %>
+		|<%= representante.cod_repre %>|<%= representante.representante %>|<%= representante.fantasia %>|<br />
+	<% end %>
+	<p>Representantes importados:<%= @Representantes.count%>.</p>
+<% else %>
+	<p>Não existe arquivo para ser importado!</p>
+<% end %>

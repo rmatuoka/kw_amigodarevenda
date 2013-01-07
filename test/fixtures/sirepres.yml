@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  cod_repre: MyString
+  representante: MyString
+  fantasia: MyString
+
+two:
+  cod_repre: MyString
+  representante: MyString
+  fantasia: MyString

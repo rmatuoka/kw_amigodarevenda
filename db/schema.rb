@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120531003941) do
+ActiveRecord::Schema.define(:version => 20130102200812) do
 
   create_table "categories", :force => true do |t|
     t.integer  "cod_sistema"
@@ -243,6 +243,16 @@ ActiveRecord::Schema.define(:version => 20120531003941) do
     t.datetime "updated_at"
   end
 
+  create_table "sirepres", :id => false, :force => true do |t|
+    t.string   "cod_repre"
+    t.string   "representante"
+    t.string   "fantasia"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sirepres", ["cod_repre"], :name => "index_sirepres_on_cod_repre", :unique => true
+
   create_table "sirevs", :id => false, :force => true do |t|
     t.string   "cod_revenda"
     t.string   "revenda"
@@ -260,6 +270,9 @@ ActiveRecord::Schema.define(:version => 20120531003941) do
     t.string   "email2"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "cod_repre"
+    t.string   "cod_trans"
+    t.string   "flag_ati"
   end
 
   add_index "sirevs", ["cod_revenda"], :name => "index_sirevs_on_cod_revenda", :unique => true
