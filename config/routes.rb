@@ -21,6 +21,8 @@ KwAmigodarevenda::Application.routes.draw do |map|
           get :imp_sibai
           get :imp_sirev
           get :imp_sirepre
+          get :imp_sigru
+          get :imp_trans
         end
       end
       resources :transporters

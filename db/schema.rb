@@ -10,10 +10,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130102200812) do
+ActiveRecord::Schema.define(:version => 20130108174618) do
 
   create_table "categories", :force => true do |t|
-    t.integer  "cod_sistema"
+    t.string   "cod_sistema"
     t.string   "nome"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(:version => 20130102200812) do
     t.integer  "poll_id"
     t.string   "question"
     t.boolean  "published"
-    t.integer  "total_votes"
+    t.integer  "total_votes", :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -107,14 +107,14 @@ ActiveRecord::Schema.define(:version => 20130102200812) do
     t.integer  "product_request_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "valor",              :precision => 10, :scale => 0
-    t.decimal  "discount",           :precision => 10, :scale => 2, :default => 0.0
-    t.decimal  "discount2",          :precision => 10, :scale => 2, :default => 0.0
-    t.decimal  "discount3",          :precision => 10, :scale => 2, :default => 0.0
-    t.decimal  "discount4",          :precision => 10, :scale => 2, :default => 0.0
-    t.decimal  "discount5",          :precision => 10, :scale => 2, :default => 0.0
-    t.decimal  "discount6",          :precision => 10, :scale => 2, :default => 0.0
-    t.decimal  "discount7",          :precision => 10, :scale => 2, :default => 0.0
+    t.float    "valor",              :limit => 10
+    t.decimal  "discount",                         :precision => 10, :scale => 2, :default => 0.0
+    t.decimal  "discount2",                        :precision => 10, :scale => 2, :default => 0.0
+    t.decimal  "discount3",                        :precision => 10, :scale => 2, :default => 0.0
+    t.decimal  "discount4",                        :precision => 10, :scale => 2, :default => 0.0
+    t.decimal  "discount5",                        :precision => 10, :scale => 2, :default => 0.0
+    t.decimal  "discount6",                        :precision => 10, :scale => 2, :default => 0.0
+    t.decimal  "discount7",                        :precision => 10, :scale => 2, :default => 0.0
   end
 
   create_table "product_requests", :force => true do |t|
@@ -139,7 +139,7 @@ ActiveRecord::Schema.define(:version => 20130102200812) do
   end
 
   create_table "products", :force => true do |t|
-    t.integer  "cod_sistema"
+    t.string   "cod_sistema"
     t.string   "nome"
     t.integer  "category_id"
     t.datetime "created_at"
@@ -275,7 +275,25 @@ ActiveRecord::Schema.define(:version => 20130102200812) do
     t.string   "flag_ati"
   end
 
-  add_index "sirevs", ["cod_revenda"], :name => "index_sirevs_on_cod_revenda", :unique => true
+  create_table "sitrans", :id => false, :force => true do |t|
+    t.string   "cod_trans"
+    t.string   "transportadora"
+    t.string   "fantasia"
+    t.string   "cod_pais"
+    t.string   "cod_estado"
+    t.string   "cod_cidade"
+    t.string   "cod_zona"
+    t.string   "cod_bairro"
+    t.string   "endereco"
+    t.string   "nr"
+    t.string   "cep"
+    t.string   "telefone"
+    t.string   "email1"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sitrans", ["cod_trans"], :name => "index_sitrans_on_cod_trans", :unique => true
 
   create_table "sizonas", :id => false, :force => true do |t|
     t.string   "cod_pais"
@@ -355,8 +373,8 @@ ActiveRecord::Schema.define(:version => 20130102200812) do
     t.string   "crypted_password"
     t.string   "password_salt"
     t.string   "persistence_token"
-    t.integer  "login_count",        :default => 0, :null => false
-    t.integer  "failed_login_count", :default => 0, :null => false
+    t.integer  "login_count"
+    t.integer  "failed_login_count"
     t.string   "last_login_count"
     t.datetime "created_at"
     t.datetime "updated_at"

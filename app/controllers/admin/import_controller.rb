@@ -1,4 +1,3 @@
-
 class Admin::ImportController < ApplicationController
   layout "blank"
   require 'fileutils'
@@ -133,30 +132,14 @@ class Admin::ImportController < ApplicationController
         `updated_at` = utc_timestamp
         }.squish!
         Sirev.connection.insert_sql(statement)
-
-        
-#        Sirev.create!(  :cod_revenda => row[0],
-#                        :revenda => row[1],
-#                        :fantasia => row[2],
-#                        :cod_pais => row[3],
-#                        :cod_estado => row[4],
-#                        :cod_cidade => row[5],
-#                        :cod_zona => row[6],
-#                        :cod_bairro => row[7],
-#                        :endereco => row[8],  
-#                        :nr => row[9],
-#                        :cep => row[10],
-#                        :telefone => row[11],
-#                        :email1 => row[12],
-#                        :email2 => row[13]
-#                      )
       end
       novo_nome_arquivo = "SIREV_"+Date.today.strftime("%Y") + Date.today.strftime("%m") + Date.today.strftime("%d") + Time.now.strftime("%H") + Time.now.strftime("%M") + Time.now.strftime("%S")
       File.rename('public/import/new/SIREV.TXT', 'public/import/new/'+ novo_nome_arquivo +'.TXT')
       FileUtils.mv('public/import/new/'+ novo_nome_arquivo  +'.TXT', 'public/import/old/'+ novo_nome_arquivo +'.TXT')
      
       #@Revendas = Sirev.all(:joins => :sirepre) #Lista todas os representantes que tem relacionamento valido com a Revenda
-      @Revendas = Sirev.all
+      #@Revendas = Sirev.all #Todas as Revendas
+      @Revendas = Sirev.all(:joins => :sitrans)
     end
   end
   
@@ -165,7 +148,6 @@ class Admin::ImportController < ApplicationController
       text = File.read('public/import/new/SIREPRE.TXT')
       File.open('public/import/new/SIREPRE.TXT', 'w') { |f| f << text.gsub("'", "''") }
 
-      #Sirev.delete_all
       FasterCSV.foreach('public/import/new/SIREPRE.TXT', :quote_char => '}', :col_sep =>'||', :row_sep =>:auto) do |row|
 
         statement = %{
@@ -188,76 +170,72 @@ class Admin::ImportController < ApplicationController
       @Representantes = Sirepre.all
     end
   end
-        
-#  def index
-#    require 'fileutils'
-#    
-#    #PRODUTOS
-#    if File.exists?('public/import/new/PROD.TXT')
-#      @temp = Temporary.all
-#      @temp.each do |t|
-#        t.destroy
-#      end
-#      
-#      arquivo_prod = File.open('public/import/new/PROD.TXT','r')
-#      @produtos = arquivo_prod.readlines
-#      arquivo_prod.close
-#      
-      #GRAVA NA TABELA TEMPORARIA
-#      counter = 0
-#      @produtos.count.times do
-#        @temp = Temporary.new
-#        itens = @produtos[counter].split(';')
-#        @temp.cod_cat = itens[0]
-#        @temp.categoria = itens[1]
-#        @temp.cod_produto = itens[2]
-#        @temp.produto = itens[3]
-#        @temp.save
-#        counter = counter + 1
-#      end
-#      
-      #GRAVA AS CATEGORIAS
-      #CASO A CATEGORIA JÁ EXISTA, DA O UPDATE, CASO CONTRARIO ADICIONA
-#      @categorias_temp = Temporary.all(:group => "categoria")
-#      if @categorias_temp
-#        @categorias_temp.each do |c|
-#          categoria = Category.first(:conditions => ['cod_sistema = ?', c.cod_cat])
-#          if !categoria
-#            categoria = Category.new
-#          end
-#          categoria.cod_sistema = c.cod_cat
-#          categoria.nome = c.categoria
-#          categoria.save
-#        end
-#      end
-#      
-      #GRAVA OS PRODUTOS
-      #CASO O PRODUTO JÁ EXISTA, DA O UPDATE, CASO CONTRARIO ADICIONA
-#      @produtos_temp = Temporary.all()
-#      if @produtos_temp
-#        @produtos_temp.each do |p|
-#          produto = Product.first(:conditions => ['cod_sistema = ? AND cod_categoria_sistema = ?', p.cod_produto, p.cod_cat])
-#          if !produto
-#            produto = Product.new
-#          end
-#          produto.cod_sistema = p.cod_produto
-#          produto.nome = p.produto
-#          produto.cod_categoria_sistema = p.cod_cat
-#          
-          #Resgata a categoria
-#          categoria = Category.first(:conditions => ['cod_sistema = ?', p.cod_cat])
-#          produto.category_id = categoria.id
-#          if !produto.save
-#            flash[:notice] = "Erro ao salvar alguns registros"
-#          end
-#        end
-#      end
-#      
-      #RENOMEIA E MOVE O ARQUIVO
-#      novo_nome_arquivo = Date.today.strftime("%Y") + Date.today.strftime("%m") + Date.today.strftime("%d") + Time.now.strftime("%H") + Time.now.strftime("%M") + Time.now.strftime("%S")
-#      File.rename('public/import/new/PROD.TXT', 'public/import/new/'+ novo_nome_arquivo +'.TXT')
-#      FileUtils.mv('public/import/new/'+ novo_nome_arquivo  +'.TXT', 'public/import/old/'+ novo_nome_arquivo +'.TXT')
-#      
-#    end
-#  end
+  
+  def imp_trans 
+    if File.exists?('public/import/new/SITRANS.TXT')
+      text = File.read('public/import/new/SITRANS.TXT')
+      File.open('public/import/new/SITRANS.TXT', 'w') { |f| f << text.gsub("'", "''") }
+
+      FasterCSV.foreach('public/import/new/SITRANS.TXT', :quote_char => '}', :col_sep =>'||', :row_sep =>:auto) do |row|
+
+        statement = %{
+
+          INSERT INTO `sitrans`
+          (`cod_trans`, `transportadora`, `fantasia`, `cod_pais`, `cod_estado`, `cod_cidade`, `cod_zona`, `cod_bairro`,
+           `endereco`, `nr`, `cep`, `telefone`, `email1`,`updated_at`, `created_at`) 
+          VALUES 
+          ('#{row[0]}', '#{row[1]}', '#{row[2]}', '#{row[3]}', '#{row[4]}', '#{row[5]}', '#{row[6]}', '#{row[7]}', '#{row[8]}',
+           '#{row[9]}', '#{row[10]}', '#{row[11]}', '#{row[12]}', utc_timestamp, utc_timestamp)  
+          ON DUPLICATE KEY UPDATE
+          `transportadora` = '#{row[1]}',
+          `fantasia` = '#{row[2]}', 
+          `cod_pais` = '#{row[3]}', 
+          `cod_estado` = '#{row[4]}', 
+          `cod_cidade` = '#{row[5]}', 
+          `cod_zona` = '#{row[6]}', 
+          `cod_bairro` = '#{row[7]}',
+          `endereco` = '#{row[8]}',
+          `nr` = '#{row[9]}', 
+          `cep` = '#{row[10]}', 
+          `telefone` = '#{row[11]}', 
+          `email1` = '#{row[12]}', 
+          `updated_at` = utc_timestamp
+          }.squish!
+        Sitrans.connection.insert_sql(statement)
+
+      end
+      novo_nome_arquivo = "SITRANS_"+Date.today.strftime("%Y") + Date.today.strftime("%m") + Date.today.strftime("%d") + Time.now.strftime("%H") + Time.now.strftime("%M") + Time.now.strftime("%S")
+      File.rename('public/import/new/SITRANS.TXT', 'public/import/new/'+ novo_nome_arquivo +'.TXT')
+      FileUtils.mv('public/import/new/'+ novo_nome_arquivo  +'.TXT', 'public/import/old/'+ novo_nome_arquivo +'.TXT')
+      @Transportadora = Sitrans.all
+    end
+  end
+    
+  def imp_sigru 
+    if File.exists?('public/import/new/SIGRU.TXT')
+      text = File.read('public/import/new/SIGRU.TXT')
+      File.open('public/import/new/SIGRU.TXT', 'w') { |f| f << text.gsub("'", "''") }
+
+      FasterCSV.foreach('public/import/new/SIGRU.TXT', :quote_char => '}', :col_sep =>'||', :row_sep =>:auto) do |row|
+
+        statement = %{
+
+        INSERT INTO `sirepres`
+        (`cod_repre`, `representante`, `fantasia`,`updated_at`, `created_at`) 
+        VALUES 
+        ('#{row[0]}', '#{row[1]}', '#{row[2]}', utc_timestamp, utc_timestamp)  
+        ON DUPLICATE KEY UPDATE
+        `representante` = '#{row[1]}',
+        `fantasia` = '#{row[2]}', 
+        `updated_at` = utc_timestamp
+        }.squish!
+        Sirepre.connection.insert_sql(statement)
+
+      end
+      novo_nome_arquivo = "SIGRU_"+Date.today.strftime("%Y") + Date.today.strftime("%m") + Date.today.strftime("%d") + Time.now.strftime("%H") + Time.now.strftime("%M") + Time.now.strftime("%S")
+      File.rename('public/import/new/SIGRU.TXT', 'public/import/new/'+ novo_nome_arquivo +'.TXT')
+      FileUtils.mv('public/import/new/'+ novo_nome_arquivo  +'.TXT', 'public/import/old/'+ novo_nome_arquivo +'.TXT')
+      @Grupos = Sirepre.all
+    end
+  end      
 end
