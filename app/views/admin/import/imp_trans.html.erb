@@ -1,0 +1,13 @@
+<% title "Importar" %>
+
+<%=	notice %>
+
+<% if !@Transportadora.blank?%>
+	<% @Transportadora.each do |transportadora| %>
+		|<%= transportadora.cod_trans %>|<%= transportadora.transportadora %>|<%= transportadora.fantasia %>|<%= transportadora.cod_pais %>|<%= transportadora.cod_estado %>|<%= transportadora.cod_cidade %>|<%= transportadora.cod_zona %>
+		|<%= transportadora.cod_bairro %>|<%= transportadora.endereco %>|<%= transportadora.nr %>|<%= transportadora.cep %>|<%= transportadora.telefone %>|<%= transportadora.email1 %>|<br />
+	<% end %>
+	<p>Transportadoras importadas:<%= @Transportadora.count%>.</p>
+<% else %>
+	<p>Não existe arquivo para ser importado!</p>
+<% end %>
