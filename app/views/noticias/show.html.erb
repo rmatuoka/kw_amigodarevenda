@@ -7,12 +7,12 @@
 <%end%>
 
 <div id="Box_Center">
-	<h1><img src="/images/tit_noticias.png" width="14" height="19" style="margin:0 10px 0 0; float:none;"/><%=@noticia.name%></h1>
+	<h1><img src="/images/tit_noticias.png" width="14" height="19" style="margin:0 10px 0 0; float:none;"/><%=@noticia.title%></h1>
 	<p style="float:none;">
 		<br>
 		<br>
 		<i><%=@noticia.created_at.to_date.strftime("%d/%m/%Y")%></i><br>
 		<br>
-		<p class="Box_noticias"><%=@noticia.body%></p>
+		<p class="Box_noticias"><%=raw (@noticia.body)%></p>
 	</p>
 </div>

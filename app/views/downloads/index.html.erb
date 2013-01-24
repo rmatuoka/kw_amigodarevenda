@@ -38,7 +38,7 @@
 	</td>
 	<td width="52%" class="left"><%=d.name%></td>
 	<td width="18%"><%=d.file_file_size%> kb</td>
-	<td width="25%"><%=link_to(image_tag("btn_download.png"), d.file.url)%></td>
+	<td width="25%"><%=link_to(image_tag("btn_download.png"), baixar_download_path(d))%></td>
 	</tr>
 <%end%>
 </table>

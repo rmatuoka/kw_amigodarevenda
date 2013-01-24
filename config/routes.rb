@@ -1,4 +1,5 @@
 KwAmigodarevenda::Application.routes.draw do |map|
+
   resources :product_requests
   resources :user_sessions
   resources :representants
@@ -9,7 +10,7 @@ KwAmigodarevenda::Application.routes.draw do |map|
       resources(:polls){
         resources :poll_questions
       }
-      resources :notices
+      #resources :notices
       resources :offers
       resources :downloads
       resources :import do
@@ -69,8 +70,12 @@ KwAmigodarevenda::Application.routes.draw do |map|
     end
     
   end
-
-  resources :downloads
+  resources :catalogos
+  resources :downloads do
+    member do
+      get :baixar
+    end
+  end
   resources :noticias
   resources :ajax_pedidos do
     collection do

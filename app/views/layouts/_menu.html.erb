@@ -7,6 +7,7 @@
                         <%end%>
 						<li><a href=""><img src="/images/Menu/btn_planilhaon.png" class="acende" width="131" height="28" /></a></li>
                         <li><%=link_to(image_tag("Menu/btn_downloads.png", :class => "acende"), downloads_path)%></li>
+                        <li><%=link_to(image_tag("Menu/btn_downloads.png", :class => "acende"), catalogos_path)%></li>
                         <%if current_user.has_role? :revendedor%>
 							<li><a href=""><img src="/images/Menu/btn_cursosonline.png" class="acende" width="131" height="28" /></a></li>
                         <%end%>		

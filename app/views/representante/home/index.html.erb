@@ -58,7 +58,7 @@ $(document).ready(function() {
             <table class="Box_content_noticias">
 				<tr>
 	                <td class="Data_noticias"><%=n.created_at.to_date.strftime("%d/%m/%Y")%>-</td>
-	                <td class="Box_noticias"><%=link_to n.summary, noticia_path(n)%></td>
+	                <td class="Box_noticias"><%=link_to n.title, noticia_path(n)%></td>
 	              </tr> 
             </table>	
 		<%end%>			
