@@ -66,7 +66,7 @@ body
 		#box_top_bar_2{
 	float:right;
 	margin-top:10px;
-	margin-right:20px;
+	margin-right:150px;
 	}
 
 
@@ -205,6 +205,13 @@ body
 			margin:50px auto;
 			width:960px;
 		}
+		
+			#Geral #Center #Box_center span
+			{
+				font-family:Tahoma, Geneva, sans-serif;
+				font-size:15px;
+				line-height:25px;
+			}
 		#Geral #Center #Box_Center
 		{
 			position:relative; 	
@@ -512,8 +519,17 @@ body
 				color:#333333;				
 				position:relative;
 				text-align:left;
+				width:100px !important;
+				height:20px !important;
 			}	
 			
+			
+			.MsoNormal{
+				font-family:Tahoma, Geneva, sans-serif !important;
+				font-size:12px !important;
+				font-weight:normal !important;
+				line-height:25px !important;
+				}
 				
 			.Box_noticias
 			{
@@ -522,7 +538,7 @@ body
 				font-weight:normal;
 				color:#333333;	
 				position:relative;
-				text-align:left;
+				text-align:left !important;
 				padding-left:5px;
 								
 			}
